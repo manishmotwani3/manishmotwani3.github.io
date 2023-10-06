@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Advantageous Skills Assessment</title>
+<h2> Advantageous Skill Assessment</h2>
+<body>
+<div>
+<div>
+	<p>
+	In this course, you will use a variety of tools implemented in different programming languages to generate useful
+	facts about a program’s behavior and analyze them.  You will learn about the tools and their theoretical underpinnings
+	in this course, however it is assumed that you are already familiar with basic concepts in computer science and
+	mathematics, as well as the use of various tools/commands in a UNIX-like environment.  
+
+	</p><p>
+	This assessment is designed to help you determine specific skills and concepts you should learn or refamiliarize
+	yourself with prior to starting this course.  You do not need to master each and every one of these skills - but you
+	should have command of the majority of them.  While it will be possible to pick up some of these skills along the way,
+	it may prove difficult to cover them.
+
+	</p><p>
+	The instructors and teaching assistants have only a limited capability to assist students with learning these tasks,
+	and they will not be explicitly covered in lectures.
+  </p></div>
+  <ul>
+  <div>
+     <li><h3>Navigating a UNIX-like Environment</h3>
+	 All assignments in this class assume a UNIX-like environment. You should be comfortable browsing folders and
+	 executing basic commands from a UNIX command prompt.
+
+     <p><dfn>Sample task:</dfn>
+	 Using just a command prompt in a UNIX-like environment (such as Linux or macOS), create a new folder, create a text
+	 file inside that folder, and change the file permissions to allow execution of that file (such as would be needed if the
+	 file contained a shell script). Finally, create a ZIP archive of your folder and extract it to a
+	 different location to verify that it was correctly created.</p> </li>
+  </div>
+  </ul>
+  <ul>
+  <div>
+	<li><h3>Writing Shell Scripts</h3>
+
+	 <p>For some assignments, you may need to write a shell script that can execute a command. You may use any common
+	 UNIX shell scripting language such as bash, csh, or even python.</p>
+
+     <p><dfn>Sample task:</dfn>
+	 Write a script that can be executed with the command <code>./myscript.sh input.txt output.txt</code> that takes an
+	 input text file and produces a version of the file that is sorted using the UNIX <code>sort</code> program. Your program
+	 should produce an <code>output.txt</code> that contains just Error if the input causes sort to crash.</p> </li>
+  </div>
+</ul>	
+<ul>
+  <div>
+    <li><h3>Evaluating Data Structures</h3>
+
+	 <p>You should know how to perform analysis on common data structures such as trees, heaps, queues, and stacks. You should
+	 be able to write code in Java and C++ that can use common data structures.</p>
+
+     <p><dfn>Sample task:</dfn>
+	 Using a high level language such as Java or C++, write a class that builds a balanced binary tree out of an
+	 unsorted array of integer values. Then write a search function to determine if a specific value exists in the tree. Your
+	 search function should use an algorithm such as a BFS (Breadth First Search) or DFS (Depth First Search) on the tree
+	 values and return false if the desired value does not exist in the tree.</p>
+
+	 <p>Sample input array of values: [26, 28, 76, 32, 4, 87, 42, 9, 12]</p></li>
+  </div>
+</ul>
+<ul>	
+  <div>
+     <li><h3>Debugging High Level Code</h3>
+
+	 <p>Some tools we explore in this class automatically generate test cases that will find bugs in a provided
+	 application. You should be able to use a compile error or stack trace to figure out why a source file doesn’t compile.
+	 Additionally, you should be able to find and fix issues such as null pointer exceptions or invalid cast errors in a code
+	 file. As many applications we will be analyzing are relatively simple, we recommend having a high level of comfort
+	 debugging simple issues without the help of an IDE.</p>
+
+	 <p><dfn>Sample task:</dfn>
+	 Run the following Java program. Make sure that all code in the main method executes to produce correct results.</p>
+
+	 <figure class="highlight"><pre><code class="language-java" data-lang="java">		
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">test</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Add 1 + 2:"</span><span class="o">);</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Result = "</span> <span class="o">+</span> <span class="n">add</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">));</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Add 40 + 2:"</span><span class="o">);</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Result = "</span> <span class="o">+</span> <span class="n">add</span><span class="o">(</span><span class="mi">40</span><span class="o">,</span><span class="mi">2</span><span class="o">));</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Multiply 3 x 4:"</span><span class="o">);</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Result = "</span> <span class="o">+</span> <span class="n">multiply</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">));</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Multiply 12 x 20:"</span><span class="o">);</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Result = "</span> <span class="o">+</span> <span class="n">add</span><span class="o">(</span><span class="mi">12</span><span class="o">,</span><span class="mi">20</span><span class="o">));</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Done!"</span><span class="o">)</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">add</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+		<span class="nc">Integer</span> <span class="n">result</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+		<span class="n">result</span> <span class="o">+=</span> <span class="n">a</span><span class="o">;</span>
+		<span class="n">result</span> <span class="o">+=</span> <span class="n">b</span><span class="o">;</span>
+		<span class="k">return</span> <span class="n">result</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">multiply</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+		<span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+		<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">b</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
+			<span class="n">result</span> <span class="o">=</span> <span class="n">add</span><span class="o">(</span><span class="n">result</span><span class="o">,</span> <span class="n">a</span><span class="o">);</span>
+		<span class="k">return</span> <span class="n">result</span><span class="o">;</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+
+	 </code></pre></figure>
+    </li>
+  </div>
+</ul>
+<ul>
+  <div>
+    <li><h3>Using Man Pages and Modifying Commands</h3>
+
+	 <p>Many software analysis tools require more knowledge of the tool than will be provided in assignment instructions
+	 to effectively use the tool. You should be comfortable reading the documentation that is provided with tools and
+	 utilities. In particular, one great resource available for many tools are man pages. Most UNIX tools provide a man page
+	 that gives basic usage instructions and how to modify the command to accomplish different tasks.</p>
+
+     <p><dfn>Sample task:</dfn>
+	 Use the <code>uniq</code> UNIX tool to take the following text (copy it into a text file) and remove duplicate lines.
+
+	 </p><figure class="highlight"><pre><code class="language-text" data-lang="text">		
+	The quick brown fox jumps over the lazy dog.
+	THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.
+	The Quick Brown Fox Jumps Over The Lazy Dog.
+	My quick brown fox jumps over the lazy dog.
+	His quick brown fox jumps over the lazy dog.
+	The quick, brown fox jumps over the lazy dog.
+	The quick brown fox jumps over the lazy dog.
+
+	 </code></pre></figure>
+	 <p></p>
+
+     <p>Modify your command to do the following things:
+	<ul style="list-style-type:square">
+     </p><li>Prefix each line by the number of occurrences of that line in the file</li>
+     <li>Skip comparing the first three characters on the line</li>
+     <li>Ignore the case of the characters in the comparison</li>
+	</ul>
+     Hint: use the <code>man</code> command to figure out the capabilities of <code>uniq</code>.<p></p> </li>
+  </div>
+  </ul>
+  <ul>
+  <div>
+     <li><h3>Understanding of Random Distributions and Sampling</h3>
+
+	 <p>Some of the analysis and testing techniques exploit the power of randomness.  While a thorough understanding of
+	 probability and statistics is not necessary for success in this course, you should be familiar with the concepts of the
+	 Random Distribution and Random Sampling.  You should be able to apply these concepts to randomized algorithms and reason
+	 about the likelihood of a particular program behavior.</p>
+	 
+     <p><dfn>Sample task:</dfn>
+	 Assume you are writing a program to randomly award a prize to contestants.  Contestants enter a 32-bit unsigned integer
+	 at random. If the number entered is between 50 and 65 and divisible by 5, the contestant wins.  
+	 </p><ol>
+		<li>What is the likelihood that any given contestant will win?</li>
+		<li>Assuming the program handles one contestant per minute, how long should we expect the game to run before a
+		contestant wins?  Minutes, hours, days, weeks or months?</li>
+		<li>If the contestant enters the string “WIN” instead of an integer, what is the likelihood that the contestant will
+		win?</li>
+     </ol><p></p></li>
+  </div>
+  </ul>
+  <ul>
+  <div>
+     <li><h3>Working Knowledge of Code Build Processes</h3>
+
+	 <p>One of the topics of this course is Software Analysis. Software can be analyzed at various stages in its life cycle
+	 including in its source code written by the programmer, an intermediate representation generated by a compiler or
+	 language toolchain, and in the program’s binary representation.</p>
+
+	 <p>While extensive knowledge of compilers, toolchains, and runtimes is not necessary for this course, in general
+	 you should have a working knowledge of what happens to your code when you “build” it.</p>
+
+     <p><dfn>Sample task:</dfn>
+	 You should be able to answer the following questions regarding code build processes:
+	 </p><ol>
+		<li>What is the difference between high level code, intermediate representation, assembly code, and machine
+		language?</li>
+		<li>What is the difference between a compiled language and an interpreted language?</li>
+		<li>What happens to C/C++ code when you click “Build and Run” in an IDE?</li>
+		<li>What happens to Java code when you click “Build and Run” in an IDE?</li>
+	</ol><p></p></li>
+  </div>
+</ul>
+</div>
+
+</body>
+</html>
