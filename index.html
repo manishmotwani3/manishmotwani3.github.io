@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Brendon">
+    <meta name="description" content="Homepage of Manish Motwani">
+    <title>Home Page - Manish Motwani</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar-links">
+                <ul class="nav-links">
+                    <li><a href="/~motwanim/index.html" class="active"><i class="fas fa-home"></i> HOME</a></li>
+                    <li><a href="/~motwanim/research/research.html"><i class="fas fa-book-reader"></i> RESEARCH</a></li>
+                    <li><a href="/~motwanim/publications/publications.html"><i class="fas fa-project-diagram"></i> PUBLICATIONS</a></li>
+                    <li><a href="/~motwanim/teaching_and_students/teaching_and_students.html"><i class="fas fa-book"></i> TEACHING AND STUDENTS</a></li>
+                </ul>
+            </div>
+        </nav>
+    <div class="main-container">
+        <!-- Left Column -->
+        <div class="left-column">
+            <div class="left-top">
+                <div class="profile-image">
+                    <img id="professorImage" alt="Professor Image">
+                </div>
+                <div class="social-info">
+                    <div class="name-position">
+                        <h3 id="professorName"></h3>
+                        <p id="professorPosition"></p>
+                    </div>
+                    <p id="department"></p>
+                    <p id="university"></p>
+                    <p id="address"></p>
+                    <a id="email" href=""></a>
+                    <div class="social-icons" id="socialIcons"></div>
+                </div>
+            </div>
+            <div class="left-bottom">
+                <div class="news">
+                    <h2>News:</h2>
+                    <div class="news-box">
+                        <ul id="newsList" class="news-list"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="right-column">
+            <div class="bio">
+                <div class="bio-info" id="bioDescription"></div>
+            </div>
+        </div>
+        </div>
+        </div>
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>&copy; 2024 Manish Motwani. All rights reserved.</p>
+                    <p>Last Updated: <span id="lastUpdated"></span></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        window.onload = function() {
+            const lastUpdatedElement = document.getElementById('lastUpdated');
+    
+            // Function to format date
+            function formatDate(date) {
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                return date.toLocaleDateString('en-US', options);
+            }
+    
+            const lastModified = new Date(document.lastModified);
+    
+            // Function to update the last modified date display
+            function updateLastUpdated() {
+                lastUpdatedElement.textContent = formatDate(lastModified);
+            }
+    
+            updateLastUpdated();
+    
+            // Fetch data from JSON
+            fetch('/~motwanim/homepage.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Update left column data
+                    document.getElementById('professorImage').src = data.leftColumn.image;
+                    document.getElementById('professorName').textContent = data.leftColumn.name;
+                    document.getElementById('professorPosition').textContent = data.leftColumn.position;
+                    document.getElementById('department').textContent = data.leftColumn.department;
+                    document.getElementById('university').textContent = data.leftColumn.university;
+                    document.getElementById('address').textContent = data.leftColumn.address;
+                    document.getElementById('email').textContent = data.leftColumn.email;
+                    document.getElementById('email').href = 'mailto:' + data.leftColumn.email;
+    
+                    // Update social icons
+                    const socialIcons = data.leftColumn.socialLinks.map(link => {
+                        const a = document.createElement('a');
+                        a.href = link.url;
+                        a.target = '_blank';
+                        a.title = link.title;
+                        const icon = document.createElement('i');
+                        icon.className = link.icon;
+                        a.appendChild(icon);
+                        return a;
+                    });
+                    document.getElementById('socialIcons').append(...socialIcons);
+    
+                    // Update bio description
+                    document.getElementById('bioDescription').innerHTML = data.rightColumn.bio.description;
+    
+                    // Update news list
+                    const newsList = document.getElementById('newsList');
+                    const newsItems = data.leftColumn.news.map(item => {
+                        const li = document.createElement('li');
+                        const p = document.createElement('p');
+    
+                        let title = item.title;
+                        if (item.wordToLink) {
+                            const linkText = item.wordToLink;
+                            const linkUrl = item.url || '#';
+                            title = title.replace(linkText, `<a href="${linkUrl}" target="blank">${linkText}</a>`);
+                        }
+    
+                        p.innerHTML = title;
+                        li.appendChild(p);
+                        return li;
+                    });
+                    newsList.append(...newsItems);
+                })
+                .catch(error => {
+                    console.error('Error fetching the JSON data:', error);
+                });
+        };
+    </script>
+</body>
+</html>

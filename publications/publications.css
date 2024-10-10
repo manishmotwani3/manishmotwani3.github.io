@@ -1,0 +1,288 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #eeeeee;
+}
+
+
+/* Navbar Styles */
+.navbar {
+    width: 100%;
+    background: #30333A;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    font-weight: 500;
+    z-index: 1000; /* Keep the navbar above other content */
+    position: fixed; /* Ensure stacking context */
+    transition: all 0.3s ease-in-out; /* Smooth transition for all properties */
+}
+
+/* Navbar Styles */
+.navbar.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar-links {
+    display: flex;
+    justify-content: center; /* Center align the links */
+    padding: 15px 0;
+    font-weight: 350px;
+}
+
+.navbar-links ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-links ul li {
+    margin: 0 15px;
+}
+
+.navbar-links ul li a {
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 19px;
+    transition: color 0.3s ease;
+    font-weight: 350;
+}
+
+.navbar-links ul li a:hover {
+    color: #cfd1d4;
+}
+
+.navbar-links ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #d3d3d3;
+    transition: width 0.3s ease;
+}
+
+.navbar-links ul li a:hover::after,
+.navbar-links ul li a.active::after {
+    width: 100%;
+}
+
+.navbar-links ul li a.active {
+    color: #d3d3d3;
+}
+
+.container {
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Main content styles */
+.main-container {
+    gap: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    justify-content: center;
+    margin: 0 auto; /* Center horizontally */
+    max-width: 1200px;
+    padding-bottom: 1px;
+}
+
+.sort-buttons {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 62px;
+}
+
+.sort-btn {
+    display: inline-block;
+    background-color: #f0f0f0;
+    text-decoration: none;
+    padding: 7px 14px;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    transition: color 0.3s ease;
+    font-size: 15px;
+    font-weight: 550;
+    margin-left: 10px; /* Adjust margin as needed */
+    cursor: pointer; /* Add pointer cursor on hover */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sort-btn:hover {
+    color: #e2a727;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+
+/* Publications Styles */
+
+.section {
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    background-color: #ffffff;
+    margin-bottom: 20px; /* Add bottom margin to create space between sections */
+    transition: transform 0.3s ease;
+    border: 2px solid rgb(92, 96, 104);
+}
+
+.section:hover {
+    transform: translateY(-5px);
+}
+
+.section h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    font-weight: 500;
+    background-color: #f0f0f0;
+    border-radius: 6px 6px 0px 0px;
+    padding-left: 10px;
+}
+
+.publication p {
+    font-size: 14px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-weight: 400;
+    text-align: left;
+    padding-right: 20px;
+    padding-left: 20px;
+    
+}
+
+.publication .links {
+    display: flex;
+    margin-top: 0;
+    padding-left: 15px;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+.publications-list .links a {
+    margin-right: 5px;
+}
+
+.section a {
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 5px;
+    text-decoration: none;
+    color: #1b4793;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.section a:hover {
+    text-decoration: underline;
+    color: #e2a727;
+}
+
+.bold-keyword {
+    font-weight: 500;
+}
+
+.section-list li {
+    list-style-type: circle;
+    font-size: 14px;
+}
+
+.section-list {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-right: 20px;
+}
+
+li.publication-item {
+    font-size: 15px;
+}
+
+.links a {
+    margin: 0px;
+    margin-right: 5px;
+}
+
+.links {
+    margin-bottom: 5px;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #30333A;
+    color: #fff;
+    padding: 10px 15px;  /* Increased padding for better spacing */
+    text-align: center;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);  /* Subtle shadow for depth */
+    font-size: 14px;  /* Adjust font size for readability */
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;  /* Keep vertical alignment */
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    line-height: 1.2;  /* Improve text readability with better line spacing */
+}
+
+
+/* Media query for tablets and smaller desktop screens */
+@media screen and (max-width: 1024px) and (pointer: coarse), 
+       screen and (max-width: 1024px) and (hover: none) {
+    /* Portrait mode */
+    @media (orientation: portrait) {
+        .section h2 {
+            font-size: 7px;
+            font-weight: 500;
+        }
+    
+        .section-list li {
+            font-size: 5px;
+            font-weight: 400;
+        }
+    }
+
+    /* Landscape mode */
+    @media (orientation: landscape) {
+        .section h2 {
+            font-size: 7px;
+            font-weight: 500;
+        }
+    
+        .section-list li {
+            font-size: 10px;
+            font-weight: 400;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 1024px) {
+    /* Apply styles for iOS devices */
+    @supports (-webkit-touch-callout: none) { /* Check for iOS devices */
+        .section h2 {
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        li.publication-item {
+            font-size: 9px;
+        }
+
+    }
+}
+
+

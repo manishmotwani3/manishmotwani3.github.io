@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Brendon">
+    <meta name="description" content="Publications Page of Manish Motwani">
+    <title>Publications - Manish Motwani</title>
+    <link rel="stylesheet" href="publications.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar-links">
+                <ul class="nav-links">
+                    <li><a href="/~motwanim/index.html"><i class="fas fa-home"></i> HOME</a></li>
+                    <li><a href="/~motwanim/research/research.html"><i class="fas fa-book-reader"></i> RESEARCH</a></li>
+                    <li><a href="/~motwanim/publications/publications.html" class="active"><i class="fas fa-project-diagram"></i> PUBLICATIONS</a></li>
+                    <li><a href="/~motwanim/teaching_and_students/teaching_and_students.html"><i class="fas fa-book"></i> TEACHING AND STUDENTS</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="main-container">
+            <section id="publications">
+                <div class="sort-buttons">
+                    <button id="sortByYear" class="sort-btn active">Sort by Year</button>
+                    <button id="sortByType" class="sort-btn">Sort by Publication Type</button>
+                </div>
+                <div class="publications-list">
+                    <!-- Publications will be dynamically generated here -->
+                </div>
+            </section>
+        </div>
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>&copy; 2024 Manish Motwani. All rights reserved.</p>
+                    <p>Last Updated: <span id="lastUpdated"></span></p>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const customOrder = [
+                    "Refereed Journal Articles",
+                    "Refereed Conference Publications",
+                    "Refereed Short Publications",
+                    "Refereed Book Chapters",
+                    "Refereed Workshop Publications",
+                    "Refereed Poster and Unconventional Publications",
+                    "Patents",
+                    "Non-Refereed Publications"
+                ];
+
+                const publicationsList = document.querySelector('.publications-list');
+                const sortByYearBtn = document.getElementById('sortByYear');
+                const sortByTypeBtn = document.getElementById('sortByType');
+
+                function createListItem(publication) {
+                    const listItem = document.createElement('li');
+                    listItem.className = 'publication-item';
+
+                    // Create the title
+                    const titleSpan = document.createElement('span');
+                    titleSpan.innerHTML = styleTitle(publication.title, publication.bold, publication.italic);
+                    listItem.appendChild(titleSpan);
+
+                    // Add the links if any
+                    if (publication.links && publication.links.length > 0) {
+                        const linksDiv = document.createElement('div');
+                        linksDiv.className = 'links';
+                        publication.links.forEach(link => {
+                            const linkElement = document.createElement('a');
+                            linkElement.href = link.url;
+                            linkElement.textContent = link.text;
+                            linkElement.target = '_blank';
+                            linksDiv.appendChild(linkElement);
+                        });
+                        listItem.appendChild(linksDiv);
+                    }
+
+                    return listItem;
+                }
+
+                function renderPublications(groupedPublications) {
+                    publicationsList.innerHTML = '';  // Clear existing content
+
+                    groupedPublications.forEach(group => {
+                        const sectionDiv = document.createElement('div');
+                        sectionDiv.classList.add('section');
+
+                        const groupTitle = document.createElement('h2');
+                        groupTitle.textContent = group.key;
+                        sectionDiv.appendChild(groupTitle);
+
+                        const ulElement = document.createElement('ul');
+                        ulElement.classList.add('section-list');
+
+                        group.items.forEach(publication => {
+                            const listItem = createListItem(publication);
+                            ulElement.appendChild(listItem);
+                        });
+
+                        sectionDiv.appendChild(ulElement);
+                        publicationsList.appendChild(sectionDiv);
+                    });
+                }
+
+                function styleTitle(title, boldWords, italicWords) {
+                    let styledTitle = title;
+
+                    // Apply bold styling
+                    boldWords.forEach(word => {
+                        const boldedWord = `<span class="bold">${word}</span>`;
+                        styledTitle = styledTitle.replace(new RegExp(`\\b${word}\\b`, 'g'), boldedWord);
+                    });
+
+                    // Apply italic styling
+                    italicWords.forEach(word => {
+                        const italicizedWord = `<em>${word}</em>`;
+                        styledTitle = styledTitle.replace(new RegExp(`\\b${word}\\b`, 'g'), italicizedWord);
+                    });
+
+                    return styledTitle;
+                }
+
+                function groupPublicationsBy(key, publications) {
+                    const grouped = publications.reduce((acc, publication) => {
+                        const groupKey = publication[key];
+                        if (!acc[groupKey]) {
+                            acc[groupKey] = [];
+                        }
+                        acc[groupKey].push(publication);
+                        return acc;
+                    }, {});
+
+                    return Object.keys(grouped).map(key => ({
+                        key,
+                        items: grouped[key]
+                    }));
+                }
+
+                function sortPublicationsByType(publications) {
+                    const grouped = groupPublicationsBy('type', publications);
+                    grouped.sort((a, b) => customOrder.indexOf(a.key) - customOrder.indexOf(b.key));
+                    renderPublications(grouped);
+                }
+
+                function sortPublicationsByYear(publications) {
+                    const grouped = groupPublicationsBy('year', publications);
+                    grouped.sort((a, b) => b.key - a.key);
+                    renderPublications(grouped);
+                }
+
+                async function fetchPublications() {
+                    try {
+                        const response = await fetch('/~motwanim/publications/publications.json');
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! Status: ${response.status}`);
+                        }
+                        const data = await response.json();
+
+                        // Setup sorting buttons
+                        sortByYearBtn.addEventListener('click', () => {
+                            sortByYearBtn.classList.add('active');
+                            sortByTypeBtn.classList.remove('active');
+                            sortPublicationsByYear(data);
+                        });
+
+                        sortByTypeBtn.addEventListener('click', () => {
+                            sortByYearBtn.classList.remove('active');
+                            sortByTypeBtn.classList.add('active');
+                            sortPublicationsByType(data);
+                        });
+
+                        // Initial sort by year
+                        sortPublicationsByYear(data);
+                    } catch (error) {
+                        console.error('Error fetching publications:', error);
+                    }
+                }
+
+                function updateLastUpdated() {
+                    const lastUpdatedElement = document.getElementById('lastUpdated');
+                    const lastModified = new Date(document.lastModified);
+
+                    function formatDate(date) {
+                        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                        return date.toLocaleDateString('en-US', options);
+                    }
+
+                    lastUpdatedElement.textContent = formatDate(lastModified);
+                }
+
+                fetchPublications();
+                updateLastUpdated();
+            });
+                    </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,350 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #eeeeee;
+}
+
+
+/* Navbar Styles */
+.navbar {
+    width: 100%;
+    background: #30333A;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    font-weight: 500;
+    z-index: 1000; /* Keep the navbar above other content */
+    position: fixed; /* Ensure stacking context */
+    transition: all 0.3s ease-in-out; /* Smooth transition for all properties */
+}
+
+.navbar.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+
+.navbar-links {
+    display: flex;
+    justify-content: center; /* Center align the links */
+    padding: 15px 0;
+    font-weight: 350px;
+}
+
+.navbar-links ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-links ul li {
+    margin: 0 15px;
+}
+
+.navbar-links ul li a {
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 19px;
+    transition: color 0.3s ease;
+    font-weight: 350;
+}
+
+.navbar-links ul li a:hover {
+    color: #cfd1d4;
+}
+
+.navbar-links ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #d3d3d3;
+    transition: width 0.3s ease;
+}
+
+.navbar-links ul li a:hover::after,
+.navbar-links ul li a.active::after {
+    width: 100%;
+}
+
+.navbar-links ul li a.active {
+    color: #d3d3d3;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.main-container {
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    justify-content: center;
+    margin: 0 auto; /* Center horizontally */
+    max-width: 1200px;
+    margin-top: 62px;
+}
+
+
+.research-info {
+    margin-bottom: 0;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    background-color: #f0f0f0;
+    border: 2px solid rgb(92, 96, 104);
+}
+
+.research-logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.research-logo img {
+    height: auto;
+    border-radius: 8px;
+    width: 350px; /* Adjust this value */
+}
+
+.research-description {
+    max-width: 1300px; /* Adjust this value as needed */
+    font-weight: 400;
+    font-size: 15px;
+    text-align: left;
+}
+
+.research-description a {
+    color: #1b4793;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.research-description a:hover{
+    color: #e2a727;
+    text-decoration: underline;
+}
+
+.research-description p {
+    margin: 0;
+}
+
+#research h2 {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.research-projects {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.research-project {
+    background-color: #fff;
+    border: 2px solid rgb(92, 96, 104);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.research-project:hover {
+    transform: translateY(-5px);
+}
+
+.research-image {
+    flex: 0 0 250px; /* Increase the width for image */
+    margin-right: 20px;
+}
+
+.research-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover; /* Ensures the image covers the container */
+}
+
+.research-details {
+    flex: 1;
+    overflow: hidden;
+}
+
+.research-details h3 {
+    font-size: 17px;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.research-details p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    overflow: hidden;
+    max-height: 120px; /* Initial max height */
+    transition: max-height 2.0s ease; /* Smooth transition for height change */
+    font-weight: 400;
+    margin-top: 0;
+    text-align: left;
+}
+
+.research-project:hover .research-details p {
+    max-height: 1000px; /* Expanded max height on hover */
+}
+
+.research-project a.paper-button {
+    color: #1b4793;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    font-size: 15px;
+    margin-right: 5px;
+}
+
+.research-project a.paper-button:last-child {
+    margin-right: 0;
+}
+
+.research-project a.paper-button:hover {
+    text-decoration: underline;
+    color: #e2a727;
+}
+
+.anchor-target {
+    scroll-margin-top: 140px; /* Adjust based on your navbar height */
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Black background with opacity */
+    overflow: auto; /* Enable scroll if needed */
+    margin: auto;
+}
+
+.modal-content {
+    position: absolute; /* Position the content absolutely within the modal */
+    top: 50%; /* Move content down by 50% of the modal height */
+    left: 50%; /* Move content right by 50% of the modal width */
+    transform: translate(-50%, -50%); /* Adjust content to be centered */
+    background: white; /* Example background color */
+    max-width: 1100px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001; /* Ensure it's above the modal content */
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #30333A;
+    color: #fff;
+    padding: 10px 15px;  /* Increased padding for better spacing */
+    text-align: center;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);  /* Subtle shadow for depth */
+    font-size: 14px;  /* Adjust font size for readability */
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;  /* Keep vertical alignment */
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    line-height: 1.2;  /* Improve text readability with better line spacing */
+}
+
+/* Responsive Design for Mobile Devices */
+/* Media query for tablets and smaller desktop screens */
+@media screen and (max-width: 1024px) and (pointer: coarse), 
+       screen and (max-width: 1024px) and (hover: none) {
+    /* Portrait mode */
+    @media (orientation: portrait) {
+        .research-projects {
+            margin-top: 10px;
+        }
+    
+        .research-description {
+            font-size: 5px;
+        }
+    
+        #research h2 {
+            font-size: 6px;
+            margin-top: 10px;
+        }
+    }
+
+    /* Landscape mode */
+    @media (orientation: landscape) {
+        .research-projects {
+            margin-top: 10px;
+        }
+    
+        .research-description {
+            font-size: 11px;
+        }
+    
+        #research h2 {
+            font-size: 13px;
+            margin-top: 10px;
+        }
+    }
+}
+
+
+
+@media only screen and (max-width: 1024px) {
+    /* Apply styles for iOS devices */
+    @supports (-webkit-touch-callout: none) { /* Check for iOS devices */
+
+            .research-description {
+                font-size: 8px;
+            }
+
+            #research h2 {
+                font-size: 17px;
+            }
+            .research-details h3 {
+                font-size: 9px;
+                font-weight: 600;
+            }
+            
+            .research-details p {
+                font-size: 8px;
+                font-weight: 100;
+            }
+            .research-project a.paper-button {
+                font-size: 8px;
+            }
+       
+    }
+}

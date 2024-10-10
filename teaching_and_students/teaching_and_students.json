@@ -1,0 +1,42 @@
+{
+    "courses": [
+        {
+            "term": "Winter 2025",
+            "courseNumber": "CS 362: Software Engineering II",
+            "url": ""
+        },
+        {
+            "term": "Winter 2025",
+            "courseNumber": "CS 563: Software Evolution and Maintenance",
+            "url": ""
+        },
+        {
+            "term": "Winter 2024",
+            "courseNumber": "CS 569: Selected Topics in Software Engineering: Program Analysis and Evaluation",
+            "url": "/~motwanim/courses/cs569_winter2024/syllabus.html"
+        },
+        {
+            "term": "Spring 2024",
+            "courseNumber": "CS 563: Software Evolution and Maintenance",
+            "url": "/~motwanim/courses/cs563_spring2024/syllabus.html"
+        }
+    ],
+    "students": [
+        {
+            "name": "Aakash Kulkarni",
+            "standing": "1st year MS/PhD"
+        },
+        {
+            "name": "Christopher Terrazas",
+            "standing": "1st year PhD"
+        },
+        {
+            "name": "Ashish Tulso Ramrakhiani",
+            "standing": "2nd year MS"
+        },
+        {
+            "name": "Rahil Piyush Mehta",
+            "standing": "1st year MS"
+        }
+    ]
+}

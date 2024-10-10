@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Brendon">
+    <meta name="description" content="Teaching and Students Page of Manish Motwani">
+    <title>Teaching and Students Page - Manish Motwani</title>
+    <link rel="stylesheet" href="teaching_and_students.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar-links">
+                <ul class="nav-links">
+                    <li><a href="/~motwanim/index.html" aria-label="Home"><i class="fas fa-home"></i> HOME</a></li>
+                    <li><a href="/~motwanim/research/research.html" aria-label="Research"><i class="fas fa-book-reader"></i> RESEARCH</a></li>
+                    <li><a href="/~motwanim/publications/publications.html" aria-label="Publications"><i class="fas fa-project-diagram"></i> PUBLICATIONS</a></li>
+                    <li><a href="/~motwanim/teaching_and_students/teaching_and_students.html" class="active"><i class="fas fa-book"></i> TEACHING AND STUDENTS</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="main-container">
+                <div class="courses">
+                    <h2 class="courses-title">Teaching</h2>
+                    <div class="courses-table-wrapper">
+                        <table class="courses-table" id="coursesTable">
+                            <thead>
+                                <tr>
+                                    <th>Term</th>
+                                    <th>Course Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Student rows will be dynamically inserted here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="students">
+                    <h2 class="student-title">Students</h2>
+                    <div class="students-table-wrapper">
+                        <table class="students-table" id="studentsTable">
+                            <thead>
+                                <tr>
+                                    <th>Standing</th>
+                                    <th>Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Student rows will be dynamically inserted here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        </div>
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>&copy; 2024 Manish Motwani. All rights reserved.</p>
+                    <p>Last Updated: <span id="lastUpdated"></span></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dataUrl = '/~motwanim/teaching_and_students/teaching_and_students.json'; // Update with the actual path to your JSON file
+            
+            fetch(dataUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok: ' + response.statusText);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Update Students Table
+                    const studentsTableBody = document.getElementById('studentsTable').querySelector('tbody');
+                    data.students.forEach(student => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `<td>${student.standing}</td><td>${student.name}</td>`;
+                        studentsTableBody.appendChild(row);
+                    });
+        
+                    // Update Courses Table
+                    const coursesTableBody = document.getElementById('coursesTable').querySelector('tbody');
+                    data.courses.forEach(course => {
+                        const row = document.createElement('tr');
+                        if (course.url == "") {
+                            row.innerHTML = `<td>${course.term}</td><td><p>${course.courseNumber}</p></td>`;
+
+                        } else {
+                        row.innerHTML = `<td>${course.term}</td><td><a href="${course.url}" target="blank">${course.courseNumber}</a></td>`;
+                        }
+                        coursesTableBody.appendChild(row);
+                    });
+    
+                    // Adjust heights after tables are updated
+                    adjustTableWrapperHeights();
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        
+            const lastUpdatedElement = document.getElementById('lastUpdated');
+        
+            // Function to format the date as "Month Day, Year" (e.g., "July 2, 2024")
+            function formatDate(date) {
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                return date.toLocaleDateString('en-US', options);
+            }
+        
+            // Get the last modified timestamp of the HTML file
+            const lastModified = new Date(document.lastModified);
+        
+            // Update the last updated date
+            lastUpdatedElement.textContent = formatDate(lastModified);
+        });
+    </script>
+</body>
+</html>

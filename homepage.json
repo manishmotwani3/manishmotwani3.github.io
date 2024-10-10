@@ -1,0 +1,165 @@
+{
+    "leftColumn": {
+        "image": "homepage/resources/Motwani.jpg",
+        "name": "Manish Motwani",
+        "position": "(Assistant Professor)",
+        "department": "School of Electrical Engineering and Computer Science",
+        "university": "",
+        "address": "Room 3043, Kelley Engineering Center 2500 NW Monroe Ave, Corvallis, OR 97331-5501",
+        "email": "motwanim[at]oregonstate.edu",
+        "socialLinks": [
+            {
+                "icon": "fas fa-address-card",
+                "url": "/~motwanim/homepage/resources/ManishMotwani_CV.pdf",
+                "title": "Resume"
+            },
+            {
+                "icon": "fab fa-github",
+                "url": "https://github.com/manishmotwani3",
+                "title": "GitHub"
+            },
+            {
+                "icon": "fas fa-graduation-cap",
+                "url": "https://scholar.google.com/citations?user=OCyPkm0AAAAJ&hl=en",
+                "title": "Google Scholar"
+            },
+            {
+                "icon": "fab fa-twitter",
+                "url": "https://x.com/manish_motwani?lang=en",
+                "title": "Twitter"
+            },
+            {
+                "icon": "fab fa-linkedin",
+                "url": "https://www.linkedin.com/in/m-motwani/",
+                "title": "LinkedIn"
+            }
+        ],
+        "news": [
+	    {
+		"title": "PC member at ISSTA'25 (Research track)",
+                "url": "https://conf.researchr.org/home/issta-2025",
+                "wordToLink": "ISSTA'25"
+            },	
+	    {
+		"title": "PC member at ESEM Industry, Government and Community Track (IGC) 2024",
+                "url": "https://conf.researchr.org/track/esem-2024/esem-2024-industry-government-community?",
+                "wordToLink": "ESEM"
+            },	    
+            {
+                "title": "Paper accepted in ICSE'24 (Technical track)",
+                "url": "/~motwanim/publications/publication_sources/Ruikai24icse.pdf",
+                "wordToLink": "Paper"
+            },
+            {
+                "title": "Panelist in the BoF session on Software Testing for Scientific Computing in HPC at Supercomputing Conference (SC'23)",
+                "url": "https://sc23.conference-program.com/presentation/?id=bof189&amp;sess=sess383",
+                "wordToLink": "(SC'23)"
+            },
+            {
+                "title": "PC member at FSE'24 (Research track)",
+                "url": "",
+                "wordToLink": ""
+            },
+            {
+                "title": "Panelist in the 4th International Workshop on Automated Program Repair (APR'23)",
+                "url": "https://program-repair.org/workshop-2023/",
+                "wordToLink": "(APR'23)"
+            },
+            {
+                "title": "Paper accepted in ICSE'23 (Technical track, Artifact Evaluation track)",
+                "url": "/~motwanim/publications/publication_sources/Motwani23icse.pdf",
+                "wordToLink": "Paper"
+            },
+            {
+                "title": "Paper accepted in ICSE'23 (SEIP track)",
+                "url": "/~motwanim/publications/publication_sources/Motwani23icse.pdf",
+                "wordToLink": "Paper"
+            },
+            {
+                "title": "Accepted Postdoctoral Fellow position at Georgia Tech and Assistant Professor tenure-track (courtesy appointment) at Oregon State University",
+                "url": "",
+                "wordToLink": ""
+            },
+            {
+                "title": "Defended my Dissertation",
+                "url": "/~motwanim/publications/publication_sources/High-Quality-APR-Dissertation.pdf",
+                "wordToLink": "Dissertation"
+            },
+            {
+                "title": "PC member at SSBSE'22 (Challenge track)",
+                "url": "",
+                "wordToLink": ""
+            },
+            {
+                "title": "Paper accepted in ICSE'21 (Doctoral Symposium track)",
+                "url": "/~motwanim/publications/publication_sources/Motwani21-icseDS.pdf",
+                "wordToLink": "Paper"
+            },
+            {
+                "title": "PC member at SSBSE'21 (Challenge track)",
+                "url": "",
+                "wordToLink": ""
+            },
+            {
+                "title": "Paper accepted in TSE (2020)",
+                "url": "/~motwanim/publications/publication_sources/Motwani20tse.pdf",
+                "wordToLink": "Paper"
+            },
+            {
+                "title": "Paper accepted in TSE (2019)",
+                "url": "/~motwanim/publications/publication_sources/Afzal19tse.pdf",
+                "wordToLink": "Paper"
+            },
+            {
+                "title": "Paper accepted in ICSE'19 (Technical track, Artifact Evaluation track)",
+                "url": "/~motwanim/publications/publication_sources/Motwani19icse.pdf",
+                "wordToLink": "Paper"
+            },
+            {
+                "title": "US Patent (US10146762B2) granted, Dec 2018",
+                "url": "/~motwanim/publications/publication_sources/MotwaniPatentUS10146762.pdf",
+                "wordToLink": "US Patent"
+            },
+            {
+                "title": "Paper accepted in ICSE'18 (Journal-First track)",
+                "url": "/~motwanim/publications/publication_sources/Motwani18emse-icseJF.pdf",
+                "wordToLink": "Paper"
+            },
+            {
+                "title": "Paper accepted in EMSE (2018)",
+                "url": "/~motwanim/publications/publication_sources/Motwani18emse.pdf",
+                "wordToLink": "Paper"
+            },
+            {
+                "title": "US Patent (US9972016B2) granted, May 2018",
+                "url": "/~motwanim/publications/publication_sources/MotwaniPatentUS9972016.pdf",
+                "wordToLink": "US Patent"
+            },
+            {
+                "title": "Joined MS/PhD program at UMass Amherst",
+                "url": "",
+                "wordToLink": ""
+            },
+            {
+                "title": "Paper accepted in FSE'15 (Industry track)",
+                "url": "/~motwanim/publications/publication_sources/Ghaisas15fse.pdf",
+                "wordToLink": "Paper"
+            },
+            {
+                "title": "Paper accepted in ASE'13 (New Ideas track)",
+                "url": "/~motwanim/publications/publication_sources/Ghaisas13ase.pdf",
+                "wordToLink": "Paper"
+            },
+            {
+                "title": "Paper accepted in PLEASE'13 workshop",
+                "url": "/~motwanim/publications/publication_sources/Anish13please.pdf",
+                "wordToLink": "Paper"
+            }
+        ]
+    },
+    "rightColumn": {
+        "bio": {
+            "description": "I am an Assistant Professor in the <a href=\"https://engineering.oregonstate.edu/EECS\" target=\"_blank\">School of Electrical Engineering and Computer Science (EECS)</a> at <a href=\"https://oregonstate.edu/\" target=\"_blank\">Oregon State University</a>. My broad research interests focus on improving software quality through the automation of software engineering practices. My research involves analyzing large software repositories to discover valuable insights and use that knowledge to design novel automation techniques, such as requirements elicitation, testing, and program repair.<br></br>Previously, I was a Postdoctoral Fellow in the <a href=\"https://www.cc.gatech.edu/school-computer-science\" target=\"_blank\">College of Computing, School of Computer Science, at the Georgia Institute of Technology</a>, where I worked on automated testing and program repair for high-performance computing applications.<br></br>I hold a Ph.D. in Computer Science from the <a href=\"https://www.cics.umass.edu\" target=\"_blank\">University of Massachusetts Amherst</a>, where my research focused on enhancing automatic program repair techniques for practical use by software practitioners.<br></br>Before my doctoral studies, I conducted research in requirements engineering at the <a href=\"https://www.tcs.com/what-we-do/research\" target=\"_blank\">Tata Research Development and Design Centre (TRDDC)</a> in Pune, India."
+        }
+    }
+}

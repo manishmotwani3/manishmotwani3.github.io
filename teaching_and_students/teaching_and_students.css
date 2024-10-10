@@ -1,0 +1,258 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #eeeeee;
+}
+
+/* Navbar Styles */
+.navbar {
+    width: 100%;
+    background: #30333A;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    font-weight: 500;
+    z-index: 1000;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-links {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    font-weight: 350px;
+}
+
+.navbar-links ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-links ul li {
+    margin: 0 15px;
+}
+
+.navbar-links ul li a {
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 19px;
+    transition: color 0.3s ease;
+    font-weight: 350;
+}
+
+.navbar-links ul li a:hover {
+    color: #cfd1d4;
+}
+
+.navbar-links ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #d3d3d3;
+    transition: width 0.3s ease;
+}
+
+.navbar-links ul li a:hover::after,
+.navbar-links ul li a.active::after {
+    width: 100%;
+}
+
+.navbar-links ul li a.active {
+    color: #d3d3d3;
+}
+
+/* Main content styles */
+.main-container {
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    margin: auto;
+    max-width: 1200px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+/* Header Styles */
+thead {
+    background-color: #f0f0f0;
+    top: 0;
+    z-index: 2;
+    position: sticky;
+    box-shadow: 0 2px 0 rgb(92, 96, 104); /* Simulates the border-bottom */
+    display: table;
+    width: 100%;
+}
+
+th, td {
+    padding: 7px 15px;
+    text-align: left;
+}
+
+td p {
+    margin: 0;
+    font-weight: 500;
+}
+
+th {
+    background-color: #f0f0f0;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+td {
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+    border-right: 2px solid #d1cfcf;
+}
+
+.students-table td:nth-child(2) {
+    font-weight: 500;
+}
+
+td:last-child {
+    border-right: none;
+}
+
+/* Scrollable tbody */
+tbody {
+    display: block;
+    overflow-y: auto;
+    max-height: 197px; /* Adjust as needed */
+    font-size: 15px;
+    font-weight: 400;
+    width: 100%;
+}
+
+tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed; /* Ensures column widths are respected */
+}
+
+tr:nth-child(even) td {
+    background-color: #ffffff;
+}
+
+/* Specific Table Styling */
+.courses-title {
+    margin-top: 0;
+}
+
+.courses a {
+    color: #1b4793;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.courses a:hover {
+    color: #e2a727;
+    text-decoration: underline;
+}
+
+.courses-table-wrapper,
+.students-table-wrapper {
+    border-radius: 8px;
+    border: 2px solid rgb(92, 96, 104);
+    overflow-y: auto;
+}
+
+tbody::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Style the scrollbar track */
+tbody::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 8px;
+}
+
+/* Style the scrollbar handle */
+tbody::-webkit-scrollbar-thumb {
+    background: #30333A;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Style the scrollbar handle on hover */
+tbody::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Adjust the width of the columns */
+.courses-table-wrapper th:nth-child(1),
+.courses-table-wrapper td:nth-child(1) {
+    width: 120px; /* Adjust the width as needed */
+}
+
+.students-table-wrapper th:nth-child(1),
+.students-table-wrapper td:nth-child(1) {
+    width: 120px; /* Adjust the width as needed */
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #30333A;
+    color: #fff;
+    padding: 10px 15px;
+    text-align: center;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    line-height: 1.2;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 1024px) {
+    /* Apply styles for iOS devices */
+    @supports (-webkit-touch-callout: none) { /* Check for iOS devices */
+        .courses-title {
+            font-size: 11px;
+        }
+
+        .student-title {
+            font-size: 11px;
+        }
+
+        .courses-table td:nth-child(2){
+            font-size: 9px; /* Change this value to your desired font size */
+        }
+
+        .courses-table th:nth-child(2) {
+            font-size: 15px;
+        }
+
+        /* Targeting the right column of the students table */
+        .students-table td:nth-child(2) {
+            font-size: 9px; /* Change this value to your desired font size */
+        }       
+    }
+}

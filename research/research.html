@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Brendon">
+    <meta name="description" content="Research Page of Manish Motwani">
+    <title>Research - Manish Motwani</title>
+    <link rel="stylesheet" href="research.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar-links">
+                <ul class="nav-links">
+                    <li><a href="/~motwanim/index.html"><i class="fas fa-home"></i> HOME</a></li>
+                    <li><a href="/~motwanim/research/research.html" class="active"><i class="fas fa-book-reader"></i> RESEARCH</a></li>
+                    <li><a href="/~motwanim/publications/publications.html"><i class="fas fa-project-diagram"></i> PUBLICATIONS</a></li>
+                    <li><a href="/~motwanim/teaching_and_students/teaching_and_students.html"><i class="fas fa-book"></i> TEACHING AND STUDENTS</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="main-container">
+            <section id="research">
+                <h2><span>Research Projects</span></h2>
+                <div class="research-projects" id="research-projects-container">
+                    <!-- Projects will be inserted here by JavaScript -->
+                </div>
+            </section>
+        </div>
+        </div>
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>&copy; 2024 Manish Motwani. All rights reserved.</p>
+                    <p>Last Updated: <span id="lastUpdated"></span></p>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var modal = document.createElement('div');
+                modal.classList.add('modal');
+                modal.innerHTML = `
+                    <span class="modal-close">&times;</span>
+                    <img class="modal-content">
+                `;
+                document.body.appendChild(modal);
+        
+                var modalContent = modal.querySelector('.modal-content');
+                var modalClose = modal.querySelector('.modal-close');
+        
+                function openModal(src) {
+                    modalContent.src = src;
+                    modal.style.display = 'block';
+                }
+        
+                function closeModal() {
+                    modal.style.display = 'none';
+                }
+        
+                modalClose.addEventListener('click', closeModal);
+        
+                window.addEventListener('click', function(event) {
+                    if (event.target === modal) {
+                        closeModal();
+                    }
+                });
+        
+                window.addEventListener('keyup', function(event) {
+                    if (event.key === 'Escape') {
+                        closeModal();
+                    }
+                });
+        
+                function addModalEventListeners() {
+                    var imageLinks = document.querySelectorAll('.modal-link');
+                    imageLinks.forEach(function(link) {
+                        link.addEventListener('click', function(event) {
+                            event.preventDefault();
+                            openModal(this.href);
+                        });
+                    });
+                }
+        
+                function updateLastUpdated() {
+                    const htmlElement = document.querySelector('html');
+                    const lastUpdatedElement = document.getElementById('lastUpdated');
+                    const lastModified = new Date(document.lastModified);
+                    const currentModified = new Date(htmlElement.getAttribute('data-last-modified'));
+        
+                    function formatDate(date) {
+                        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                        return date.toLocaleDateString('en-US', options);
+                    }
+        
+                    if (currentModified.getTime() !== lastModified.getTime()) {
+                        lastUpdatedElement.textContent = formatDate(lastModified);
+                        htmlElement.setAttribute('data-last-modified', lastModified); // Update the attribute
+                    }
+                }
+        
+                updateLastUpdated();
+        
+                window.addEventListener('scroll', updateLastUpdated);
+                window.addEventListener('click', updateLastUpdated);
+        
+                function stickyHeader() {
+                    var navbar = document.querySelector('.navbar');
+                    var headerImage = document.querySelector('.header-image');
+                    var sticky = navbar.offsetTop;
+        
+                    if (window.pageYOffset > sticky) {
+                        navbar.classList.add("sticky");
+                        headerImage.style.top = navbar.offsetHeight + 'px'; // Adjust header image position
+                    } else {
+                        navbar.classList.remove("sticky");
+                        headerImage.style.top = '0'; // Reset header image position
+                    }
+                }
+        
+                window.onscroll = stickyHeader;
+        
+                fetch('research.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        // Render the research-info section
+                        const infoContainer = document.createElement('div');
+                        infoContainer.className = 'research-info';
+                        infoContainer.innerHTML = `
+                            <div class="research-logo">
+                                <img src="${data.researchInfo.logo}" alt="Research Logo">
+                            </div>
+                            <div class="research-description">
+                                <p>${data.researchInfo.description}</p>
+                            </div>
+                        `;
+                        document.querySelector('#research').insertBefore(infoContainer, document.querySelector('#research h2'));
+        
+                        // Render the research projects
+                        const container = document.getElementById('research-projects-container');
+                            data.projects.forEach(project => {
+                                const projectElement = document.createElement('div');
+                                projectElement.id = project.id;  // Set the ID attribute
+                                projectElement.className = 'research-project anchor-target';  // Set a default class if needed
+                                projectElement.innerHTML = `
+                                    <div class="research-image">
+                                        <a href="${project.image}" class="modal-link">
+                                            <img src="${project.image}" alt="${project.title}">
+                                        </a>
+                                    </div>
+                                    <div class="research-details">
+                                        <h3>${project.title}</h3>
+                                        <p>${project.description}</p>
+                                        ${project.links.map(link => `<a href="${link.url}" class="paper-button" target="_blank">${link.label}</a>`).join('')}
+                                    </div>
+                                `;
+                                container.appendChild(projectElement);
+                            });
+                                    
+                        addModalEventListeners(); // Add modal event listeners after projects are loaded
+        
+                        // Scroll to the anchor if present
+                        const hash = window.location.hash;
+                        if (hash) {
+                            const targetElement = document.querySelector(hash);
+                            if (targetElement) {
+                                targetElement.scrollIntoView({ behavior: 'smooth' });
+                            }
+                        }
+                    })
+                    .catch(error => console.error('Error fetching research projects:', error));
+            });
+        </script>
+    </body>
+    </html>

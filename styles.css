@@ -1,0 +1,349 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #eeeeee;
+}
+
+/* Navbar Styles */
+.navbar {
+    width: 100%;
+    background: #30333A;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    font-weight: 500;
+    z-index: 1000;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-links {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    font-weight: 350;
+}
+
+.navbar-links ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-links ul li {
+    margin: 0 15px;
+}
+
+.navbar-links ul li a {
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 19px;
+    transition: color 0.3s ease;
+    font-weight: 350;
+}
+
+.navbar-links ul li a:hover {
+    color: #cfd1d4;
+}
+
+.navbar-links ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #d3d3d3;
+    transition: width 0.3s ease;
+}
+
+.navbar-links ul li a:hover::after,
+.navbar-links ul li a.active::after {
+    width: 100%;
+}
+
+.navbar-links ul li a.active {
+    color: #d3d3d3;
+}
+
+/* Main Container */
+.main-container {
+    display: flex;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    margin: auto;
+    max-width: 1200px;
+    padding: 20px;
+    align-items: stretch; /* Ensure both columns stretch to match height */
+}
+
+
+/* Left Column */
+.left-column {
+    width: 294px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 20px;
+    align-self: stretch; /* Ensure the left column stretches to match height */
+}
+
+.left-top,
+.left-bottom {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border: 2px solid rgb(92, 96, 104);
+}
+
+.left-top {
+    /* Top section of the left column (longer) */
+    padding-bottom: 10px;
+}
+
+.left-top img {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically if needed */
+    border: 1px solid #30333A;
+    width: 215px;
+    border-radius: 8px;
+    margin: auto;
+}
+
+.left-bottom {
+    /* Bottom section of the left column */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;  /* Allows the contents inside to adjust */
+    flex-grow: 1; /* This ensures the left-bottom section grows to fill space */
+    margin-top: 20px;
+    padding-top: 12px;
+}
+
+/* Right Column */
+.right-column {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#bioDescription {
+    margin: 0;
+    font-size: 18px; /* Increased font size */
+    font-weight: 400; /* Slightly bolder text */
+    line-height: 1.8; /* Adjust line height for readability */
+    color: #333333; /* Darker color for better contrast */
+}
+
+.bio a {
+    font-weight: 500;
+    text-decoration: none;
+    color: #1b4793;
+    transition: color 0.3s ease;
+}
+
+.bio-info a:hover {
+    color: #e2a727; /* Text color on hover for a */
+    text-decoration: underline;
+}
+
+/* Social Info */
+.name-position {
+    text-align: center; /* Center-aligns text and inline elements inside */
+    margin: 0;
+    line-height: 1.2;
+}
+
+.name-position h3 {
+    margin: 0;
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+#professorPosition {
+    text-align: center;
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: #555252;
+    margin-bottom: 5px;
+}
+
+.social-info {
+    font-size: 14px;
+}
+
+.social-info a {
+    margin: 0;
+    font-weight: 500;
+    text-align: left;
+    color: #1b4793;
+    transition: color 0.3s ease; /* This defines the color transition */
+    text-decoration: none;
+}
+
+.social-info a:hover {
+    color: #e2a727;
+    text-decoration: underline;
+}
+
+.social-info p {
+    margin: 0;
+    font-size: 14px;
+    text-align: left;
+}
+
+.social-icons {
+    font-size: 21px;
+    margin: 0;
+    transition: color 0.3s ease;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+}
+
+.social-icons a {
+    color: #1b4793;
+    margin: 0 10px; /* Add spacing between icons */
+    transition: color 0.3s ease; /* This defines the color transition */
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #e2a727;
+    text-decoration: underline;
+}
+
+.news {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allow the news section to grow */
+}
+
+/* News Styles */
+.news h2 {
+    font-size: 18px;
+    color: #333;
+    font-weight: 500;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+/* News Box Styles */
+.news-box {
+    min-height: 105px; /* Minimum height */
+    flex-grow: 2; /* Allow to take up available space */
+    flex-shrink: 1; /* Allow to shrink if necessary */
+    flex-basis: 0; /* Set initial size to zero */
+    overflow-y: auto; /* Allow scrolling if content overflows */
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid #30333A;
+}
+
+.news-list {
+    margin: 0;
+    list-style-type: circle; /* Add circle bullets */
+    padding-left: 0;
+}
+
+.news-list p {
+    margin: 0;
+}
+
+.news-list li a {
+    color: #1b4793;
+    transition: color 0.3s ease; /* This defines the color transition */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.news-list li a:hover {
+    color: #e2a727;
+    text-decoration: underline;
+}
+
+.news-box .news-list li {
+    margin-bottom: 0;
+}
+
+.news-list li {
+    list-style-type: circle; /* You can use disc, circle, square, etc. */
+    margin-left: 20px; /* Optional: Add left margin for indentation */
+    font-size: 14px;
+}
+
+/* Scrollbar Styles */
+.news-box::-webkit-scrollbar {
+    width: 10px;
+}
+
+.news-box::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.news-box::-webkit-scrollbar-thumb {
+    background: #30333A;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.news-box::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #30333A;
+    color: #fff;
+    padding: 10px 15px; /* Increased padding for better spacing */
+    text-align: center;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    font-size: 14px; /* Adjust font size for readability */
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column; /* Keep vertical alignment */
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    line-height: 1.2; /* Improve text readability with better line spacing */
+}
+
+
+
+/* Media query for tablets and smaller desktop screens */
+@media screen and (max-width: 1024px) and (pointer: coarse), 
+       screen and (max-width: 1024px) and (hover: none) {
+    /* Portrait mode */
+    @media (orientation: portrait) {
+        #bioDescription {
+            font-size: 9px;
+        }
+    }
+
+    /* Landscape mode */
+    @media (orientation: landscape) {
+        
+    }
+}
+
+
+@media only screen and (max-width: 1024px) {
+    /* Apply styles for iOS devices */
+    @supports (-webkit-touch-callout: none) { /* Check for iOS devices */
+        #bioDescription {
+            font-size: 9px;
+        }
+    }
+}
