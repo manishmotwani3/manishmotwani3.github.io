@@ -1,86 +1,86 @@
 {
     "researchInfo": {
-        "logo": "/~motwanim/research/research_images/logo-no-background.png",
+        "logo": "./research_images/logo-no-background.png",
         "description": "The Advanced Software Engineering Research (ANSWER) lab (part of the <a href=\"https://engineering.oregonstate.edu/EECS/research/software-engineering-and-human-computer-interaction\" target=\"_blank\">Software Engineering and Human-Computer Interaction</a> group) in the <a href=\"https://engineering.oregonstate.edu/EECS\" target=\"_blank\">School of Electrical Engineering and Computer Science</a> at <a href=\"https://oregonstate.edu/\" target=\"_blank\">Oregon State University</a> focuses on advancing the field of automated software testing, debugging, and repair. Our work spans a range of application domains, including High-Performance Computing (HPC) scientific applications, Reinforcement learning (RL)-based systems, and REST API-based web applications. We aim to develop innovative techniques and tools that can automatically identify and fix defects, ensuring the reliability and robustness of these complex software systems. Our research strives to improve the efficiency and effectiveness of software maintenance and quality assurance processes."
     },
     "projects": [
         {
             "id": "automated-testing",
-	    "image": "/~motwanim/research/research_images/hpctest.jpg",
+	    "image": "./research_images/hpctest.jpg",
             "title": "Automated Testing and Bug Repair for Heterogeneous High-Performance Computing Applications",
             "description": "Scientific advancements typically use high-performance computing (HPC)-based simulators to model real-world phenomena. These simulations involve processing large amounts of data (e.g., analyzing the change in the interaction between atomic particles while changing their physical environment) that typically require special libraries and computational power to run the simulations efficiently. Most of these HPC applications involve processing numerical values and their correctness depends on the implementation of underlying libraries and platforms (e.g., Kokkos, Raja, OpenMP, Cuda) that are used to create and execute the HPC applications on supercomputers. The goal of this project is to develop techniques to automatically test the correctness of HPC applications, localize the root cause of bugs detected by automated testing, and repair the bugs using an automated program repair approach.",
             "links": []
         },
         {
             "id": "respector",
-            "image": "/~motwanim/research/research_images/Respector.jpg",
+            "image": "./research_images/Respector.jpg",
             "title": "Automatically Generating Precise OpenAPI Specifications for REST APIs",
             "description": "Modern web applications extensively use API calls to update the UI state to respond user events or server-side changes. For such applications, API-level testing is as important as the unit testing and UI testing. Existing API testing tools require API specifications (e.g., OpenAPI), which often may not be available or, when available, be inconsistent with the API implementation, thus limiting the applicability of automated API testing to web applications. The goal of this project is to use program analysis techniques to automatically generate precise OpenAPI specifications from the application's implementation that can be used by automated API testing tools.",
             "links": [
-                { "label": "[Paper]", "url": "/~motwanim/publications/publication_sources/Huang24icse.pdf" }
+                { "label": "[Paper]", "url": "../publications/publication_sources/Huang24icse.pdf" }
             ]
         },
         {
             "id": "high-quality-apr",
-            "image": "/~motwanim/research/research_images/high-quality-apr.jpg",
+            "image": "./research_images/high-quality-apr.jpg",
             "title": "High-Quality Automatic Program Repair",
             "description": "Automatic program repair (APR) has recently gained attention because it proposes to fix software defects with no human intervention. To automatically fix defects, most APR tools use the developer-written tests to (a) localize the defect, and (b) generate and validate the automatically produced candidate patches based on the constraints imposed by the tests. While APR tools can produce patches that appear to fix the defect for 11–19% of the defects in real-world software, most of the patches produced are not correct or acceptable to developers because they overfit to the tests used during the repair process. This problem is known as the patch overfitting problem. To address this problem, I propose to equip APR tools with additional constraints derived from natural-language software artifacts such as bug reports and requirements specifications that describe the bug and intended software behavior but are not typically used by the APR tools. I hypothesize that patches produced by APR tools while using such additional constraints would be of higher quality. To test this hypothesis, I propose an automated and objective approach to evaluate the quality of patches, and propose two novel methods to improve the fault localization and developer-written test suites using natural-language software artifacts. Finally, I propose to use my patch evaluation methodology to analyze the effect of the improved fault localization and test suites on the quality of patches produced by APR tools for real-world defects.",
             "links": [
-                { "label": "[Paper]", "url": "/~motwanim/publications/publication_sources/Motwani21-icseDS.pdf"},
-                { "label": "[Dissertation]", "url": "/~motwanim/publications/publication_sources/High-Quality-APR-Dissertation.pdf" },
+                { "label": "[Paper]", "url": "../publications/publication_sources/Motwani21-icseDS.pdf"},
+                { "label": "[Dissertation]", "url": "../publications/publication_sources/High-Quality-APR-Dissertation.pdf" },
                 { "label": "[Video]", "url": "https://www.youtube.com/watch?v=om7VWRGAMew" }
             ]
         },
         {
             "id": "quality-automated",
-            "image": "/~motwanim/research/research_images/overfitting.png",
+            "image": "./research_images/overfitting.png",
             "title": "Quality of Automated Program Repair on Real World Defects",
             "description": "In this project we address a deficit of earlier evaluations of automated repair techniques caused by repairing programs and evaluating generated patches’ correctness using the same set of tests. Since tests are an imperfect metric of program correctness, evaluations of this type do not discriminate between correct patches and patches that “overfit” the available tests and break untested but desired functionality. We develop JaRFLy, a framework to automatically evaluate quality of repair tools, on a publicly available benchmarks using independently constructed evaluation test suites.",
             "links": [
-                { "label": "[Paper]", "url": "/~motwanim/publications/publication_sources/Motwani20tse.pdf" },
+                { "label": "[Paper]", "url": "../publications/publication_sources/Motwani20tse.pdf" },
                 { "label": "[Replication Package]", "url": "https://github.com/LASER-UMASS/JavaRepair-replication-package" },
                 { "label": "[JaRFly Framework]", "url": "https://jarfly.cs.umass.edu/" }
             ]
         },
         {
             "id": "swami",
-            "image": "/~motwanim/research/research_images/swami.png",
+            "image": "./research_images/swami.png",
             "title": "Automatically Generating Precise Oracles from Structured Natural Language Specifications",
             "description": "Software specifications often use natural language to describe the desired behavior, but such specifications are difficult to verify automatically. We present Swami, an automated technique that extracts test oracles and generates executable tests from structured natural language specifications. Swami focuses on exceptional behavior and boundary conditions that often cause field failures but that developers often fail to manually write tests for.",
             "links": [
-                { "label": "[Paper]", "url": "/~motwanim/publications/publication_sources/Motwani19icse.pdf" },
+                { "label": "[Paper]", "url": "../publications/publication_sources/Motwani19icse.pdf" },
                 { "label": "[Replication Package]", "url": "https://github.com/LASER-UMASS/Swami" }
             ]
         },
         {
             "id": "sosrepair",
-            "image": "/~motwanim/research/research_images/sosrepair.png",
+            "image": "./research_images/sosrepair.png",
             "title": "SOSRepair: Expressive Semantic Search for Real-World Program Repair",
             "description": "This project aims to develop a technique that fundamentally redesigns the use of semantic search for automated repair of real-world defects in real-world systems. The technique should handle large, real-world programs that employ realistic programming constructs and idioms (e.g., structs, console output, and library calls) as well as defects with no passing test cases executing the buggy region.",
             "links": [
-                { "label": "[Paper]", "url": "/~motwanim/publications/publication_sources/Afzal19tse.pdf"},
+                { "label": "[Paper]", "url": "../publications/publication_sources/Afzal19tse.pdf"},
                 { "label": "[Replication Package]", "url": "https://github.com/squaresLab/SOSRepair" }
             ]
         },
         {
             "id": "repairingimportantbugs",
-            "image": "/~motwanim/research/research_images/repairingimportantbugs.jpg",
+            "image": "./research_images/repairingimportantbugs.jpg",
             "title": "Do Automated Program Repair Techniques Repair Hard and Important Bugs?",
             "description": "Existing evaluations of automated repair techniques focus on the fraction of the defects for which the technique can produce a patch, the time needed to produce patches, and how well patches generalize to the intended specification. These evaluations have not focused on the characteristics of the defects that repair techniques can repair. This project aims to find answers for questions such as “can automated repair techniques repair bugs that are hard for humans to repair?” and “which techniques are more likely to repair a memory leak defect?”.",
             "links": [
                 { "label": "[Paper]", "url": "https://people.cs.umass.edu/~brun/pubs/pubs/Motwani18emse.pdf" },
-                { "label": "[Slides]", "url": "/~motwanim/publications/publication_sources/AutoRepairApplicabilityICSE18.pdf" },
+                { "label": "[Slides]", "url": "../publications/publication_sources/AutoRepairApplicabilityICSE18.pdf" },
                 { "label": "[Blog]", "url": "https://livablesoftware.com/automated-program-repair-important-bugs/" },
                 { "label": "[Replication Package]", "url": "https://github.com/LASER-UMASS/AutomatedRepairApplicabilityData" }
             ]
         },
         {
             "id": "scvc",
-            "image": "/~motwanim/research/research_images/scvc.png",
+            "image": "./research_images/scvc.png",
             "title": "Towards automating the security compliance value chain",
             "description": "Information security is of paramount importance in this digital era. While businesses strive to adopt industry-accepted system-hardening standards such as benchmarks recommended by the Center for Internet Security (CIS) to combat threats, they are confronted with an additional challenge of ever-evolving regulations that address security concerns. These create additional requirements, which must be incorporated into software systems. In this project, we present a generic approach towards automating different activities of the Security Compliance Value Chain in organizations in the context of the Payment Card Industry Data Security Standard (PCI-DSS) regulations.",
             "links": [
-                { "label": "[Paper]", "url": "/~motwanim/publications/publication_sources/Ghaisas15fse.pdf" }
+                { "label": "[Paper]", "url": "../publications/publication_sources/Ghaisas15fse.pdf" }
             ]
         },
         {
@@ -89,7 +89,7 @@
             "title": "Systems and Methods for an Automated Interpretation of Legal Regulations",
             "description": "Regulations influence several aspects of IT-enabled businesses. Aimed at safeguarding the wellbeing of citizens, they are written with great rigor and discipline to minimize incidents of violations. However, their diction is so highly specialized that it is almost incomprehensible to business communities and software vendors who need to ensure regulatory compliance. In this projct, we devise a Regulatory Rule Model to represent regulations and demonstrate its use to automate the interpretation of regulations.",
             "links": [
-                { "label": "[Patent]", "url": "/~motwanim/publications/publication_sources/MotwaniPatentUS9972016.pdf" }
+                { "label": "[Patent]", "url": "../publications/publication_sources/MotwaniPatentUS9972016.pdf" }
             ]
         },
         {
@@ -108,7 +108,7 @@
             "title": "Knowledge-assisted Product Requirements Configurator",
             "description": "Time to market is a key determinant for the success of any product-based business. This depends to a great extent on how efficiently the existing product knowledge is utilized for customization needs. The knowledge is often not represented in a form that allows an easy reuse. In this project, we developed an ontological representation of product primitives for a knowledge-assisted requirements configurator and deployed it in an organizational unit for a financial product suite.",
             "links": [
-                { "label": "[Paper]", "url": "/~motwanim/publications/publication_sources/Anish13please.pdf" }
+                { "label": "[Paper]", "url": "../publications/publication_sources/Anish13please.pdf" }
             ]
         }
     ]
