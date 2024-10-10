@@ -13,10 +13,10 @@
         <nav class="navbar">
             <div class="navbar-links">
                 <ul class="nav-links">
-                    <li><a href="/~motwanim/index.html"><i class="fas fa-home"></i> HOME</a></li>
-                    <li><a href="/~motwanim/research/research.html"><i class="fas fa-book-reader"></i> RESEARCH</a></li>
-                    <li><a href="/~motwanim/publications/publications.html" class="active"><i class="fas fa-project-diagram"></i> PUBLICATIONS</a></li>
-                    <li><a href="/~motwanim/teaching_and_students/teaching_and_students.html"><i class="fas fa-book"></i> TEACHING AND STUDENTS</a></li>
+                    <li><a href="../index.html"><i class="fas fa-home"></i> HOME</a></li>
+                    <li><a href="../research/research.html"><i class="fas fa-book-reader"></i> RESEARCH</a></li>
+                    <li><a href="./publications.html" class="active"><i class="fas fa-project-diagram"></i> PUBLICATIONS</a></li>
+                    <li><a href="../teaching_and_students/teaching_and_students.html"><i class="fas fa-book"></i> TEACHING AND STUDENTS</a></li>
                 </ul>
             </div>
         </nav>
@@ -155,7 +155,7 @@
 
                 async function fetchPublications() {
                     try {
-                        const response = await fetch('/~motwanim/publications/publications.json');
+                        const response = await fetch('../publications/publications.json');
                         if (!response.ok) {
                             throw new Error(`HTTP error! Status: ${response.status}`);
                         }

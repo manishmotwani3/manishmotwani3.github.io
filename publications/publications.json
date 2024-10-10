@@ -6,7 +6,7 @@
         "bold": ["Generating REST API Specifications through Static Analysis"],
         "italic": ["Ruikai Huang", "Manish Motwani", "Idel Martinez", "Alessandro Orso"],
         "links": [
-            { "text": "[Paper]", "url": "/~motwanim/publications/publication_sources/Huang24icse.pdf" }
+            { "text": "[Paper]", "url": "./publication_sources/Huang24icse.pdf" }
         ]
     },
     {
@@ -16,8 +16,8 @@
         "bold": ["Better Automatic Program Repair by Using Bug Reports and Tests Together"],
         "italic": ["Manish Motwani", "Yuriy Brun"],
         "links": [
-            { "text": "[Paper]", "url": "/~motwanim/publications/publication_sources/Motwani23icse.pdf" },
-            { "text": "[Slides]", "url": "/~motwanim/publications/publication_sources/SBIR_ICSE23.pdf" },
+            { "text": "[Paper]", "url": "./publication_sources/Motwani23icse.pdf" },
+            { "text": "[Slides]", "url": "./publication_sources/SBIR_ICSE23.pdf" },
             { "text": "[Video]", "url": "https://www.youtube.com/watch?v=5tQfOQoQhLI" }
         ]
     },
@@ -28,7 +28,7 @@
         "bold": ["Understanding Why and Predicting When Developers Adhere to Code-Quality Standards"],
         "italic": ["Manish Motwani", "Yuriy Brun"],
         "links": [
-            { "text": "[Paper]", "url": "/~motwanim/publications/publication_sources/Motwani23icseseip.pdf" }
+            { "text": "[Paper]", "url": "./publication_sources/Motwani23icseseip.pdf" }
         ]
     },
     {
@@ -38,8 +38,8 @@
         "bold": ["Automatically Generating Precise Oracles from Structured Natural Language Specifications"],
         "italic": ["Manish Motwani", "Yuriy Brun"],
         "links": [
-            { "text": "[Paper]", "url": "/~motwanim/publications/publication_sources/Motwani19icse.pdf" },
-            { "text": "[Slides]", "url": "/~motwanim/publications/publication_sources/swami.pdf" },
+            { "text": "[Paper]", "url": "./publication_sources/Motwani19icse.pdf" },
+            { "text": "[Slides]", "url": "./publication_sources/swami.pdf" },
             { "text": "[Video]", "url": "https://www.youtube.com/watch?v=GBwrvtrg1Ug" }
         ]
     },
@@ -50,7 +50,7 @@
         "bold": ["Quality of Automated Program Repair on Real-World Defects"],
         "italic": ["Manish Motwani", "Mauricio Soto", "Yuriy Brun", "René Just", "Claire Le Goues"],
         "links": [
-            { "text": "[Paper]", "url": "/~motwanim/publications/publication_sources/Motwani20tse.pdf" }
+            { "text": "[Paper]", "url": "./publication_sources/Motwani20tse.pdf" }
         ]
     },
     {
@@ -60,7 +60,7 @@
         "bold": ["SOSRepair: Expressive Semantic Search for Real-World Program Repair"],
         "italic": ["Afsoon Afzal", "Manish Motwani", "Kathryn T. Stolee", "Yuriy Brun", "Claire Le Goues"],
         "links": [
-            { "text": "[Paper]", "url": "/~motwanim/publications/publication_sources/Afzal19tse.pdf" }
+            { "text": "[Paper]", "url": "./publication_sources/Afzal19tse.pdf" }
         ]
     },
     {
@@ -70,8 +70,8 @@
         "bold": ["Do Automated Program Repair Techniques Repair Hard and Important Bugs?"],
         "italic": ["Manish Motwani", "Sandhya Sankaranarayanan", "René Just", "Yuriy Brun"],
         "links": [
-            { "text": "[Paper]", "url": "/~motwanim/publications/publication_sources/Motwani18emse.pdf" },
-            { "text": "[Slides]", "url": "/~motwanim/publications/publication_sources/AutoRepairApplicabilityICSE18.pdf" }
+            { "text": "[Paper]", "url": "./publication_sources/Motwani18emse.pdf" },
+            { "text": "[Slides]", "url": "./publication_sources/AutoRepairApplicabilityICSE18.pdf" }
         ]
     },
     {
@@ -81,8 +81,8 @@
         "bold": ["High-Quality Automated Program Repair"],
         "italic": ["Manish Motwani"],
         "links": [
-            { "text": "[Paper]", "url": "/~motwanim/publications/publication_sources/Motwani21-icseDS.pdf" },
-            { "text": "[Proposal]", "url": "/~motwanim/publications/publication_sources/MotwaniDissertationProposal.pdf" },
+            { "text": "[Paper]", "url": "./publication_sources/Motwani21-icseDS.pdf" },
+            { "text": "[Proposal]", "url": "./publication_sources/MotwaniDissertationProposal.pdf" },
             { "text": "[Video]", "url": "https://www.youtube.com/watch?v=om7VWRGAMew" }
         ]
     },
@@ -93,7 +93,7 @@
         "bold": ["Towards automating the security compliance value chain"],
         "italic": ["Smita Ghaisas", "Manish Motwani", "Balaji Balasubramaniam", "Anjali Gajendragadkar", "Rahul Kelkar", "Harrick Vin"],
         "links": [
-            { "text": "[Paper]", "url": "/~motwanim/publications/publication_sources/Ghaisas15fse.pdf" }
+            { "text": "[Paper]", "url": "./publication_sources/Ghaisas15fse.pdf" }
         ]
     },
     {
@@ -103,7 +103,7 @@
         "bold": ["Detecting System Use Cases and Validations from Documents"],
         "italic": ["Smita Ghaisas", "Manish Motwani", "Preethu Rose"],
         "links": [
-            { "text": "[Paper]", "url": "/~motwanim/publications/publication_sources/Ghaisas13ase.pdf" }
+            { "text": "[Paper]", "url": "./publication_sources/Ghaisas13ase.pdf" }
         ]
     },
     {
@@ -113,7 +113,7 @@
         "bold": ["High-Quality Automated Program Repair"],
         "italic": ["Manish Motwani"],
         "links": [
-            { "text": "[Dissertation]", "url": "/~motwanim/publications/publication_sources/High-Quality-APR-Dissertation.pdf" }
+            { "text": "[Dissertation]", "url": "./publication_sources/High-Quality-APR-Dissertation.pdf" }
         ]
     },
     {
@@ -123,8 +123,8 @@
         "bold": ["Do Automated Program Repair Techniques Repair Hard and Important Bugs?"],
         "italic": ["Manish Motwani", "Sandhya Sankaranarayanan", "René Just", "Yuriy Brun"],
         "links": [
-            { "text": "[Paper]", "url": "/~motwanim/publications/publication_sources/Motwani18emse-icseJF.pdf" },
-            { "text": "[Slides]", "url": "/~motwanim/publications/publication_sources/AutoRepairApplicabilityICSE18.pdf" },
+            { "text": "[Paper]", "url": "./publication_sources/Motwani18emse-icseJF.pdf" },
+            { "text": "[Slides]", "url": "./publication_sources/AutoRepairApplicabilityICSE18.pdf" },
             { "text": "[Video]", "url": "https://livablesoftware.com/automated-program-repair-important-bugs/" }
         ]
     },
@@ -135,7 +135,7 @@
         "bold": ["Knowledge-assisted Product Requirements Configurator"],
         "italic": ["Preethu Rose Anish", "SK. Sharma", "Smita Ghaisas", "Manish Motwani"],
         "links": [
-            { "text": "[Paper]", "url": "/~motwanim/publications/publication_sources/Anish13please.pdf" }
+            { "text": "[Paper]", "url": "./publication_sources/Anish13please.pdf" }
         ]
     },
     {
@@ -145,7 +145,7 @@
         "bold": ["Systems and Methods for an Automated Interpretation of Legal Regulations"],
         "italic": ["Smita Ghaisas", "Preethu R. Anish", "Balaji Balasubramaniam", "Manish Motwani", "Aarthy Krishnamurthy"],
         "links": [
-            { "text": "[Patents]", "url": "/~motwanim/publications/publication_sources/MotwaniPatentUS9972016.pdf" }
+            { "text": "[Patents]", "url": "./publication_sources/MotwaniPatentUS9972016.pdf" }
         ]
     },
     {
@@ -155,7 +155,7 @@
         "bold": ["Automated Classification of Business Rules from Text"],
         "italic": ["Smita Ghaisas", "Preethu Rose Anish", "Balaji Balasubramaniam", "Manish Motwani", "Shashi Kant Sharma"],
         "links": [
-            { "text": "[Patents]", "url": "/~motwanim/publications/publication_sources/MotwaniPatentUS10146762.pdf" }
+            { "text": "[Patents]", "url": "./publication_sources/MotwaniPatentUS10146762.pdf" }
         ]
     }
 ]
