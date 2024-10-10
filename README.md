@@ -1,4 +1,4 @@
-# Professor Manish - ANSWER Research Website Documentation
+# Research Website Documentation
 
 ---
 
