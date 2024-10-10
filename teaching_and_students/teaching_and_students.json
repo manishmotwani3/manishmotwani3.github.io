@@ -13,12 +13,12 @@
         {
             "term": "Winter 2024",
             "courseNumber": "CS 569: Selected Topics in Software Engineering: Program Analysis and Evaluation",
-            "url": "/~motwanim/courses/cs569_winter2024/syllabus.html"
+            "url": "./courses/cs569_winter2024/syllabus.html"
         },
         {
             "term": "Spring 2024",
             "courseNumber": "CS 563: Software Evolution and Maintenance",
-            "url": "/~motwanim/courses/cs563_spring2024/syllabus.html"
+            "url": "./courses/cs563_spring2024/syllabus.html"
         }
     ],
     "students": [
