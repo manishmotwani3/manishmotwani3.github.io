@@ -13,10 +13,10 @@
         <nav class="navbar">
             <div class="navbar-links">
                 <ul class="nav-links">
-                    <li><a href="/~motwanim/index.html" class="active"><i class="fas fa-home"></i> HOME</a></li>
-                    <li><a href="/~motwanim/research/research.html"><i class="fas fa-book-reader"></i> RESEARCH</a></li>
-                    <li><a href="/~motwanim/publications/publications.html"><i class="fas fa-project-diagram"></i> PUBLICATIONS</a></li>
-                    <li><a href="/~motwanim/teaching_and_students/teaching_and_students.html"><i class="fas fa-book"></i> TEACHING AND STUDENTS</a></li>
+                    <li><a href="index.html" class="active"><i class="fas fa-home"></i> HOME</a></li>
+                    <li><a href="./research/research.html"><i class="fas fa-book-reader"></i> RESEARCH</a></li>
+                    <li><a href="./publications/publications.html"><i class="fas fa-project-diagram"></i> PUBLICATIONS</a></li>
+                    <li><a href="./teaching_and_students/teaching_and_students.html"><i class="fas fa-book"></i> TEACHING AND STUDENTS</a></li>
                 </ul>
             </div>
         </nav>
@@ -86,7 +86,7 @@
             updateLastUpdated();
     
             // Fetch data from JSON
-            fetch('/~motwanim/homepage.json')
+            fetch('./homepage.json')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
