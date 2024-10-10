@@ -1,6 +1,6 @@
 {
     "leftColumn": {
-        "image": "homepage/resources/Motwani.jpg",
+        "image": "./homepage/resources/Motwani.jpg",
         "name": "Manish Motwani",
         "position": "(Assistant Professor)",
         "department": "School of Electrical Engineering and Computer Science",
@@ -10,7 +10,7 @@
         "socialLinks": [
             {
                 "icon": "fas fa-address-card",
-                "url": "/~motwanim/homepage/resources/ManishMotwani_CV.pdf",
+                "url": "./homepage/resources/ManishMotwani_CV.pdf",
                 "title": "Resume"
             },
             {
@@ -47,7 +47,7 @@
             },	    
             {
                 "title": "Paper accepted in ICSE'24 (Technical track)",
-                "url": "/~motwanim/publications/publication_sources/Ruikai24icse.pdf",
+                "url": "./publications/publication_sources/Ruikai24icse.pdf",
                 "wordToLink": "Paper"
             },
             {
@@ -67,12 +67,12 @@
             },
             {
                 "title": "Paper accepted in ICSE'23 (Technical track, Artifact Evaluation track)",
-                "url": "/~motwanim/publications/publication_sources/Motwani23icse.pdf",
+                "url": "./publications/publication_sources/Motwani23icse.pdf",
                 "wordToLink": "Paper"
             },
             {
                 "title": "Paper accepted in ICSE'23 (SEIP track)",
-                "url": "/~motwanim/publications/publication_sources/Motwani23icse.pdf",
+                "url": "./publications/publication_sources/Motwani23icse.pdf",
                 "wordToLink": "Paper"
             },
             {
@@ -82,7 +82,7 @@
             },
             {
                 "title": "Defended my Dissertation",
-                "url": "/~motwanim/publications/publication_sources/High-Quality-APR-Dissertation.pdf",
+                "url": "./publications/publication_sources/High-Quality-APR-Dissertation.pdf",
                 "wordToLink": "Dissertation"
             },
             {
@@ -92,7 +92,7 @@
             },
             {
                 "title": "Paper accepted in ICSE'21 (Doctoral Symposium track)",
-                "url": "/~motwanim/publications/publication_sources/Motwani21-icseDS.pdf",
+                "url": "./publications/publication_sources/Motwani21-icseDS.pdf",
                 "wordToLink": "Paper"
             },
             {
@@ -102,37 +102,37 @@
             },
             {
                 "title": "Paper accepted in TSE (2020)",
-                "url": "/~motwanim/publications/publication_sources/Motwani20tse.pdf",
+                "url": "./publications/publication_sources/Motwani20tse.pdf",
                 "wordToLink": "Paper"
             },
             {
                 "title": "Paper accepted in TSE (2019)",
-                "url": "/~motwanim/publications/publication_sources/Afzal19tse.pdf",
+                "url": "./publications/publication_sources/Afzal19tse.pdf",
                 "wordToLink": "Paper"
             },
             {
                 "title": "Paper accepted in ICSE'19 (Technical track, Artifact Evaluation track)",
-                "url": "/~motwanim/publications/publication_sources/Motwani19icse.pdf",
+                "url": "./publications/publication_sources/Motwani19icse.pdf",
                 "wordToLink": "Paper"
             },
             {
                 "title": "US Patent (US10146762B2) granted, Dec 2018",
-                "url": "/~motwanim/publications/publication_sources/MotwaniPatentUS10146762.pdf",
+                "url": "./publications/publication_sources/MotwaniPatentUS10146762.pdf",
                 "wordToLink": "US Patent"
             },
             {
                 "title": "Paper accepted in ICSE'18 (Journal-First track)",
-                "url": "/~motwanim/publications/publication_sources/Motwani18emse-icseJF.pdf",
+                "url": "./publications/publication_sources/Motwani18emse-icseJF.pdf",
                 "wordToLink": "Paper"
             },
             {
                 "title": "Paper accepted in EMSE (2018)",
-                "url": "/~motwanim/publications/publication_sources/Motwani18emse.pdf",
+                "url": "./publications/publication_sources/Motwani18emse.pdf",
                 "wordToLink": "Paper"
             },
             {
                 "title": "US Patent (US9972016B2) granted, May 2018",
-                "url": "/~motwanim/publications/publication_sources/MotwaniPatentUS9972016.pdf",
+                "url": "./publications/publication_sources/MotwaniPatentUS9972016.pdf",
                 "wordToLink": "US Patent"
             },
             {
@@ -142,17 +142,17 @@
             },
             {
                 "title": "Paper accepted in FSE'15 (Industry track)",
-                "url": "/~motwanim/publications/publication_sources/Ghaisas15fse.pdf",
+                "url": "./publications/publication_sources/Ghaisas15fse.pdf",
                 "wordToLink": "Paper"
             },
             {
                 "title": "Paper accepted in ASE'13 (New Ideas track)",
-                "url": "/~motwanim/publications/publication_sources/Ghaisas13ase.pdf",
+                "url": "./publications/publication_sources/Ghaisas13ase.pdf",
                 "wordToLink": "Paper"
             },
             {
                 "title": "Paper accepted in PLEASE'13 workshop",
-                "url": "/~motwanim/publications/publication_sources/Anish13please.pdf",
+                "url": "./publications/publication_sources/Anish13please.pdf",
                 "wordToLink": "Paper"
             }
         ]
