@@ -1,0 +1,53 @@
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Assignment: Homework-1: Code review and Model-View-Controller in action</title>
+</head>
+<body>
+<p>Due:<span> </span><strong>Wednesday, May 1, 2024, 11:59 PM PT</strong></p>
+<p>You may work with others on this assignment but each student must submit  their own, individual write up and code, clearly specifying the collaborators. The write ups should be individual, not created jointly, and written in the student’s own words.<span> <strong>You have <span class="textLayer--absolute" dir="ltr" role="presentation">automatic 1</span><span class="textLayer--absolute" dir="ltr" role="presentation">-</span><span class="textLayer--absolute" dir="ltr" role="presentation">day </span><span class="textLayer--absolute" dir="ltr" role="presentation">extension</span> but beyond that, l</strong></span><strong>ate assignments will not be accepted without prior permission.</strong></p>
+<h4><strong>Overview</strong></h4>
+<p>The goal of this assignment is to code review, redesign, and re-implement a Tic Tac Toe game, according to the <a class="inline_disabled" href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller" target="_blank" title="Link">model-view-controller (MVC) architectural pattern</a>.<br/>The following repository provides a basic implementation of the Tic Tac Toe game: <a href="https://github.com/CS-563/homework-1/" target="_blank">https://github.com/CS-563/homework-1/</a> <br/>This quick-and-dirty implementation violates many best practices and needs a major design overhaul. In contrast to the current version, your implementation should support a possible extensions without violating the open/closed principle. Additionally, your implementation should enable better testability so that the individual components can be tested in isolation.</p>
+<h4><strong>Code review</strong></h4>
+<p>You are expected to code-review the current version of the application. In particular, you are expected to identify four (4) violations of best practices. For each violation, briefly explain what the issue is (you may refer to general principles or poor design choices with respect to the desired extensibility) and how to fix it.<br/>Your code review should follow the following pattern <strong>for each identified violation</strong>:</p>
+<ul>
+<li>Brief summary of violation (a few keywords)</li>
+<li>What’s the issue (one or two sentences)</li>
+<li>How to fix it (one or two sentences)</li>
+</ul>
+<p>Your reimplementation should reflect and implement your code review suggestions.</p>
+<h4><strong>Implementation</strong></h4>
+<p><strong>Desired extensibility<br/></strong></p>
+<p>Your implementation must implement the rules of tic tac toe. It must, in that sense, be a correct implementation of the rules.</p>
+<p>Your design needs to support the following extensions:</p>
+<ul>
+<li>Using a different visualization (View) for the game board without changing the model or the controllers.</li>
+<li>Using a different data representation (Model) without changing the view or the controllers.</li>
+<li>Reading game moves from other sources (e.g., reading from the command line).</li>
+</ul>
+<p><strong>You do not need to implement these extensions,</strong> but your design needs to be flexible enough to support them. Also, your design does not need to support different GUI frameworks (only supporting one GUI framework of your choice is sufficient).</p>
+<p>Make sure you use the following directory structure to organize your application source code and test files.</p>
+<p><span style="font-family: tahoma, arial, helvetica, sans-serif;">tictactoe/</span><br/><span style="font-family: tahoma, arial, helvetica, sans-serif;">              src/</span><br/><span style="font-family: tahoma, arial, helvetica, sans-serif;">                     model/</span><br/><span style="font-family: tahoma, arial, helvetica, sans-serif;">                     view/</span><br/><span style="font-family: tahoma, arial, helvetica, sans-serif;">                     controller/</span><br/><span style="font-family: tahoma, arial, helvetica, sans-serif;">              test/</span><br/><span style="font-family: tahoma, arial, helvetica, sans-serif;">              build.xml</span><br/><span style="font-family: tahoma, arial, helvetica, sans-serif;">              README.md</span></p>
+<p> </p>
+<h4><strong>Testing</strong></h4>
+<p>Your design must allow testing of individual components. To show testability, you are expected to submit at least one test case per component (M, V, and C) along with your implementation. You need to write unit tests using JUnit framework. Ideally, you should test all of your public methods that belong to Model, View, and Controller to ensure that your application is working correctly but for this homework you are only required to write tests for at least one of the method belong to each of the M,V,C components.<br/><br/><strong>USEFUL RESOURCE:  </strong>see <span style="color: #236fa1;"><em>test/TestExample.java</em></span> provided with the given implementation and refer <a href="https://junit.org/junit4/faq.html" target="_blank">https://junit.org/junit4/faq.html</a></p>
+<h4><br/><strong>Version control</strong></h4>
+<p>You are expected to clone the existing repository and keep your implementation under version control, using the cloned repository. You will submit your repository to us, so you should make coherent and atomic commits, and use descriptive log messages.</p>
+<h4><strong>How to get started</strong></h4>
+<ol style="list-style-type: decimal;">
+<li>Clone the repository <a href="https://github.com/CS-563/homework-1/" target="_blank">https://github.com/CS-563/homework-1/</a> </li>
+<li>Read the provided README in the <span style="color: #236fa1;"><em>tictactoe</em></span> folder.</li>
+<li>Compile, test, and run the application.</li>
+<li>Familiarize yourself with the existing code (<em><span style="color: #236fa1;">src/TicTacToe.java</span></em>)</li>
+</ol>
+<p>Feel free to use the provided Ant build file (build.xml) to compile and test your code. Alternatively, you can import the implementation into an IDE of your choice — most IDEs can import a project from an existing build file. However, neither Ant nor a particular IDE is a requirement. Additionally, you can use the provided example test class (<em><span style="color: #236fa1;"><strong>test/TestExample.java</strong></span></em>) as a template to write your own test cases.</p>
+<h4><strong>Deliverables:</strong></h4>
+<p>Your submission, via Canvas, must be a single archive (.zip, .tar.gz) file, containing:</p>
+<ol style="list-style-type: decimal;">
+<li>Your code review in a plain text file named as hw1-codereview.txt.</li>
+<li>The compressed file containing the homework-1 folder which contains all the updated source files and test cases of your application residing inside the tictactoe folder. <strong>Make sure that .git directory exists in your compressed file that you submit. You should be able to see your commits by extracting your submission file and running the git log command from inside the homework-1 folder.<br/>USEFUL TIP: </strong>While running the command to compress the homework-1 folder, use homework-1/.* instead of homework-1/* to specify the files to be compressed.<strong><br/>The repository should have a set of coherent commits showing your work, not a single version of the code.</strong><strong></strong></li>
+<li>A README file describing the <strong>command line arguments to build, test, and run your code</strong> from within the <em><span style="color: #236fa1;">tictactoe</span></em> folder. You can use <em><span style="color: #236fa1;">Ant</span></em> or other build tools, but the README needs to explicitly say the commands to run for each of the three actions (refer existing README provided in the tictactoe folder).</li>
+</ol>
+<p>Your application is expected to compile and run correctly for tic tac toe. Unless your application can be compiled and tested with the provided build file (build.xml), please provide brief instructions for how to compile, test, and run your code within a README file that should exist inside the tictactoe folder.</p>
+</body>
+</html>

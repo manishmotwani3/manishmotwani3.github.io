@@ -1,0 +1,94 @@
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Assignment: Homework-2: Automated Program Repair </title>
+</head>
+<body>
+<p>Due:<span> </span><strong>Wednesday, May 29, 2024, 11:59 PM PT</strong></p>
+<p>You may work with others on this assignment but each student must submit  their own, individual write up and code, clearly specifying the collaborators. The write ups should be individual, not created jointly, and written in the student’s own words.<span> <strong>You have <span class="textLayer--absolute" dir="ltr" role="presentation">automatic 1</span><span class="textLayer--absolute" dir="ltr" role="presentation">-</span><span class="textLayer--absolute" dir="ltr" role="presentation">day </span><span class="textLayer--absolute" dir="ltr" role="presentation">extension</span> but beyond that, l</strong></span><strong>ate assignments will not be accepted without prior permission.</strong></p>
+<h4><strong>Overview</strong></h4>
+<p>The goal of this assignment is to learn about Genprog, an automated bug repair technique that takes a program with a set of passing and a set of failing test cases, and automatically produces a small change to the program that makes it pass all the tests.</p>
+<p>The assignment consists of:</p>
+<ol style="list-style-type: decimal;">
+<li>Reading a small part of a research paper that describes the GenProg technique.</li>
+<li>Setting up a virtual machine to run Genprog on a buggy program that contains a simplified version of the bug that took down all the Zune music players on Dec 31, 2008. Running Genprog and analyzing its output.</li>
+<li>Answering problem questions about Genprog and the Zune bug.</li>
+</ol>
+<p> </p>
+<h4><strong>Resources</strong></h4>
+<ul>
+<li>The paper describing Genprog: “Automatically Finding Patches Using Genetic Programming” by Westley Weimer, ThanhVu Nguyen, Claire Le Goues, and Stephanie Forrest: <a class="inline_disabled" href="https://www.cs.cmu.edu/~clegoues/docs/legoues-icse09.pdf" target="_blank" title="Link">https://www.cs.cmu.edu/~clegoues/docs/legoues-icse09.pdf</a></li>
+<li>Virtual Box. Because the software you will be using is a research prototype, the class instructor has created a virtual machine with that software installed, rather than making you deal with installing it yourself.</li>
+<li>The virtual machine with Genprog installed. Download the virtual machine G<strong>enProg-vm.ova</strong> from <a class="inline_disabled" href="https://oregonstateuniversity-my.sharepoint.com/:u:/g/personal/motwanim_oregonstate_edu/EQYrmkDEeQhBta5qUSB7ICAB7GkHkmUzfdzVyIR3g0jiqw?e=eNpMde" target="_blank" title="Link">here</a>.<br/>This files is over 600MB, so make sure you have a good network connection and allow for adequate time.</li>
+<li>Genprog is already installed on the virtual machine. See below on how to run it. </li>
+</ul>
+<p> </p>
+<h4><strong>Setup</strong></h4>
+<ol style="list-style-type: decimal;">
+<li>Read the first two sections (Introduction and Motivating Example) of “<strong>Automatically Finding Patches Using Genetic Programming</strong>” by Westley Weimer, ThanhVu Nguyen, Claire Le Goues, and Stephanie Forrest.</li>
+<li>Download Virtual Box (you’ll need it to run the provided virtual machine. Go to <a class="inline_disabled" href="https://www.virtualbox.org/wiki/Downloads" target="_blank" title="Link">https://www.virtualbox.org/wiki/Downloads</a> and download the Virtual Box for your OS. It’s free and you may find this a useful tool in the future. If you have any problems installing or running Virtual Box, that website has an extensive manual and other help.</li>
+<li>Make sure you downloaded the virtual machine itself: G<strong>enProg-vm.ova</strong>.</li>
+<li>Start Virtual Box, go to the <em>File </em>menu and select <em>Import Appliance</em>. Then select <em>Open appliance </em>and select the<strong> GenProg-vm.ova</strong> file and click <em>Open</em>. Next, click <em>Continue </em>and then <em>Import</em>. Finally, click the green arrow labeled <em>Start </em>to start the virtual machine and wait for it to boot up. You can select the defaults for whatever questions the boot process asks.</li>
+<li>Once the machine boots up successfully, enter the following credentials to login:<br/><em>username</em>: genprog<br/><em>password</em>: password</li>
+<li>On successful login, you will see a terminal. Run the commands: <br/><span style="font-family: 'courier new', courier;">ls<br/></span>bash clean.sh </li>
+<li>The are several files of interest:
+<ol style="list-style-type: decimal;">
+<li><span style="font-family: 'courier new', courier;">zune/zunebug.c</span> is a buggy program. (The bug in this program is a simplified version of the bug that took down all the Zune music players on Dec 31, 2008.)</li>
+<li><span style="font-family: 'courier new', courier;">zune/test.sh</span> contains 20 test cases that pass (p1–p20) and 4 test cases that fail (n1–n4).</li>
+<li><span style="font-family: 'courier new', courier;">zune/output.*</span> files contain the expected outputs for these tests.</li>
+<li><span style="font-family: 'courier new', courier;">configuration </span>is a configuration file for Genprog, but you won’t need to modify it.</li>
+</ol>
+</li>
+</ol>
+<p> </p>
+<h4><strong>Problem</strong></h4>
+<p><span style="font-family: 'courier new', courier;">zune/zunebug.c</span> contains a bug. Of its tests (in<span style="font-family: 'courier new', courier;"> zune/test.sh</span>), 20 pass, but 4 do not, because of the bug. Genprog is going to try to automatically repair this program by producing a similar program that passes all the tests. Take a look at<span style="font-family: 'courier new', courier;"> zune/zunebug.c</span> and see if you can spot the bug.<strong><br/>Run:<br/></strong><span style="font-family: 'courier new', courier;">cd zune</span><strong><br/></strong><span style="font-family: 'courier new', courier;">$REPAIR configuration --minimization</span><strong><br/></strong>Genprog will run and produce <span style="font-family: 'courier new', courier;">sanity.c</span>, <span style="font-family: 'courier new', courier;">repair.c</span>, and <span style="font-family: 'courier new', courier;">minimized.c</span>, which are all modified versions of <span style="font-family: 'courier new', courier;">zunebug.c</span>:</p>
+<ul>
+<li><span style="font-family: 'courier new', courier;">sanity.c</span> is a properly formatted, still buggy version.</li>
+<li><span style="font-family: 'courier new', courier;">repair.c</span> is a repaired version.</li>
+<li><span style="font-family: 'courier new', courier;">minimized.c </span>is a repaired version with fewer changes (Genprog uses delta debugging to minimize the repair).</li>
+</ul>
+<p>Running this command will take some time, around 5-10 minutes. Genprog is magic. It’s magically repairing a buggy program for you. Magic takes time. </p>
+<p>Examine <span style="font-family: 'courier new', courier;">repair.c</span> and note the differences with<span style="font-family: 'courier new', courier;"> zunebug.c</span> (you may want to run<br/><span style="font-family: 'courier new', courier;">diff --side-by-side sanity.c minimized.c</span> <span style="font-family: 'courier new', courier;">&gt; compare</span><br/><span style="font-family: 'courier new', courier;">emacs compare</span> </p>
+<p>When you want to get out of emacs, press <span style="font-family: 'courier new', courier;">CTRL-x CTRL-c</span>.<br/><span style="font-family: 'courier new', courier;"><br/></span></p>
+<h4><strong>Deliverables</strong></h4>
+<p>You should submit either <strong>writeup.pdf</strong> or <strong>writeup.txt</strong> with answers to the following questions:</p>
+<ol style="list-style-type: decimal;">
+<li>Genprog takes a program that fails one or more tests and produces a similar program that passes those tests. Rather than exploring all programs up to a certain size difference from the original buggy program, Genprog relies on genetic algorithms and may explore some programs that are quite different from the original program, while not considering some others that are very similar. To explain why Genprog makes this choice, describe why Genprog doesn’t explore (a) only all very similar programs (e.g., ones only up to 5 characters different from the original), or (b) all slightly similar programs (e.g., ones up to 10 statements different from the original). Note that the answers to (a) and (b) are different.</li>
+<li>Name two concrete ways in which Genprog makes its search space tractable (makes it smaller).</li>
+<li>How does Genprog make sure that the repaired program it produces is similar enough in behavior to the original buggy program. In other words, how do we know Genprog won’t produce a completely different, unrelated program that just happens to pass the previously-failing test?</li>
+<li>Why does it make sense for Genprog to apply delta debugging to the repair it produces? You may want to look at the difference between <span style="font-family: 'courier new', courier;">repair.c</span> and <span style="font-family: 'courier new', courier;">minimized.c</span> to answer this question.</li>
+<li>Describe the bug in <span style="font-family: 'courier new', courier;">zunebug.c</span> and how Genprog suggests fixing it</li>
+</ol>
+<p><span style="font-family: 'courier new', courier;"> </span></p>
+<h4><strong>Helpful hints</strong></h4>
+<p>If Genprog fails and prints “<em>ERROR: Rep: unexpected coverage result on ...,</em>” you probably don’t have hardware virtualization enabled (or it’s not supported by your processor). Hardware virtualization is a processor feature that greatly speeds up virtualization. To check if it’s enabled, go to the <strong>genprog-vm</strong> settings in Virtual Box before starting the virtual machine, then <em>System</em>, then <em>Acceleration</em>. If the <em>Acceleration </em>tab or any options within it are disabled, hardware virtualization may be off. If hardware virtualization is on, then when the virtual machine is running, you’ll see an icon on the bottom right that looks like a blue chip containing a ‘V’.<br/>If hardware virtualization is off, you can either try to enable it or use another computer to complete the assignment. To enable it, restart your computer, enter your BIOS settings by pressing a specific key (often F1 or F12), and find a setting to enable hardware virtualization. If there is no such setting or this otherwise does not work, you’ll need to use a different machine. Notify the instructor in such scenario and they will arrange another machine for you.  You may also try unchecking “Enable Nested Paging” in the Acceleration tab to resolve the error. </p>
+<p> </p>
+<h4><strong>Acknowledgments</strong></h4>
+<p>Claire Le Goues was instrumental in designing this homework assignment. </p>
+<p> </p>
+<h4><strong>Solution</strong></h4>
+<ol style="list-style-type: decimal;">
+<li>Genprog takes a program that fails one or more tests and produces a similar program that passes those tests. Rather than exploring all programs up to a certain size difference from the original buggy program, Genprog relies on genetic algorithms and may explore some programs that are quite different from the original program, while not considering some others that are very similar. To explain why Genprog makes this choice, describe why Genprog doesn’t explore (a) only all very similar programs (e.g., ones only up to 5 characters different from the original), or (b) all slightly similar programs (e.g., ones up to 10 statements different from the original). Note that the answers to (a) and (b) are different.<br/><strong>Answer</strong>:<br/>
+<ol style="list-style-type: upper-alpha;">
+<li>The program variants that are very similar (up to 5 characters different) will have high probability of having the same bug as the original program. Therefore considering such program variants will not lead to successful repair in most cases.</li>
+<li>The program variants that are slightly similar (up to 10 statements different) could be a good choice for selecting the variants for repair. However, just the criteria of slightly similar would result in large number of variants which will increase the search space. The authors therefore use the fitness measure (considering the number of positive and negative test cases passed) to select the variants for repair.<br/><br/></li>
+</ol>
+</li>
+<li>Name two concrete ways in which Genprog makes its search space tractable (makes it smaller).<br/><strong>Answer:<br/></strong>
+<ol style="list-style-type: decimal;">
+<li>Genprog constraints the genetic operations of mutation and crossover to operate only on the specific regions of the program those are relevant to the error (i.e. portions of the program that get executed when the error is produced). This result in relatively less number of variants and hence reduces the search space.</li>
+<li>Genprog considers the probability of selecting a variant for repair which is based on variant’s relative fitness in the population. This further reduces the search space as variants with fitness below the threshold get discarded.<br/><br/></li>
+</ol>
+</li>
+<li>How does Genprog make sure that the repaired program it produces is similar enough in behavior to the original buggy program. In other words, how do we know Genprog won’t produce a completely different, unrelated program that just happens to pass the previously-failing test?<br/><strong>Answer:</strong><br/>The criteria of a program variant to be error free is that it should pass all the positive test cases (so that it is similar in satisfying the desired functionalities of the original program) and should also pass all the negative test cases (which ensures that the variant is error free). Further, Genprog minimizes the repaired program to remove the extraneous code statements. This ensures that the repaired program will not be completely different from original program.<br/><br/></li>
+<li>Why does it make sense for Genprog to apply delta debugging to the repair it produces? You may want to look at the difference between <span style="font-family: 'courier new', courier;">repair.c</span> and <span style="font-family: 'courier new', courier;">minimized.c</span> to answer this question.<br/><strong>Answer:</strong><br/>The delta debugging enables Genprog to get rid of the extra lines of code that get added during repair and removing them would still result in correct program. In the given scenario, Genprog repairs the infinite loop error by considering the case of 'days' equal to 366 and adding “days -= 366” in the else condition. It also adds an extra if-else construct and other code to repair the infinite loop. By examining the minimal interesting subset of these additions (delta debugging) such that the program still passes all negative test cases, Genprog removes the if-else construct and other non-essential code statements because the statement “days -=366” turns out to be sufficient to repair the bug.<br/><br/></li>
+<li>Describe the bug in <span style="font-family: 'courier new', courier;">zunebug.c</span> and how Genprog suggests fixing it<br/><strong>Answer:<br/></strong>There are two bugs in the zunebug.c program.
+<ol style="list-style-type: decimal;">
+<li>The first bug is in the implementation of the isLeapYear function, which is not detected by the given set of test cases. The function considers years that are divisible by 4 as leap years. This is incorrect because years such as 1900, 2100 are not leap years though they are divisible by 4. So, a test case input such as 44196 would result in current year equal to 2100 for which the correct output should be 2101. Since the given test suite doesn't contain such test cases, Genprog doesn't repairs this bug.</li>
+<li>The second bug, which is detected by the given test suite is that if the number of days input to the program results in the 'year' that gets computed as a leap year and the value of 'days' becomes 366, the program execution goes into an infinite loop (while loop). This is based on the analysis of the four negative test cases. This is repaired by Genprog by inserting the statement in else condition inside the while loop whereby it decreases the value of 'days' by 366.</li>
+</ol>
+</li>
+</ol>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Assignment: In-class Exercise #3: Software Testing</title>
+</head>
+<body>
+<p><span>Due:</span><span> <strong>Sunday</strong></span><strong>, June 2, 2024, 11:59 PM PT</strong></p>
+<p>This in-class exercise is a group submission. This means that each group only needs to submit their solution once and also that every student in a group will get the same grade.</p>
+<h4><span style="font-size: 18pt;"><strong>Overview and goal</strong></span></h4>
+<p>The high-level goal of this exercise is to learn how to systematically unit-test a program and how to assess test quality, using code coverage and mutation analysis.</p>
+<h4><span style="font-size: 18pt;"><strong>What to do?</strong></span></h4>
+<p>Ask me to add your GitHub username (if not done already) to access<span> </span><a class="inline_disabled external" href="https://github.com/CS-563/triangle" target="_blank">https://github.com/CS-563/triangle</a></p>
+<p> </p>
+<p><span style="font-size: 14pt;"><strong>Forming groups</strong></span></p>
+<ol>
+<li>Team up in groups of size up to 3. (If you cannot find a teammate, raise your hand and ask the instructor.)</li>
+<li>Add all the group members on Canvas at<span> </span><a class="inline_disabled" href="$CANVAS_COURSE_REFERENCE$/groups#tab-114239" target="_blank">$CANVAS_COURSE_REFERENCE$/groups#tab-114239</a><strong>.</strong></li>
+</ol>
+<p> </p>
+<p><span style="font-size: 14pt;"><strong>Set up</strong></span></p>
+<ol>
+<li>Make sure that you have<span> </span><strong>Git </strong>and<span> </span><strong>Java<span> </span></strong>installed.<br/>Git:<span> </span><a class="external" href="https://git-scm.com/" target="_blank"><span>https://git-scm.com/</span><span class="external_link_icon" role="presentation"><span class="screenreader-only">Links to an external site.</span></span></a><br/>Java:<span> </span><a class="external" href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank"><span>http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</span><span class="external_link_icon" role="presentation"><span class="screenreader-only">Links to an external site.</span></span></a></li>
+<li>Clone the triangle git repository:<br/>git clone  <a href="https://github.com/CS-563/triangle.git" target="_blank">https://github.com/CS-563/triangle.git</a> </li>
+<li>In a terminal, switch into the <span style="font-family: 'courier new', courier;">triangle/application</span> directory.</li>
+<li>Read the provided README.md file in that directory.</li>
+<li>Te<span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">st your </span>set up by running <span style="font-family: 'courier new', courier;">./test.sh</span></li>
+<li><span style="font-family: 'courier new', courier;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Familiarize yourself with the triangle program </span>(src/triangle/Triangle.java).</span></li>
+<li><span style="font-family: 'courier new', courier;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Familiarize yourself with the example test suite </span>(test/triangle/test/TriangleTest.java).</span></li>
+<li><span style="font-family: 'courier new', courier;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Run the code coverage analysis </span>(./coverage.sh) <span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">and inspect the report it produces</span> (coverage_results/index.html).</span></li>
+<li><span style="font-family: 'courier new', courier;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Run the mutation analysis </span>(./mutation.sh) <span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">and inspect the set of killed mutants it reports </span>(mutation results/killed.csv).</span></li>
+</ol>
+<p> </p>
+<p><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14pt;"><strong>Writing unit tests</strong></span></p>
+<p><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><strong>Goal: </strong>Develop three (3) test suites that satisfy different (coverage) criteria.</span></p>
+<ol style="list-style-type: decimal;">
+<li><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Develop a test suite that satisfies a statement coverage criterion (i.e., try your best for creating new tests to achieve as close as possible to getting 100% Line Coverage).</span></li>
+<li><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Develop a test suite that satisfies a condition coverage criterion (i.e., try your best for creating new tests to achieve as close as possible to getting 100% Branch Coverage).</span></li>
+<li><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Develop a test suite that is mutation adequate (i.e., try your best for creating new tests to kill/detect all detectable mutants).</span></li>
+</ol>
+<p><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Take notes about how you approach each step; in steps 2 and 3, you may extend the test suite developed in the previous step(s). </span><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><strong><span style="color: #e03e2d;">Make sure to commit each test suite to your cloned repository with a proper commit message. Do not push your changes! </span>only make changes to your working copy by using git commands such as git add, git commit, git rm etc. </strong></span></p>
+<p> </p>
+<p><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14pt;"><strong>Analyses</strong></span></span></p>
+<p><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12pt;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><strong>Goal</strong>: Interpret code coverage and mutation analysis results.</span></span></p>
+<ol style="list-style-type: decimal;">
+<li><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12pt;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Determine the code coverage ratios and mutant detection rates for each of your three developed test suites.</span></span></li>
+<li><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12pt;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Comment out all assertions from your test suites and repeat step 1.</span></span></li>
+</ol>
+<p> </p>
+<p><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12pt;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14pt;"><strong>Questions</strong></span></span></span></p>
+<p><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12pt;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Using your notes and results, answer the following questions:</span></span></span></p>
+<ol style="list-style-type: decimal;">
+<li><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12pt;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Did your approach to writing unit tests differ between developing a coverage-adequate test suite and developing a mutation-adequate test suite? Briefly explain why or why not.</span></span></span></li>
+<li><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12pt;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Do your coverage-adequate test suites detect (i.e., kill) all detectable mutants? Do they cover all mutants (i.e., cover the mutated code)? Briefly explain why or why not?</span></span></span></li>
+<li><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12pt;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">For any given program, why are some mutants not detectable?</span></span></span></li>
+<li><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12pt;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Consider your mutation-adequate test suite and the triangle program. For each undetected mutant, briefly explain why it is not detectable.</span></span></span></li>
+<li><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12pt;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">What changes in the code coverage ratios and mutant detection rates did you observe when commenting out (or deleting) all assertions?</span></span></span></li>
+<li><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12pt;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Create a definition of “test case redundancy” based on code coverage or mutation analysis. Given your definition of test case redundancy, are some of the test cases in your test suites redundant? Given your definition of test case redundancy, would you remove redundant test cases? Briefly explain why or why not.</span></span></span></li>
+</ol>
+<p> </p>
+<p><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12pt;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14pt;"><strong>Deliverables</strong></span></span></span></span></p>
+<p><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12pt;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Your submission, via Canvas, must be a single (one per group) archive (.zip or .tar.gz) file with name <strong>group&lt;your group number&gt;_inclass3.&lt;zip/tar.gz&gt;</strong>, containing:</span></span></span></span></p>
+<ol style="list-style-type: decimal;">
+<li><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12pt;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">answers.txt (or answers.pdf): A plain-text file with your answers to the above 6 questions. <strong>List all group members on top of this file.</strong></span></span></span></span></li>
+<li><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12pt;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">triangle: Your copy of the triangle repository, with your test suites committed. <strong>Note that this should not be the files in the triangle working copy, but instead the repository (which is the .git directory in triangle).<br/></strong> For example, on a Linux-based machine (e.g., MacOS), you can use the terminal from the triangle directory and run the command:<br/><span style="font-family: 'courier new', courier;">tar -vczf triangle.repo.tar.gz .git</span></span></span></span></span></li>
+</ol>
+<p> </p>
+<p><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12pt;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-family: 'courier new', courier;">NOTE: while the rubric below considers total points as 100, the actual score obtained will be normalized to lie in 0-5 range. </span></span></span></span></span></p>
+<p> </p>
+<p><strong><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18pt;">Solution:</span></strong></p>
+<ul>
+<li><span style="font-size: 12pt;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">It is possible to achieve 100% line coverage and 100% branch coverage. As long as you achieve &gt;95% coverage, you get full score. </span></span></li>
+<li><span style="font-size: 12pt;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">It is possible to kill 147/150 mutants. The mutants that cannot be detected are 59, 101, and 136. <br/>There are 6 tricky mutants (11, 76, 87, 111, 128, 145) that most students fail to detect and these require tests for overflow. The following are the tests to detect these mutants. </span></span>
+<p> @Test<br/>    public void killMutant11(){<br/>            Type actual = Triangle.classify((1&lt;&lt;31) | 5, (1&lt;&lt;31) | 6, 10);<br/>            Type expected = INVALID;<br/>            assertEquals(actual, expected);<br/>    }</p>
+<p>    @Test<br/>    public void killMutant76(){<br/>            Type actual = Triangle.classify((1 &lt;&lt; 31) - 2, (1 &lt;&lt; 30), (1 &lt;&lt; 30) - 1);<br/>            Type expected = INVALID;<br/>            assertEquals(actual, expected);<br/>    }</p>
+<p>    @Test<br/>    public void killMutant87(){<br/>            Type actual = Triangle.classify( (1 &lt;&lt; 30), (1 &lt;&lt; 30) - 1, (1 &lt;&lt; 31) - 2);<br/>            Type expected = INVALID;<br/>            assertEquals(actual, expected);<br/>    }</p>
+<p>    @Test<br/>    public void killMutant111(){<br/>            int a = (1 &lt;&lt; 31) - 1;<br/>            int b = (1 &lt;&lt; 31) - 2;<br/>            int c = (1 &lt;&lt; 31) - 1;<br/>            Type actual = Triangle.classify(a, b, c);<br/>            Type expected = INVALID;<br/>            assertEquals(actual, expected);<br/>    }</p>
+<p>    @Test<br/>    public void killMutant128(){<br/>            int a = (1 &lt;&lt; 31) - 2;<br/>            int b = (1 &lt;&lt; 31) - 1;<br/>            int c = (1 &lt;&lt; 31) - 1;<br/>            Type actual = Triangle.classify(a, b, c);<br/>            Type expected = INVALID;<br/>            assertEquals(actual, expected);<br/>    }</p>
+<p>    @Test<br/>    public void killMutant145(){<br/>            int b = (1 &lt;&lt; 31) - 2;<br/>            int a = (1 &lt;&lt; 31) - 1;<br/>            int c = (1 &lt;&lt; 31) - 1;<br/>            Type actual = Triangle.classify(a, b, c);<br/>            Type expected = INVALID;<br/>            assertEquals(actual, expected);<br/>    }</p>
+</li>
+</ul>
+<p><a class="instructure_file_link inline_disabled" data-canvas-previewable="false" href="/~motwanim/courses/cs563_spring2024/web_resources/Uploaded Media/solution.zip" target="_blank" title="solution.zip">solution.zip</a></p>
+</body>
+</html>

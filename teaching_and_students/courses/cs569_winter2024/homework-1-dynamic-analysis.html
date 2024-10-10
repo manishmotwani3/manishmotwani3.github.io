@@ -1,0 +1,140 @@
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Assignment: Homework 1: Dynamic Analysis</title>
+</head>
+<body>
+<p>Due: <strong>Monday, Jan 29, 2024, 11:59 PM PT</strong></p>
+<p>You may work with others on this assignment but each student must submit his or her own write up, clearly specifying the collaborators. The write ups should be individual, not created jointly, and written in the student’s own words. <strong>Late assignments will not be accepted without prior permission.</strong><br/><br/><span style="font-size: 14pt;"><strong>Overview</strong></span></p>
+<p>The goal of this assignment is to learn about dynamic program invariant detection. Specifically, we use a tool called <strong>Daikon</strong> to analyze the invariants in a 2-3-4 tree implementation.</p>
+<p>The assignment consists of:</p>
+<ol style="list-style-type: decimal;">
+<li>Installing and using Daikon to dynamically detect program invariants of a 2-3-4 tree implementation.</li>
+<li>Answering problem questions about Daikon and the detected invariants.</li>
+</ol>
+<p> </p>
+<p><span style="font-size: 14pt;"><strong>Resources</strong></span></p>
+<ul style="list-style-type: square;">
+<li>The Daikon Invariant Detector User Manual: <a href="http://plse.cs.washington.edu/daikon/download/doc/daikon.html" target="_blank">http://plse.cs.washington.edu/daikon/download/doc/daikon.html</a> (Sections 3.1 and 5.2-5.5 can be helpful for understanding the output.)</li>
+<li>Install Daikon by following the instructions in the <strong>Section 2.2</strong> at <a href="https://plse.cs.washington.edu/daikon/download/doc/daikon.html#Installing-Daikon" target="_blank">https://plse.cs.washington.edu/daikon/download/doc/daikon.html#Installing-Daikon.</a> <strong>Only perform steps 1 and 2 for the installation</strong>. </li>
+</ul>
+<ul>
+<li>Download the following:
+<ul>
+<li>The source code for 2-3-4 tree, including tests:
+<ul>
+<li><a class="instructure_file_link instructure_scribd_file inline_disabled" data-api-endpoint="https://canvas.oregonstate.edu/api/v1/courses/1964338/files/102655726" data-api-returntype="File" data-canvas-previewable="false" href="/~motwanim/courses/cs569_winter2024/web_resources/Uploaded Media/TwoThreeFourIntSet.java" target="_blank" title="TwoThreeFourIntSet.java"> TwoThreeFourIntSet.java </a></li>
+<li><a class="instructure_file_link instructure_scribd_file inline_disabled" data-api-endpoint="https://canvas.oregonstate.edu/api/v1/courses/1964338/files/102655727" data-api-returntype="File" data-canvas-previewable="false" href="/~motwanim/courses/cs569_winter2024/web_resources/Uploaded Media/IntNode.java" target="_blank" title="IntNode.java">IntNode.java</a></li>
+<li><a class="instructure_file_link instructure_scribd_file inline_disabled" data-api-endpoint="https://canvas.oregonstate.edu/api/v1/courses/1964338/files/102655728" data-api-returntype="File" data-canvas-previewable="false" href="/~motwanim/courses/cs569_winter2024/web_resources/Uploaded Media/TwoThreeFourTester.java" target="_blank" title="TwoThreeFourTester.java">TwoThreeFourTester.java</a></li>
+</ul>
+</li>
+<li>Input test data for the 2-3-4 set test driver:
+<ul>
+<li><a class="instructure_file_link instructure_scribd_file inline_disabled" data-api-endpoint="https://canvas.oregonstate.edu/api/v1/courses/1964338/files/102655714" data-api-returntype="File" data-canvas-previewable="false" href="/~motwanim/courses/cs569_winter2024/web_resources/Uploaded Media/input1.txt" target="_blank" title="input1.txt">input1.txt</a></li>
+<li><a class="instructure_file_link instructure_scribd_file inline_disabled" data-api-endpoint="https://canvas.oregonstate.edu/api/v1/courses/1964338/files/102655723" data-api-returntype="File" data-canvas-previewable="false" href="/~motwanim/courses/cs569_winter2024/web_resources/Uploaded Media/input2.txt" target="_blank" title="input2.txt">input2.txt</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><span style="font-size: 14pt;"><strong><br/>Background on 2-3-4 trees</strong></span></p>
+<p>The test program implements a multiset data structure for <span style="font-size: 10pt; font-family: 'courier new', courier; color: #236fa1;"><strong>int</strong></span> values, backed by a 2-3-4 tree. If you are familiar with B-Trees, a 2-3-4 is just a special case of a B-Tree with order 4. More information is available at <a href="http://en.wikipedia.org/wiki/2-3-4_tree" target="_blank">http://en.wikipedia.org/wiki/2-3-4_tree.</a> </p>
+<p>A 2-3-4 tree is a self-balancing, n-way search tree. Like a binary tree, it consists of nodes with children. Unlike a binary tree, each node may have more than just a left child and a right child; each node of a 2-3-4 tree may have 2, 3, or 4 children. Instead of a single element at each non-root node, a node may have anywhere from 1 to 3 elements contained within it. Elements are stored in a node in sorted order.</p>
+<p>A 2-node is just like a binary tree node with a single element <em>x</em>, with a left child <em>L</em> and right child <em>R</em>. Each child node is the root of a subtree. All elements in <em>L</em> and its descendants are less than or equal to <em>x</em>, and all elements in <em>R</em> and its descendants are greater than or equal to <em>x</em>. A 3-node contains 2 elements <em>x<sub>1</sub> </em>and <em>x<sub>2</sub></em>, with children left <em>L</em>, middle <em>M</em>, and right <em>R</em>. Elements in <em>L</em>’s subtree are all less than or equal to <em>x<sub>1</sub></em>, elements in <em>M</em>’s subtree are greater than or equal to <em>x<sub>1</sub> </em>and less than or equal to <em>x<sub>2</sub></em>, and elements in <em>R’</em>s subtree are all greater than or equal to <em>x<sub>2</sub></em>. A 4-node contains 3 elements, with a left, left-middle, right-middle, and right child, with similar bounds on the ranges of elements in the child subtrees.</p>
+<p>A 2-3-4 tree avoids imbalanced subtrees by moving elements and children between nodes in the tree whenever an element is added or removed. The algorithms for adding and removing elements can be quite involved because of the large number of special cases. For this assignment, you should not need to know how these rearranging algorithms work (although knowing how they work may be helpful); you should be able to answer the questions by thinking of the tree simply as a balanced n-way tree.</p>
+<p> </p>
+<p><span style="font-size: 14pt;"><strong>Setup</strong></span></p>
+<p>daikon.jar contains all of Daikon’s executables. It is known to work under Oracle (Sun) JRE 1.7 and above. <strong>If you are using the outdated Java 1.6 (a.k.a. Java 6) or earlier, please upgrade). </strong>Daikon supports multiple programming languages, but we will only be using the Java front end to Daikon, called Chicory.</p>
+<p>Run Daikon using these three steps:</p>
+<ol style="list-style-type: decimal;">
+<li>Compile the .java files with the following command line (with -g to include debugging symbols):<br/><strong><span style="font-family: 'courier new', courier; font-size: 10pt; color: #236fa1;">javac -g -source 8 -target 8 IntNode.java TwoThreeFourIntSet.java TwoThreeFourTester.java<br/><br/></span></strong></li>
+<li>Have Chicory run the program (TwoThreeFourTester), and Chicory will record the values of variables it observes into <span style="font-size: 10pt; font-family: 'courier new', courier; color: #236fa1;"><strong>.dtrace.gz</strong></span> file. Chicory’s arguments are the Java class name and the command line arguments to be passed to that Java program. (Notes: The<span style="font-size: 10pt; font-family: 'courier new', courier;"><strong><span style="color: #236fa1;"> --</span></strong></span> is important in the line below to tell Chicory to pass the <span style="color: #236fa1; font-family: 'courier new', courier;"><strong><span style="font-size: 10pt;">--file</span> </strong></span>flag to TwoThreeFourTester instead of trying to parse it as a Daikon flag. <span style="font-size: 10pt; font-family: 'courier new', courier;"><strong><span style="color: #236fa1;">input#.txt</span></strong></span> will be a file specified by one of the problem statements below.)<span>Execute the  command below in the directory where the java and input files are present.</span><br/><strong><span style="color: #236fa1; font-family: 'courier new', courier; font-size: 10pt;">java -cp <span>"$DAIKONDIR/daikon.jar:$PWD" daikon.Chicory TwoThreeFourTester -- --file=input#.txt</span><br/><br/></span></strong></li>
+<li>Have Daikon read all the observed values and analyze the data, looking for statistically significant invariants. Daikon stores all these likely invariants into a binary format in a compressed <span style="font-family: 'courier new', courier; font-size: 10pt;"><strong><span style="color: #236fa1;">.inv.gz</span></strong></span> file. This command also stores them in a human-readable txt file that you will analyze and submit. For TwoThreeFourTester, this step may take over a minute. (Note: <span style="color: #236fa1; font-size: 10pt; font-family: 'courier new', courier;"><strong>output#.txt </strong></span>will be a file specified by one of the problem statements below.)<br/><strong><span style="color: #236fa1; font-family: 'courier new', courier; font-size: 10pt;">java -cp "$DAIKONDIR/daikon.jar:$PWD" daikon.Daikon TwoThreeFourTester.dtrace.gz &gt; output#.txt<br/></span></strong><strong></strong></li>
+</ol>
+<p><span style="font-size: 14pt;"><strong>Problem questions</strong></span></p>
+<p>The test driver takes a script file as input containing instructions for adding (ADD), removing (REMOVE), and querying the tree. When querying the tree, a script may check if a single element is present (CONTAINS), find out how many elements are present (SIZE), or check how deep the tree is based on distances from the root to childless leaves (HEIGHT). The contents of the tree may also be printed (PRINT), with parentheses depicting the levels of the tree.</p>
+<ol style="list-style-type: decimal;">
+<li>Run the test driver with the <span style="font-size: 10pt; font-family: 'courier new', courier;"><span style="color: #236fa1;"><strong>input1.txt</strong></span> </span>as input. Save the output of PrintInvariants as <span style="font-size: 10pt; font-family: 'courier new', courier;"><strong><span style="color: #236fa1;">output1.txt,</span></strong></span> and examine the likely global invariants found for <span style="font-size: 10pt; font-family: 'courier new', courier;"><strong><span style="color: #236fa1;">IntNode:::OBJECT</span></strong></span>, which hold at every entrance and exit for every public method of the <span style="color: #236fa1; font-size: 10pt; font-family: 'courier new', courier;"><strong>IntNode</strong></span> class. For each of the first 5 invariants, answer the following questions:
+<ol style="list-style-type: upper-alpha;">
+<li>In plain English, what does the likely invariant mean?</li>
+<li>Is it really an invariant of the program, regardless of input? If not, explain why Daikon reports the false invariant. (Note: You do not need to consider inputs that try to cause crashes, e.g., ignore "out of memory" errors and integer overflow.)<br/><br/></li>
+</ol>
+</li>
+<li>Run the test driver with the file <span style="color: #236fa1; font-size: 10pt; font-family: 'courier new', courier;"><strong>input2.txt</strong></span> as input, and save the output of PrintInvariants as <span style="font-size: 10pt; font-family: 'courier new', courier;"><strong><span style="color: #236fa1;">output2.txt</span></strong></span>. The invariants found for the different inputs will be slightly different. Each of the likely invariants below appears in <span style="color: #236fa1; font-size: 10pt; font-family: 'courier new', courier;"><strong>output1.txt </strong></span>but was either changed or removed in <span style="color: #236fa1; font-size: 10pt; font-family: 'courier new', courier;"><strong>output2.txt</strong></span>. For each (there are a total of four), explain why Daikon found a different invariant or did not find the invariant in <span style="color: #236fa1; font-size: 10pt; font-family: 'courier new', courier;"><strong>output2.txt</strong></span>, and whether the invariant is true.
+<ol style="list-style-type: upper-alpha;">
+<li><strong><span style="font-size: 10pt; color: #236fa1; font-family: 'courier new', courier;">TwoThreeFourIntSet.containsRecursive(IntNode, int):::ENTER</span></strong><br/><strong><span style="font-size: 10pt; color: #236fa1; font-family: 'courier new', courier;">– node != null</span></strong></li>
+<li><span style="font-size: 10pt; font-family: 'courier new', courier;"><strong><span style="color: #236fa1;">TwoThreeFourIntSet.height():::EXIT</span></strong></span><br/><span style="font-size: 10pt; font-family: 'courier new', courier;"><strong><span style="color: #236fa1;">– return one of {1,2,3}</span></strong></span><br/><span style="font-size: 10pt; font-family: 'courier new', courier;"><strong><span style="color: #236fa1;">– this.root.elements[] elements &lt; this.size</span></strong></span></li>
+<li><span style="color: #236fa1; font-size: 10pt; font-family: 'courier new', courier;"><strong>TwoThreeFourIntSet.remove(int):::EXIT</strong></span><br/><span style="color: #236fa1; font-size: 10pt; font-family: 'courier new', courier;"><strong>– return == true<br/><br/></strong></span></li>
+</ol>
+</li>
+<li>For <span style="color: #236fa1; font-family: 'courier new', courier; font-size: 10pt;"><strong>input2.txt</strong></span>, Daikon found a likely invariant for <span style="color: #000000; font-family: 'courier new', courier;"><strong><span style="font-size: 10pt;"><span style="color: #236fa1;">TwoThreeFourIntSet.height()</span> </span></strong></span>that relates the height of the tree to the size in number of elements in the tree. The likely invariant is actually incorrect but even if it were, since a 2-3-4 tree is self balancing, a correct tighter bound exists relating size and height. Daikon does not support looking for such an invariant. Describe a generic invariant that can be added to Daikon that would allow it to report this height invariant. (Hint: Think about <strong>lower</strong> and <strong>upper</strong> bounds that can be found for balanced binary trees such as a red-black tree.)</li>
+</ol>
+<p> </p>
+<p><span style="font-size: 14pt;"><strong>Deliverables</strong></span></p>
+<p>Write the answers to the problem questions in either <strong>writeup.txt</strong> or <strong>writeup.pdf</strong>. <strong>Include your name in this file. </strong></p>
+<p>Compress the following three files into a single <strong>.zip</strong> archive (call it <strong>daikon_lastname.zip</strong>) and upload it.</p>
+<ol style="list-style-type: decimal;">
+<li>writeup.txt or writeup.pdf</li>
+<li>output1.txt</li>
+<li>output2.txt</li>
+</ol>
+<p>Note that one of the things we’ll be looking for is that you pay attention to details. We will grade aspects of the homework such as being clear in your writeup, and naming the submitted files correctly. <strong>You may use any resource you wish in this assignment but you must list your collaborators and cite all your sources. Failure to do so will result in a grade of 0.</strong></p>
+<p> </p>
+<p><span style="font-size: 14pt;"><strong>Helpful hints</strong></span></p>
+<ul>
+<li>The questions can be solved by observing the input, but if you want to dig deeper into the individual invariants, you can follow Daikon as it tries to invalidate individual invariants. Using the invariant classes from Section 5.5 of the manual, use a variant of the following command line:<br/><span style="color: #236fa1; font-size: 10pt; font-family: 'comic sans ms', sans-serif;"><strong>java -cp .:daikon.jar daikon.Daikon TwoThreeFourTester.dtrace.gz --track "NonZero&lt;return&gt;@IntNode.size(int):::ENTER"</strong></span></li>
+<li>The recorded observations are human readable once decompressed. If you are stuck, try looking at the trace file with the following command line:<br/><span style="color: #236fa1; font-size: 10pt; font-family: 'courier new', courier;"><strong>gunzip -c TwoThreeFourTester.dtrace.gz | less</strong></span><strong></strong></li>
+</ul>
+<p> </p>
+<h2><span style="color: #000000; font-size: 18pt; font-family: 'courier new', courier;"><strong>Solutions</strong></span></h2>
+<div><strong>Q1 </strong>Run the test driver with the input1.txt as input. Save the output of PrintInvariants as output1.txt, and examine the likely global invariants found for IntNode:::OBJECT, which hold at every  entrance and exit for every public method of the IntNode class. For each of the first 5 invariants, answer the following questions:</div>
+<div>(a)  In plain English, what does the likely invariant mean?</div>
+<div>(b)  Is it really an invariant of the program, regardless of input? If not, explain why Daikon reports the false invariant. (Note: You do not need to consider inputs that try to cause crashes, e.g., ignore “out of memory” errors and integer overflow.)  </div>
+<div><strong><br/>Solution</strong>:</div>
+<div>Below mentioned is the list of first 7 invariants along with their meaning in plain English obtained after running Daikon for input1.txt. Out of these 1,4,5,6,7 are the first 5 invariants that hold true at every entrance and exit of every public method of IntNode class irrespective of the input files. This is because these are based on the way classes and variables are defined or initialized using constructors. The invariants 2, 3 are specific to inputs given to the program. In case of input1.txt the elements added to the tree are all positive with no duplicates therefore Daikon generates invariants 2 and 3. However, these get falsified when we run Daikon for input2.txt.</div>
+<div><br/>1. this.elements != null                                                                               The "elements" array has been initialized and is not null.</div>
+<div>2. this.elements[] elements &gt;= 0                                                               The values of all the elements of "elements" array are non negative.(This invariant holds true for input1.txt)</div>
+<div>3. this.elements[] sorted by &lt;                                                                    The values of the elements of "elements" array are sorted in ascending order. (This invariant holds true for input1.txt)</div>
+<div>4. this.children != null                                                                                 The "children" array has been initialized and is not null.</div>
+<div>5. this.children.getClass().getName() == IntNode[].class                         The  runtime class of "children" array is IntNode</div>
+<div>6. this.children[] elements != null                                                              This elements of "children" array are not null.</div>
+<div>7. this.children[].getClass().getName() elements == IntNode.class        The runtime class of elements of "children" array is IntNode</div>
+<div><strong><br/>------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</strong></div>
+<div><strong><br/>Q2 </strong>Run the test driver with the file input2.txt as input, and save the output of PrintInvariants as output2.txt. The invariants found for the different inputs will be slightly different. Each of the likely invariants below appears in output1.txt but was either changed or removed in output2.txt. For each (there are a total of four), explain why Daikon found a different invariant or did not find the invariant in output2.txt, and whether the invariant is true.</div>
+<div><strong><br/>Solution</strong>:</div>
+<div><br/>The answer to this question is based on following paragraph:</div>
+<div>"An invariant is considered justified and reported only if three separate tests are satisfied.First, there must be a sufficient number of samples of the variables to be tested, regardless of how many contribute to confidence. Second, there must be a sufficient number of samples (exceeding a specific absolute bound) that contribute to confidence. (A variable such as a global constant that is set just once on program initialization is treated specially for the above tests. If there are many runs in the test suite, this isn’t an issue.) Third, the statistical confidence in the invariant must exceed the user-specified bound. The first two tests are inexpensive and may prevent the invariant from being tested at all." [1]</div>
+<div><br/>(a) TwoThreeFourIntSet.containsRecursive(IntNode, int):::ENTER</div>
+<div>– node != null</div>
+<div>This likely invariant gets removed in output2.txt. The probable reason for not finding it using input2.txt samples could be lack of sufficient number of samples that contribute to the computation of confidence of invariant. This is because "contains" method is called only once in input2.txt. It turns out that we need to invoke "contains" atleast twice for the above likely invariant to appear. This was verified by modifying input2.txt to have one more "contains". The invariant is a true invariant.</div>
+<div><br/>(b) TwoThreeFourIntSet.height():::EXIT</div>
+<div>– return one of {1, 2, 3}</div>
+<div>This invariant gets changed to "return one of {4, 5, 6}". The samples in input2.txt result in the value of HEIGHT to belong to the set {4 ,5, 6} whereas for input1.txt samples, it belongs to {1, 2, 3}. </div>
+<div>Therefore Daikon changes this invariant. This is a false invariant as it doesn't generalize for all different inputs. </div>
+<div><br/>– this.root.elements[] elements &lt; this.size</div>
+<div>In case of input1.txt, the value of elements in "elements" array start from 0 and increases incrementally by 1. The "size" is also incremented by 1 after addition of every element in "elements" array.</div>
+<div>The value of "size" at any point of time is equal to the value of last element of "elements" array plus one. This results into a relation between "elements" values and "size", where all elements are always less than "size". Therefore Daikon generates the above likely invariant in output1.txt. In case of input2.txt, the element values added are random because of which this invariant gets falsified and hence does not appear in output2.txt. Thus, its a false invariant. </div>
+<div> </div>
+<div>(c) TwoThreeFourIntSet.remove(int):::EXIT</div>
+<div>– return == true</div>
+<div>The input2.txt test samples never invokes "remove" method. Therefore Daikon does not generate any invariants for the "TwoThreeFourIntSet.remove(int)" method. For input1.txt the test samples always results in successful removal of an element as the element to be removed always exist. Therefore Daikon generates "return = true" as likely invariant although its also a false invariant.</div>
+<div><strong>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</strong></div>
+<div><strong>Q3</strong> For input2.txt, Daikon found a likely invariant for TwoThreeFourIntSet.height() that relates the height of the tree to the size in number of elements in the tree. The likely invariant is actually incorrect but even if it were, since a 2-3-4 tree is self balancing, a correct tighter bound exists relating size and height. Daikon does not support looking for such an invariant. Describe a generic invariant that can be added to Daikon that would allow it to report this height invariant. (Hint: Think about bounds that can be found for balanced binary trees such as a red-black tree.)</div>
+<div><strong><br/>Solution</strong>:</div>
+<div><br/>The height H and size of a balanced B-Tree N of order m (where m&gt;=3) are related as: <br/><span style="color: var(--ic-brand-font-color-dark); font-family: inherit; font-size: 1rem;"><br/>log[base m](N+1) &lt;= H &lt;= 1 + log[base ceiling(m/2)](N+1)/2 [2]</span></div>
+<div><br/>A 2-3-4 is a B-Tree with order 4 (=&gt; m=4). Therefore the relationship between H and N becomes:</div>
+<div><span>   log[base 4](N+1) &lt;= H &lt;= 1 + log[base 2](N+1)/2</span></div>
+<div>        = 1/2 * log[base 2](N+1) &lt;= H &lt;= log[base 2](N+1)</div>
+<div>        = 1/2*log(N+1) &lt;= H &lt;= log(N+1)</div>
+<div>We can add the above generic invariant in Daikon by extending its abstract class twoScalar as mentioned in [3] so that we obtain the following two invariants from the given program and test samples.</div>
+<div> </div>
+<div>The above generic invariant is represented in terms of the variables and classes used in Java implementation of 2-3-4 Tree as:</div>
+<div><span> 1/2*log(this.size + 1) &lt;= this.height</span></div>
+<div><span> this.height &lt;= log(this.size + 1)</span></div>
+<div><strong>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</strong></div>
+<div>REFERENCES</div>
+<div>[1] https://homes.cs.washington.edu/~mernst/pubs/invariants-ernst-phdthesis.pdf</div>
+<div>[2] https://www.cs.purdue.edu/homes/bertino/348Spring2012/B-Trees%20and%20B+Trees.pdf</div>
+<div>[3] http://plse.cs.washington.edu/daikon/download/doc/developer/Extending-Daikon.html#New-invariants</div>
+</body>
+</html>

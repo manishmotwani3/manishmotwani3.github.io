@@ -1,0 +1,110 @@
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Assignment: In-class Exercise #1: Advanced Uses of Git</title>
+</head>
+<body>
+<p><span>Due:</span><span> <strong>Sunday</strong></span><strong>, April 21, 2024, 11:59 PM PT</strong></p>
+<p>This in-class exercise is a group submission. This means that each group only needs to submit their solution once and also that every student in a group will get the same grade.</p>
+<p> </p>
+<h4><strong>Overview and goal</strong></h4>
+<p>The high-level goal of this exercise is to gain more experience with Git, in particular working with branches, cherry-picking commits, and understanding the difference between <em><strong>reset</strong></em>, <strong><em>rebase</em></strong>, and <strong><em>revert</em></strong>.</p>
+<p> </p>
+<h4><strong>What to do?</strong></h4>
+<p>Ask me to adding your GitHub username (if not done already) to <a class="inline_disabled" href="https://github.com/CS-563/basic-stats" target="_blank">https://github.com/CS-563/basic-stats</a></p>
+<p> </p>
+<p><strong>Forming groups</strong></p>
+<ol style="list-style-type: decimal;">
+<li>Team up in groups of size 2. (If you cannot find a teammate, raise your hand and ask the instructor.)</li>
+<li>Add all the group members on Canvas at <a class="inline_disabled" href="$CANVAS_COURSE_REFERENCE$/groups#tab-113603" target="_blank">$CANVAS_COURSE_REFERENCE$/groups#tab-113603</a>.</li>
+</ol>
+<p> </p>
+<p><strong>Set up</strong></p>
+<ol style="list-style-type: decimal;">
+<li>Check if you are using newer version of git (version ≥ 2.34.0). Update your git if needed.</li>
+<li>Clone the basic-stats git repository: <br/><span style="font-family: 'courier new', courier;">git clone <a href="https://github.com/CS-563/basic-stats" target="_blank">https://github.com/CS-563/basic-stats</a></span></li>
+<li>Create a (second) local fork by locally cloning again, this time from the first local clone:<br/><span style="font-family: 'courier new', courier;">git clone basic-stats basic-stats-fork</span></li>
+</ol>
+<p> </p>
+<p><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><strong>Branching and cherry-picking</strong></span></p>
+<p><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><strong>Goal:</strong> Cherry-pick changes to a particular file from a different branch.</span></p>
+<ol style="list-style-type: decimal;">
+<li>In <strong>basic-stats-fork</strong>, checkout the tagged version <strong>v1.0.0</strong> and create a branch, named <strong>feature-branch</strong>.<br/>Visualize the relationship between feature-branch and master.<br/><strong>USEFUL TIP</strong>: Use options available for <strong>git log</strong> command, such as <strong>--graph</strong> and -<strong>-oneline</strong>, or use an external tool, such as gitk or SourceTree.</li>
+<li>Familiarize yourself with the <strong>cherry-pick </strong>command.<br/><strong>USEFUL RESOURCE: </strong><a class="inline_disabled" href="http://think-like-a-git.net/sections/rebase-from-the-ground-up/cherry-picking-explained.html" target="_blank">http://think-like-a-git.net/sections/rebase-from-the-ground-up/cherry-picking-explained.html</a></li>
+<li>Determine all commits in the <strong>master</strong> branch that affect <strong>README.md </strong>and note their commit hashes.<br/><strong>USEFUL TIP:</strong> A commit may affect files other than <strong>README.md</strong>.</li>
+<li>Cherry-pick all of the commits from master that do not already exist in feature-branch. Note the number of commits, and visualize the relationship between feature-branch and master after cherry-picking.<br/><strong>USEFUL TIP:</strong> If you are seeing a conflict when cherry-picking, you are doing something wrong.<br/>Consider:<br/>• Are you in the basic-stats-fork directory?<br/>• Did you checkout the tagged version? Are you on the feature-branch?<br/>• Is the commit-hash used for cherry-pick applicable to README.md?<br/>• Are the commits applied to README.md in the correct chronological order?</li>
+<li>Push <strong>feature-branch</strong> back to <strong>basic-stats</strong>:<br/><span style="font-family: 'courier new', courier;">git push --set-upstream origin feature-branch</span><br/><strong>USEFUL TIP:</strong> Verify that the <strong>feature-branch</strong> is reflected in <strong>basic-stats</strong> repository.</li>
+</ol>
+<p> </p>
+<p><strong>Rebasing</strong><br/><strong>Goal:</strong> Squash multiple commits into one commit.</p>
+<ol style="list-style-type: decimal;">
+<li>Familiarize yourself with the rebase command.<br/><strong>USEFUL RESOURCE:</strong> <a class="inline_disabled" href="https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase" target="_blank">https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase</a></li>
+<li>In <strong>basic-stats-fork</strong> (feature-branch), rebase and squash the last 4 commits:<br/><span style="font-family: 'courier new', courier;">git rebase -i HEAD˜4</span></li>
+<li><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Verify the result with <span style="font-family: 'courier new', courier;">git log </span>(visualize the relationship between <strong>feature-branch</strong> and <strong>master</strong> after rebasing).<br/><strong>USEFUL TIP: </strong>Did you choose the correct option for each of the four commits in a file that pops up while running the <strong>rebase</strong> command in previous step?</span></li>
+<li><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Run <span style="font-family: 'courier new', courier;">git status</span> and discuss the risks of rebasing. What happens if you pull from another repository?</span></li>
+<li><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Pull from <strong>basic-stats </strong>and run <span style="font-family: 'courier new', courier;">git log</span> again (visualize the relationship between <strong>feature-branch</strong> and <strong>master</strong> after pulling).</span></li>
+<li><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Do <span style="font-family: 'courier new', courier;">git push</span> to push your changes to the <strong>basic-stats.</strong></span></li>
+<li><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">In <strong>basic-stats</strong>, checkout the <strong>feature-branch </strong>branch and verify that changes pushed are reflected.</span></li>
+</ol>
+<p> </p>
+<p><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><strong>Resetting and reverting</strong><br/><strong>Goal:</strong> Undo a commit before/after it is pushed. Answering questions</span></p>
+<ol style="list-style-type: decimal;">
+<li><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Familiarize yourself with the <span style="font-family: 'courier new', courier;">reset</span> and <span style="font-family: 'courier new', courier;">revert</span> commands.</span></li>
+<li><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">In <strong>basic-stats-fork</strong>, checkout the <strong>master</strong> branch:<br/><span style="font-family: 'courier new', courier;">git checkout master</span></span></li>
+<li><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Edit the <strong>README.md</strong> file, and commit your change.</span></li>
+<li><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Use reset to undo the commit:<br/><span style="font-family: 'courier new', courier;">git reset HEAD˜1<br/><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><strong>USEFUL TIP:</strong> Do not push your changes to the repository; only commit your changes.</span><br/></span></span></li>
+<li><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Make further edits to the <strong>README.md</strong> file, and <strong><span style="font-family: 'courier new', courier;">commit</span></strong> and <strong><span style="font-family: 'courier new', courier;">push</span></strong> your change.</span></li>
+<li><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Discuss the risks of resetting at this point. What happens if you pull from another repository?</span></li>
+<li><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Use the <span style="font-family: 'courier new', courier;">revert</span> command to undo your commit.</span></li>
+<li><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Verify the result with <span style="font-family: 'courier new', courier;">git log.</span></span></li>
+</ol>
+<p> </p>
+<h4><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><strong>Questions</strong></span></h4>
+<h4><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Using your notes and results, and answer the following questions:</span></h4>
+<ol style="list-style-type: decimal;">
+<li><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">How many commits did you cherry-pick?</span></li>
+<li><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Are the commit hashes of the cherry-picked commits identical in master and feature-branch? Briefly explain why.</span></li>
+<li><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">What happens if you merge a branch from which you previously cherry-picked single commits? How often do the cherry-picked commits appear in the history Briefly explain why.</span></li>
+<li><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">What are the risks of rebasing? Briefly describe a use case in which rebasing can be safely applied.</span></li>
+<li><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">What are the risks of using reset when a commit has already been pushed?</span></li>
+<li><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Does revert remove the reverted commit? Briefly explain how revert works.</span></li>
+</ol>
+<p> </p>
+<p> </p>
+<h4><strong>Deliverables</strong></h4>
+<p>Your submission, via Canvas, must be a single (one per group) archive (.zip, .tar, or .tar.gz) file, containing:</p>
+<ol style="list-style-type: decimal;">
+<li><strong>answers.txt: </strong>A plain-text file with your answers to the above 6 questions. <strong>List all group members on top of this file.</strong></li>
+<li><strong>relationships:</strong> A file that shows the visualized relationships (ascii art, diagram, picture, etc.).</li>
+<li><strong>basic-stats:</strong> The basic-stats repository. Note that this should not be the files in the basic-stats working copy, but instead the <strong>repository</strong> (which is the .git directory in basic-stats.). For example, on a Linux-based machine (e.g., MacOS), you can use the terminal from the basic-stats directory and run the command<br/><span style="font-family: 'courier new', courier;">tar -vczf basic-stats.tar.gz .git</span></li>
+<li><strong>basic-stats-fork: </strong>The basic-stats-fork repository. Note that this should not be the files in the basic-stats-fork working copy, but instead the repository (which is the .git directory in basic-stats-fork.) For example, on a Linux-based machine (e.g., MacOS), you can use the terminal from the basic-stats-fork directory and run the command<br/><span style="font-family: 'courier new', courier;">tar -vczf basic-stats-fork.tar.gz .git</span></li>
+</ol>
+<p> </p>
+<p><strong><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">NOTE:  The rubric below mentions 25 points for this assignment, but it is for the ease of grading. The total points scored by the student will be normalized to range from 0-5. </span></strong></p>
+<p> </p>
+<h3><strong><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Solution</span></strong></h3>
+<ol style="list-style-type: decimal;">
+<li><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><strong>How many commits did you cherry-pick?</strong><br/></span><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">14 (use the following commands to view the commits)<br/></span></span>
+<pre>git log master  --oneline --follow README.md <span class="c1">#(commits made in master) (16 commits)</span>
+git log feature-branch  --oneline --follow README.md <span class="c1">#(commits made in feature-branch) (2 commits)</span>
+git log feature-branch..master --follow README.md <span class="c1">#(commits made in master that do not exist in feature-branch) (14 commits)<br/></span></pre>
+<pre>git log feature-branch..master --reverse --follow README.md <span class="c1">#(see commits in reverse direction)</span>
+git log feature-branch..master --reverse --format<span class="o">=</span>format:%H --follow README.md  <span class="c1">#(get only the commit hashes) (see https://git-scm.com/docs/pretty-formats for formatting options)</span>
+git log feature-branch..master --reverse --format<span class="o">=</span>format:%H --follow README.md <span class="p">|</span> xargs git cherry-pick <span class="c1">#(apply the commits to local file)</span> </pre>
+</li>
+<li><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><strong>Are the commit hashes of the cherry-picked commits identical in master and feature-branch? Briefly explain why.</strong><br/>No, these are different commit objects with different hashes. A commit object not only contains the changes made to the file system but it also has a notion of a parent commit object and a time stamp (as well as other meta data). While the diffs of both commit objects are identical between the two sets of commits, the parent relationship differs (as well as the time stamp/meta data).<br/><br/></span></li>
+<li><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><strong>What happens if you merge a branch from which you previously cherry-picked single commits? How often do the cherry-picked commits appear in the history Briefly explain why.</strong><br/> Assuming no merge conflicts, git creates a new commit object C whose parents are the commits at the tips of the merged branches. The merge command will consider the content in both branches to be merged and as long as there is no conflicting information will bring all content into the content of C. These branches remain unchanged so that two copies of the cherry-picked commit objects will exist.<br/><br/></span></li>
+<li><strong><strong><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">What are the risks of rebasing? Briefly describe a use case in which rebasing can be safely applied.<br/></span></strong></strong>
+<p>Rebasing can change a commit history. If this branch is tracked by another repository then this may eventually lead to a merge conflict (e.g., after the rebased branch is pushed back to the remote). This can be resolved but the resolution in turn may affect other repos downstream from the remote (if they are also tracking the affected branch). If there are a large number of  contributers this can be difficult or impossible to coordinate.  Thus a rebase on a remotely-tracked branch should only be done when all remote repositories are synchronized and with proper notification to all affected parties.<br/>   <br/>An additional risk is that information may be lost this way (and may not be retrievable). This is one of Git's "Dangerous Commands".</p>
+<p>Rebasing is generally safe if done locally before any commit is publicized. For example, you may want to make many small, atomic commits locally to keep track of your changes, and after you have completed your work you want to squash all these commits into one commit that represents the addition of an entire feature.</p>
+<p>Another concrete use case where rebase is safe is as follows:<br/>You fork a repository from GitHub and clone your forked copy (note that fork makes a new repository on GitHub that you then need to clone to your own  computer...). You are working on master when you decide to create a new  feature-branch to add a feature.  While working you discover a bug and create branch bugfix and make several commits, ultimately fixing the bug. You have meanwhile made two more commits to feature-branch. First you want to squash the bugfix commits so from the bugfix branch you issue</p>
+<p><span style="font-family: 'courier new', courier;">git rebase -i feature-branch..bugfix </span># This chooses all commits visible by bugfix but not by feature-branch. This is common git syntax - know it and love it!<br/>and squash everything down into a single commit. You then call rebase again, issuing</p>
+<p><span style="font-family: 'courier new', courier;">git rebase feature-branch</span><br/><span style="font-family: 'courier new', courier;">git checkout feature-branch</span><br/><span style="font-family: 'courier new', courier;">git merge bugfix</span></p>
+<p>Thus your feature branch now contains a single commit fixing the bug. To remove the bugfix branch you issue a</p>
+<p><span style="font-family: 'courier new', courier;">git branch -d bugfix</span></p>
+<strong></strong></li>
+<li><strong><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">What are the risks of using reset when a commit has already been pushed?<br/></span></strong><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Similar to rebase, this changes the commit history, in this case by removing commit objects from the history. This is fine if no other repositories are tracking this commit but if a commit has been pushed to a  remote then as above this can be tricky to reset. First, you will have to force the removed commits to be removed from the remotes and this in turn may break work that other contributors have done on top of the removed commits.</span><strong><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><br/><br/></span></strong></li>
+<li><strong><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Does revert remove the reverted commit? Briefly explain how revert works.<br/></span></strong><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Revert makes a <em><strong>new</strong></em> commit object with identical content to a previous commit but with a different parent commit object. This does not alter the commit history and is safe even if other repos are tracking a branch - you are only adding to the commit history and thus will not be removing commits that others depend upon. Note that you still may have a merge conflict.</span><strong><span style="font-family: lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;"><br/></span></strong></li>
+</ol>
+</body>
+</html>

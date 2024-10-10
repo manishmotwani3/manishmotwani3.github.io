@@ -1,0 +1,118 @@
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Assignment: In-class Exercise #2: Software Debugging using Git</title>
+</head>
+<body>
+<p><span>Due:</span><span> <strong>Tuesday</strong></span><strong>, April 30, 2024, 11:59 PM PT</strong></p>
+<p>This in-class exercise is a group submission. This means that each group only needs to submit their solution once and also that every student in a group will get the same grade.</p>
+<p> </p>
+<h4><strong>Overview and goal</strong></h4>
+<p>The high-level goal of this exercise is to learn about systematic debugging and to identify and minimize a defect-inducing commit in the version control history of a project.</p>
+<p> </p>
+<h4><strong>What to do?</strong></h4>
+<p>Ask me to adding your GitHub username (if not done already) to<span> </span><a class="inline_disabled external" href="https://github.com/CS-563/basic-stats" target="_blank"><span>https://github.com/CS-563/basic-stats</span><span class="external_link_icon" role="presentation"><span class="screenreader-only">.</span></span></a></p>
+<p> </p>
+<p><strong>Forming groups</strong></p>
+<ol>
+<li>Team up in groups of size 2/3. (If you cannot find a teammate, raise your hand and ask the instructor.)</li>
+<li>Add all the group members on Canvas at<span> </span><a class="inline_disabled" href="$CANVAS_COURSE_REFERENCE$/groups#tab-113603" target="_blank">$CANVAS_COURSE_REFERENCE$/groups#tab-113603</a><strong>.</strong></li>
+</ol>
+<p> </p>
+<p><strong>Set up</strong></p>
+<ol style="list-style-type: decimal;">
+<li>Make sure that you have <strong>Git</strong>, <strong>Apache Ant</strong>, and <strong>Java </strong>installed.<br/>Git: <a href="https://git-scm.com/" target="_blank">https://git-scm.com/</a><br/>Apache Ant: <a href="http://ant.apache.org/" target="_blank">http://ant.apache.org/</a><br/>Java: <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a></li>
+<li>Clone the basic-stats git repository <strong>(if you have a clone from a previous assignment, delete it, or clone to a new location)</strong>:<br/><span style="font-family: 'courier new', courier;">git clone <a class="external" href="https://github.com/CS-563/basic-stats" target="_blank">https://github.com/CS-563/basic-stats</a></span><br/>Read that repository’s README.md file:<br/><span style="font-family: 'courier new', courier;">cat basic-stats/README.md</span></li>
+<li>Test your set up by compiling, running, and testing the application. Note that one test failure is expected on the HEAD revision.<br/><span style="font-family: 'courier new', courier;">cd basic-stats</span><br/><span style="font-family: 'courier new', courier;">ant compile</span><br/><span style="font-family: 'courier new', courier;">ant -lib lib/ test</span></li>
+<li>Compile and run the application using the main method in the<span style="font-family: 'courier new', courier;"> BasicStats.java</span> file. This will invoke a GUI. Play with it and see whether it works correctly.<br/><span style="font-family: 'courier new', courier;">cd basic-stats</span><br/><span style="font-family: 'courier new', courier;">ant clean</span><br/><span style="font-family: 'courier new', courier;">ant compile</span><br/><span style="font-family: 'courier new', courier;">java -cp bin BasicStats</span><br/><strong>USEFUL HINT:</strong> Try running the test case that failed above.</li>
+<li>Check out the version <strong>v1.0.0</strong> and compile and test the application again. Note that all tests are expected to pass on version v1.0.0.<br/><span style="font-family: 'courier new', courier;">cd basic-stats</span><br/><span style="font-family: 'courier new', courier;">git checkout v1.0.0</span><br/><span style="font-family: 'courier new', courier;">ant clean</span><br/><span style="font-family: 'courier new', courier;">ant compile</span><br/><span style="font-family: 'courier new', courier;">ant -lib lib/ test</span><br/><br/></li>
+</ol>
+<p><strong>Background</strong></p>
+<p>The developers of this application followed reasonable development practices and used a test-driven approach until they published the first release. Everything just went haywire from there—a lot of late-night, sleep deprived, pizza-and-drinks hacking.</p>
+<p>Unfortunately, the developers introduced a defect at some point after the first release (v1.0.0), which has existed in the code since. While the developers thought about and implemented some automated testing, their automated testing infrastructure does not catch the defect. And since they were so excited about coding, they never bothered to manually check a single test run.</p>
+<p>The testing infrastructure that the developers used is a nightly run cron (<a class="inline_disabled" href="https://en.wikipedia.org/wiki/Cron" target="_blank">https://en.wikipedia.org/wiki/Cron</a>) job, which executes the following command:<br/><span style="font-family: 'courier new', courier;">ant clean test || reportBug</span></p>
+<p>This command executes ant to build the application from scratch and to run the tests. If ant returns an error (exit code != 0), then the reportBug command sends an email to the developers. Otherwise nothing happens.</p>
+<p> </p>
+<p><strong>Now what?</strong></p>
+<ol style="list-style-type: decimal;">
+<li>Checkout the HEAD revision (git checkout master) and run ant clean test. Note the test failure and figure out why the testing infrastructure described above can’t catch this failure.<br/><strong>USEFUL HINT:</strong> Think about exit codes and take a look at the build file, specifically the used options in the JUnit task that runs the tests.</li>
+<li>Familiarize yourself with the version control history and determine the number of commits between v1.0.0 and the HEAD revision (including v1.0.0 and HEAD). Note the command(s) that you used.<br/><strong>USEFUL HINT:</strong> Look up the difference in the outputs of the following two commands:<br/><span style="font-family: 'courier new', courier;">git log branch1..branch2</span><br/><span style="font-family: 'courier new', courier;">git log branch1..branch2ˆ</span></li>
+<li>Brainstorm possible strategies for identifying the commit that introduced the defect. Imagine that you are looking at several thousand commits.</li>
+<li>Familiarize yourself with the <span style="font-family: 'courier new', courier;">git bisect</span> command and use it to identify the commit that introduced the defect between version v1.0.0 and the HEAD revision. Note the commit hash and log message of the defect-inducing commit. Verify that you correctly identified the defect-inducing commit.<br/><strong>USEFUL RESOURCE:</strong> <a href="https://git-scm.com/docs/git-bisect" target="_blank">https://git-scm.com/docs/git-bisect</a></li>
+<li>Isolate the actual defect in the defect-inducing commit, using a<em> delta-debugging-like</em> approach. Essentially, think about iteratively removing irrelevant changes until only the defect remains. Note that you can employ <span style="font-family: 'courier new', courier;">git </span>for this purpose: locally commit the source code after every successful iteration so that you can easily revert back if the next iteration fails.</li>
+</ol>
+<p> </p>
+<h4><span><strong>Questions</strong></span></h4>
+<h4><span>Using your notes and results, and answer the following questions:</span></h4>
+<ol style="list-style-type: decimal;">
+<li><span>Why does the described automated testing infrastructure not catch the defect?</span></li>
+<li><span>How could the developers improve the build file or the testing infrastructure to notice test failures in the future?</span></li>
+<li><span>How many commits exist between v1.0.0 and the HEAD revisions (including v1.0.0 and HEAD)? What command(s) did you use to determine the number?</span></li>
+<li><span>Which commit (commit hash and log message) introduced the defect? How did you verify that this commit indeed introduced the defect?</span></li>
+<li><span>After how many steps (git bisect calls) did you identify the defect-inducing commit?</span></li>
+<li><span>Which git command can you use to undo the defect-inducing commit? Briefly explain what problem may occur when undoing a commit and what best practice generally mitigates this problem.</span></li>
+<li><span>Write a command ⟨cmd⟩ such that the following two calls of git bisect automatically determine the defect-inducing commit:<br/><span style="font-family: 'courier new', courier;">git bisect start HEAD v1.0.0</span><br/><span style="font-family: 'courier new', courier;">git bisect run ⟨cmd⟩</span><br/><strong>Note</strong>: You may write a script (instead of a single command) and call it as your command. If you do, please include the content of your script in your answer.</span></li>
+</ol>
+<p> </p>
+<h4><strong>Deliverables</strong></h4>
+<p>Your submission, via Canvas, must be a single (one per group) archive (.zip, .tar, or .tar.gz) file, containing:</p>
+<ol style="list-style-type: decimal;">
+<li><em>answers.txt (or .pdf)</em>: A plain-text/pdf file with your answers to the above 7 questions. <strong>List all group members on top of this file.</strong></li>
+<li><em>The isolated defect:</em> That is, the minimal change that introduces the defect, when applied to the source code of the last good commit (i.e., the last commit that passes all tests). You may submit a diff (take a look at the <span style="font-family: 'courier new', courier;">diff</span> or <span style="font-family: 'courier new', courier;">git diff</span> commands) or the buggy source code. The difference between your buggy source code and the last good commit should be only the defect and nothing else.</li>
+</ol>
+<p> </p>
+<p><strong><span>NOTE:  The rubric below mentions 100 points for this assignment, but it is for the ease of grading. The total points scored by the student will be normalized to range from 0-5.</span></strong></p>
+<p> </p>
+<h4><strong>Solution</strong></h4>
+<ol style="list-style-type: decimal;">
+<li><span><span><strong>Why does the described automated testing infrastructure not catch the defect?</strong><br/></span></span>
+<p>The developers assumed that ant will return a non-zero code on test failure but this is not the case. Here is a truncated view session, which calls `ant test` and then queries the last exit code with `echo $?`:</p>
+<p>    user@place$ ant clean test -lib lib/<br/>    Buildfile: build.xml</p>
+<p>    test:<br/>         [echo] Running unit tests ...<br/>        [junit] Running BasicStatsTest<br/>        [junit] Testsuite: BasicStatsTest<br/>        [junit] Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec<br/>        [junit] Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec<br/>        [junit]<br/>        [junit] Testcase: testMedian took 0.002 sec<br/>        [junit]     FAILED</p>
+<p>    BUILD SUCCESSFUL<br/>    Total time: 0 seconds<br/>    user@place$ echo $?    # This gets the exit code of the last program run in this shell<br/>    0            # Is not zero - this is why the devs never got an e-mail</p>
+</li>
+<li><strong>How could the developers improve the build file or the testing infrastructure to notice test failures in the future?<br/></strong>The cron job is a fine idea but this should be piped through a program that checks for failures via some text matching from ant's output. It might also be good to send weekly reports on the number of tests run per day, number of failures, etc to make sure the developers are looking at the data.<strong><br/></strong></li>
+<li><strong><strong>How many commits exist between v1.0.0 and the HEAD revisions (including v1.0.0 and HEAD)? What command(s) did you use to determine the number?<br/></strong></strong>
+<p>There are 35 commits from v1.0.0 to master non inclusive.  There are a number of ways to calculate this. One way is to issue the following command:</p>
+<p>user@place$ git rev-list v1.0.0..master^ --count<br/>35</p>
+<p>This does the following.</p>
+<p>* `git rev-list`: this is a low-level Git command that gives a reverse list of the commit hashes for some range of commits.</p>
+<p>* `master^`: the `^` operator is basically the 'parent-of' operator. So if we have commit history</p>
+<p>        A &lt;--- B &lt;--- C<br/>        ^<br/>        |<br/>        +----- D &lt;--- E</p>
+<p>        Diagram 1</p>
+<p>  (where `A &lt;--- B` means "`A` is the parent of `B`"), calling `C^` will give us `B`, and `C^^` = `E^^` = `B^` = `D^` = `A`. Calling `A^` is undefined.</p>
+<p>* `v1.0.0..master^`: In this case we specify the _range of commits_ to inspect to be "All commits that are visible from `master^` that are **not** visible from `v1.0.0` (this is accomplished with the `..` operator).  Note that `master^` points to the parent of `master` - this gives us the non-inclusiveness (which is what I interpreted 'between' to mean). In general, the syntax `branch1..branch2` means _"All commits visible by branch 2 not visible by branch 1"_. So in Diagram 1 above the range `E..C` will refer to commits `B` and `C`, and `C..D` refers to the single commit `D`.</p>
+<p>* `git rev-list v1.0.0..master^`: We call `rev-list` on our range, which unadorned by `--count` will dump the following to stdout:</p>
+<p>        user@place$ git rev-list v1.0.0..master^<br/>        aad2f3efa0c236063772d0d4d6598170817c07b3<br/>        0f983c1d947c1a50162668c25530fa16afa09670<br/>        913a5d8b1319ac89eacbc5cf4689e825dd446e58<br/>        61ffac5ac635228ee28fab0044f4d5e2bbe15546<br/>        ddc3fac01d2e0c68b2589844cc01fc1a40e0a3c5<br/>        9712b0486c49febd9509706df7cb49f0253652fc<br/>        c2b31639edb5fcaadca92fccfc2cf90e51ba552f<br/>        c2111cc0d37bfde779a317e533d3a5e68b8ed9e3<br/>        3e2a0a5bbe3183214936c5b8a0c835c4ce633ee6<br/>        fc5bd50e30d7c7edea00adf312aa992faba92883<br/>        a2583e6eab56667cd39e16a0c72c80542cc47a03<br/>        4fa7109674a1cea9cdfa43c9973b2d6163b70766<br/>        f60980c1d1025f7b25bae6a91d1ca22c5f33ea14<br/>        a5c4194b471f0d8648f08de8d9228dbba6ce6d1b<br/>        5643f60236ce47a9972e97148bfd2ca8759df470<br/>        01da475b0395fa18b773e68b93721dae4caf651b<br/>        ea570cf8b3bef806bd771d61a738f30f940f4a3a<br/>        cc717c651ac06b5fd7c1767f90947aac58a33586<br/>        a9f6094d7283b086c69254bd4404ec240f54def5<br/>        e0ca8e1a35db5b8f121acad289b4c7d0d35fc26a<br/>        749685f2ee91265d53ab218a370f30cb23d2c8df<br/>        c18d700010bf84ac4bd301e7aabf7e438d0744c0<br/>        d75539f6b799140f6aa83e88689499e342ca7183<br/>        4b5c0cff408794e940ac59507f4195e177b4c896<br/>        f7f175dc8bc5b3693f99b2f8e799b51c0d0d9b9f<br/>        bda5f0214b51f6cb77e00a7869f32119dadddb47<br/>        6462c91631b264a2e6b252335fe77bc3ca14d268<br/>        c5fc3b7de251fa35900c20db2673085565afb5c6<br/>        1f1ab2776685f4bfa251308a4f8e38b34995a7c6<br/>        946af6f4aa97049f526bf919f17c3b61f77ce07a<br/>        6c57e680cdc883ca7a690a45c6e3caf722c3009e<br/>        d2539a7f4eb4f3e988b3c39653666676e72b10f9<br/>        0a1490a903dfe37880b42a2f68a8c264346e3e12<br/>        97621b1ccb32a9304f3ede4e5281afb655d2fac4<br/>        6b81a2a6cef8003a3fe4d28ec25458b449eca5eb</p>
+<p>  These are the commit hashes between `v1.0.0` and `master`. If only there was a way to count these!</p>
+<p>* `git rev-list v1.0.0..master^ --count`: Count the commits :)</p>
+<p>### A Pedantic side note<br/>The question implies that `master` is a descendant of `v1.0.0`. How could we check this? Well a quick eyeball of a `git log --oneline v1.0.0..master` does the trick in this case, but what if we wanted to do this programmatically? There is a command for this:</p>
+<p>    git merge-base --is-ancestor v1.0.0 master; echo $?</p>
+<p>This checks if the first argument `v1.0.0` is an ancestor of the second argument `master`. If it is it exits successfully (and `echo $?` will dump `0` to stdout); otherwse it will dump a nonzero code to stdout:</p>
+<p>user@place$ git merge-base --is-ancestor v1.0.0 master; echo $?<br/>    0</p>
+<p>user@place$ git merge-base --is-ancestor master master^; echo $?<br/>    1</p>
+<strong></strong></li>
+<li><strong><strong>Which commit (commit hash and log message) introduced the defect? How did you verify that this commit indeed introduced the defect?<br/></strong></strong>
+<p>f7f175dc8bc5b3693f99b2f8e799b51c0d0d9b9f is the first bad commit<br/>    commit f7f175dc8bc5b3693f99b2f8e799b51c0d0d9b9f<br/>    Author: DeveloperTommy &lt;its.tommy.nguyen@gmail.com&gt;<br/>    Date:   Mon Sep 26 23:58:11 2016 -0400</p>
+<p>        Commented and cleaned up the source code</p>
+If we checkout the repo at the commit before this commit (bda5f0214b51f6cb77e00a7869f32119dadddb47), the defect does not exists (i.e. the tests pass). This, this commit indeed introduced the defect.   </li>
+<li><strong>After how many steps (git bisect calls) did you identify the defect-inducing commit?<br/></strong>5 steps<br/>cc717c6 Updated Override annotations<br/>6462c91 Removed autogenerated stubs<br/>d75539f Placed BasicStats into its own Util folder<br/>f7f175d Commented and cleaned up the source code<br/>bda5f02 More refactorings<strong><br/></strong></li>
+<li><strong><strong>Which git command can you use to undo the defect-inducing commit? Briefly explain what problem may occur when undoing a commit and what best practice generally mitigates this problem.<br/></strong></strong>
+<p>git revert f7f175dc8bc5b3693f99b2f8e799b51c0d0d9b9f</p>
+<p>A potential problem that may occur when using git revert command is that conflicts may arise between the changes introduced by the commit you are reverting and the current state of the codebase. <br/>These conflicts can arise if the changes in the commit being reverted overlap or interfere with other changes that have been made after the commit you want to revert.</p>
+<p>The best practice to mitigate this problem is to regularly update your local repository with the latest changes from the remote repository before performing a git revert.  This ensures that your local repository is up to date and minimizes the chances of conflicts when reverting a commit. In other words, you should first run git pull to fetch and merge the latest changes from the remote repository before running git revert.</p>
+</li>
+<li><strong>Write a command ⟨cmd⟩ such that the following two calls of git bisect automatically determine the defect-inducing commit:<br/><span><span style="font-family: 'courier new', courier;">git bisect start HEAD v1.0.0</span><br/><span style="font-family: 'courier new', courier;">git bisect run ⟨cmd⟩</span><br/>Note: You may write a script (instead of a single command) and call it as your command. If you do, please include the content of your script in your answer.</span></strong><strong><strong><br/></strong></strong>
+<p>Create a file `myscript.sh` with contents</p>
+<p>    #!/bin/bash</p>
+<p>    git log  -1 &gt;&gt; commits.txt        # Keep track of commits that are visited<br/>    ! ant test -lib lib | grep FAIL   # Run ant tests, looking for string 'FAIL'ls<br/>    <br/>    exit $?                           # Return the exit status</p>
+<p>Note that `ant test -lib lib | grep FAIL` will return success (i.e., `0`),<br/>precisely when the test fails. This means we need to negate this with the `!`<br/>operator. Finally, we exit with the result of this command `exit $?`.</p>
+<p>To run this, enter:</p>
+<p>    # master is our `bad` and<br/>    # v1.0.0 is our `good`<br/>    user@place$ git bisect start master v1.0.0</p>
+<p>    user@place$ git bisect run myscript.sh  # make sure it is executable!<br/>    <br/>#### Isolated minimal change</p>
+<p>- for (int j = 1; j &lt; (n - j); j++) {<br/>+ for (int j = 1; j &lt; (n - i); j++) {</p>
+</li>
+</ol>
+<p> </p>
+</body>
+</html>

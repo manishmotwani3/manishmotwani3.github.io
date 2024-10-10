@@ -1,0 +1,57 @@
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Assignment: Project Idea Proposal </title>
+</head>
+<body>
+<p>Due:<span> </span><strong>Monday, April 22, 2024, 11:59 AM PT</strong><strong></strong></p>
+<p>This assignment will be completed individually or in teams of<span> </span><strong>up to 2 students. </strong>Your choice.</p>
+<p> </p>
+<h4><strong>Research idea write-up and presentation</strong></h4>
+<p>The assignment consists of:</p>
+<ol style="list-style-type: decimal;">
+<li>Coming up with a creative new research idea.</li>
+<li> An up to 1-page write-up describing your research idea using <a class="inline_disabled" href="https://www.overleaf.com/read/dzcdmrfzxcpm#8024c4" target="_blank" title="Link">this overleaf template</a></li>
+<li>A 10-minute presentation, given in class on Monday, April 22, 2024.</li>
+</ol>
+<p> </p>
+<h4><strong>Overview</strong></h4>
+<p>Your primary job in this assignment is twofold:</p>
+<ol style="list-style-type: decimal;">
+<li>To describe your proposed research goal so that people understand what it is and why it is valuable. This must include a research question you will try to answer.</li>
+<li>To describe how you will accomplish your research goal and how you will evaluate it so that it is clear how a team of up to two students can answer the research question in 5 weeks.</li>
+</ol>
+<p>You will present your idea to the class. Everyone will then have the opportunity to review the presentations and <strong>form groups of up to three students </strong>to actually explore the research idea!<br/>One of the purposes of identifying the research idea is to find an area of software engineering research that is interesting to you. The idea will evolve over time, especially as you read the related work. While this initial idea may differ significantly from the final research question you tackle, the initial idea will serve an important role in focusing you on a particular area of software engineering.</p>
+<h4><strong>Guidelines and examples</strong></h4>
+<p>The <strong>research idea</strong> written description <strong>and</strong> the presentation must <strong>each</strong> contain:</p>
+<ul>
+<li><strong>Research question. </strong>This must be in the form of a question and describe what you will know after this project is finished that the world does not know today. Examples of reasonable research questions include: "RQ1: How can we <span>forecast future maintenance needs of a software system based on historical maintenance data, code metrics, and other relevant factors?"</span>, "RQ2: What are the <span>challenges involved in fixing software bugs, and opportunities for improving bug fixing efficiency and effectiveness in Mobile apps?", and "RQ3: How can we intelligently select a subset of regression tests to run based on code changes, to reduce the time and resources required for testing during maintenance?"</span></li>
+<li><strong>The key idea behind the new technique you will develop. </strong>For example, for RQ1, the idea may be “We will select a mature, widely-used, open-source project and analyze the <span>specific aspects of code maintenance and evolution (e.g., code churn, bug fixing rate, developer activity) over a relevant period of time. We will then train a machine learning model to predict future maintenance needs of the software system.</span>”</li>
+<li><strong>A concrete evaluation plan that you will use to determine when answering your research question is a success. </strong>For example, for RQ2, the plan may be “We will survey the automatic program repair literature to find out techniques that can repair bugs in mobile (Android/IOS) apps. We will then find, on github.com, at least 4 open-source mobile applications. Each application will have at least 10k lines of code,  100 tests, and 1000 commits in its history. We will analyze the commit history to find regression bugs (times when a test that previously was passing but then started failing), isolate the changes that resulted in each of these bugs, and determine whether these changes could be been generated automatically using the existing program repair techniques”.</li>
+</ul>
+<p> </p>
+<h4><strong>Deliverables</strong></h4>
+<p>Each group should upload 1 zip file (&lt;project-name&gt;_&lt;last-name&gt;.zip) via Canvas that contains:</p>
+<ul>
+<li>An up to 1-page description of the research idea, in a .pdf. Don’t forget to put your name on it.</li>
+<li>A digital presentation (keynote, powerpoint, or pdf). Don’t forget to put your name on it.</li>
+</ul>
+<p>You will also deliver an in-class presentation. The delivery should take a maximum of 10 minutes. You will be cut off after 10 minutes! Shorter can be OK. <br/>We will have an in-class exercise for brainstorming on the project ideas. You should rehearse your presentation. You may use any resource you wish in this assignment but you must list your collaborators and cite all your sources. Failure to do so will result in a grade of 0.</p>
+<p> </p>
+<h4><strong>Sample project ideas</strong></h4>
+<p>These ideas are meant as starting points. Students are encouraged to generate their own ideas, or to start from these high-level topics and generate a more concrete idea as a course project.</p>
+<p><span style="font-size: 12pt;"><strong>Generating tests from natural language descriptions.</strong></span><br/>Software projects are more than just code. There are tests, requirements documents, bug reports, etc. Many of these documents are written in natural language. At the same time, projects’ test suites are often incomplete and fail to capture some notions described in these natural-language documents. This project focuses on the<br/>problem of generating executable tests from natural-language descriptions of code.</p>
+<p>See "Automatically Generating Precise Oracles from Structured Natural Language Specifications (<a class="inline_disabled" href="https://ieeexplore.ieee.org/document/8812070" target="_blank">https://ieeexplore.ieee.org/document/8812070</a>)" and “C2S: Translating natural language comments to formal program specifications” (<a class="inline_disabled" href="https://doi.org/10.1145/3368089.3409716" target="_blank">https://doi.org/10.1145/3368089.3409716</a>) as a starting point.</p>
+<p>One could consider applying recent large-language-model-based code generation tools (see CoPilot, Codex, GPT-J, GPT-Neo, GPT-NeoX-20B, and CodeParrot; <a class="inline_disabled" href="https://arxiv.org/abs/2202.13169" target="_blank">https://arxiv.org/abs/2202.13169</a>) for test generation. Once one has tests, they could evaluate if the tests improve the quality of the existing test suite via coverage or mutation testing.</p>
+<p> </p>
+<p><strong>Automated software verification.</strong></p>
+<p>One of the most challenging tasks in software engineering is formal verification — proving that source code does what it is intended to do. Recent work has looked into automatically generating formal verification proofs in languages such as Coq (see, for example “Learning to Prove Theorems via Interacting with Proof Assistants” <a class="inline_disabled" href="https://proceedings.mlr.press/v97/yang19a/yang19a.pdf" target="_blank">https://proceedings.mlr.press/v97/yang19a/yang19a.pdf</a>). That paper presents the CoqGym dataset of open-source Coq projects. Expanding that dataset with more  such projects would be a useful contribution (but it would require understanding and debugging Coq code, so it may be challenging if you are not familiar with this language.)</p>
+<p> </p>
+<p><strong>Verification-driven sound refactoring.</strong></p>
+<p>Suppose you have a program, and you want to refactor it to have it do the same thing but be simpler, more maintainable, etc. Create lots of mutants of the program. Identify ones that improve some useful metrics and filter out the rest. Run either an existing or a generated test suite to filter out mutants that do not behave the same way as the original program. Take the mutants that are left and (maybe automatically) use symbolic execution to verify that they are equivalent to the original program (e.g., use the Z3 theorem prover). Suggest the equivalent mutants that improve code metrics as sound refactoring that improve the code.</p>
+<p> </p>
+<p><strong>Presentation template:<br/></strong></p>
+<p>Create a short 10 min presentation similar to the following example. </p>
+<p><strong><a class="instructure_file_link instructure_scribd_file inline_disabled" data-canvas-previewable="false" href="/~motwanim/courses/cs563_spring2024/web_resources/Uploaded Media/Do Automated Program Repair techniques repair difficult bugs_presentation.pdf" target="_blank" title="Do Automated Program Repair techniques repair difficult bugs_presentation.pdf">Do Automated Program Repair techniques repair difficult bugs_presentation.pdf</a></strong></p>
+</body>
+</html>
