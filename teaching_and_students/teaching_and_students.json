@@ -24,11 +24,23 @@
     "students": [
         {
             "name": "Ashish Tulso Ramrakhiani",
-            "standing": "2nd year MS"
+            "standing": "MS"
         },
         {
             "name": "Rahil Piyush Mehta",
-            "standing": "1st year MS"
+            "standing": "MS"
         },
+        {
+            "name": "Akshith Gunasekaran",
+            "standing": "PhD candidate (committee member)"
+        },
+        {
+            "name": "Brian Wise Mulanda",
+            "standing": "PhD candidate (committee member)"
+        },
+        {
+            "name": "Myeongsoo Kim",
+            "standing": "PhD (committee member), Georgia Tech"
+        }
     ]
 }
