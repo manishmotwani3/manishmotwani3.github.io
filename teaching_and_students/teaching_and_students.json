@@ -23,16 +23,12 @@
     ],
     "students": [
         {
-            "name": "Aakash Kulkarni",
-            "standing": "1st year MS/PhD"
-        },
-        {
             "name": "Ashish Tulso Ramrakhiani",
             "standing": "2nd year MS"
         },
         {
             "name": "Rahil Piyush Mehta",
             "standing": "1st year MS"
-        }
+        },
     ]
 }
