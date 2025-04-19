@@ -24,11 +24,11 @@
     "students": [
         {
             "name": "Ashish Tulso Ramrakhiani",
-            "standing": "MS"
+            "standing": "MS at OSU"
         },
         {
             "name": "Rahil Piyush Mehta",
-            "standing": "MS"
+            "standing": "MS at OSU"
         },
         {
             "name": "Akshith Gunasekaran",
@@ -44,7 +44,7 @@
         }, 
         {
             "name": "Oscar Ludwig",
-            "standing": "Undergraduate"
+            "standing": "Undergraduate at OSU"
         }
     ]
 }
