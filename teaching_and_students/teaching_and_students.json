@@ -32,15 +32,19 @@
         },
         {
             "name": "Akshith Gunasekaran",
-            "standing": "PhD candidate (committee member)"
+            "standing": "PhD candidate at OSU, (committee member)"
         },
         {
             "name": "Brian Wise Mulanda",
-            "standing": "PhD candidate (committee member)"
+            "standing": "PhD candidate at OSU, (committee member)"
         },
         {
             "name": "Myeongsoo Kim",
-            "standing": "PhD (committee member), Georgia Tech"
+            "standing": "PhD defended at Georgia Tech, (committee member)"
+        }, 
+        {
+            "name": "Oscar Ludwig",
+            "standing": "Undergraduate"
         }
     ]
 }
