@@ -35,21 +35,6 @@
             }
         ],
         "news": [
-	    {
-		"title": "PC member at International Conference on Program Comprehension (ICPC) 2025 (RENE track)",
-                "url": "https://conf.researchr.org/track/icpc-2025/icpc-2025-replications-and-negative-results--rene-?",
-                "wordToLink": "RENE"
-            },	
-	    {
-		"title": "PC member at ISSTA'25 (Research track)",
-                "url": "https://conf.researchr.org/home/issta-2025",
-                "wordToLink": "ISSTA'25"
-            },	
-	    {
-		"title": "PC member at ESEM Industry, Government and Community Track (IGC) 2024",
-                "url": "https://conf.researchr.org/track/esem-2024/esem-2024-industry-government-community?",
-                "wordToLink": "ESEM"
-            },	    
             {
                 "title": "Paper accepted in ICSE'24 (Technical track)",
                 "url": "./publications/publication_sources/Ruikai24icse.pdf",
@@ -59,11 +44,6 @@
                 "title": "Panelist in the BoF session on Software Testing for Scientific Computing in HPC at Supercomputing Conference (SC'23)",
                 "url": "https://sc23.conference-program.com/presentation/?id=bof189&amp;sess=sess383",
                 "wordToLink": "(SC'23)"
-            },
-            {
-                "title": "PC member at FSE'24 (Research track)",
-                "url": "",
-                "wordToLink": ""
             },
             {
                 "title": "Panelist in the 4th International Workshop on Automated Program Repair (APR'23)",
@@ -91,19 +71,9 @@
                 "wordToLink": "Dissertation"
             },
             {
-                "title": "PC member at SSBSE'22 (Challenge track)",
-                "url": "",
-                "wordToLink": ""
-            },
-            {
                 "title": "Paper accepted in ICSE'21 (Doctoral Symposium track)",
                 "url": "./publications/publication_sources/Motwani21-icseDS.pdf",
                 "wordToLink": "Paper"
-            },
-            {
-                "title": "PC member at SSBSE'21 (Challenge track)",
-                "url": "",
-                "wordToLink": ""
             },
             {
                 "title": "Paper accepted in TSE (2020)",
@@ -139,11 +109,6 @@
                 "title": "US Patent (US9972016B2) granted, May 2018",
                 "url": "./publications/publication_sources/MotwaniPatentUS9972016.pdf",
                 "wordToLink": "US Patent"
-            },
-            {
-                "title": "Joined MS/PhD program at UMass Amherst",
-                "url": "",
-                "wordToLink": ""
             },
             {
                 "title": "Paper accepted in FSE'15 (Industry track)",
