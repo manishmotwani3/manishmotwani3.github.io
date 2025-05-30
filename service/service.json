@@ -1,0 +1,70 @@
+"services": [
+	          {
+		            "title": "PC member",
+                "url": "https://conf.researchr.org/track/icpc-2025/icpc-2025-replications-and-negative-results--rene-?",
+                "at": "IEEE/ACM International Conference on Program Comprehension (ICPC) (RENE track)"
+                "wordToLink": "ICPC",
+                "year": "2025"
+            },	
+	          {
+		            "title": "PC member", 
+                "at": ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA) (Research track)",
+                "url": "https://conf.researchr.org/home/issta-2025",
+                "wordToLink": "ISSTA",
+                "year": "2025"
+            },	
+  	        {
+		            "title": "PC member", 
+                "at": "ACM/IEEE Empirical Software Engineering and Measurement (ESEM) conference (Industry, Government and Community (IGC) Track)",
+                "url": "https://conf.researchr.org/track/esem-2025/esem-2025-industrial-track-",
+                "wordToLink": "ESEM",
+                "year": "2025"
+            },	   
+	          {
+		            "title": "PC member", 
+                "at": "ACM/IEEE Empirical Software Engineering and Measurement (ESEM) conference (Industry, Government and Community (IGC) Track)",
+                "url": "https://conf.researchr.org/track/esem-2024/esem-2024-industry-government-community?",
+                "wordToLink": "ESEM",
+                "year": "2024"
+            },	    
+            {
+                "title": "PC member"
+                "at":  "ACM International Conference on the Foundations of Software Engineering (FSE) (Research track)",
+                "url": "https://2024.esec-fse.org/track/fse-2024-research-papers?",
+                "wordToLink": "FSE",
+                "year": "2024"
+            },
+            {
+                "title": "Reviewer",
+                 "at": "IEEE Transactions on Software Engineering (TSE) journal",
+                "url": "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=32",
+                "wordToLink": "TSE"
+                "year": "2024"
+            },
+           {
+                "title": "Faculty search committee member",
+                "at": "School of EECS, Oregon State University",
+                "wordToLink": "",
+                "year": "2024"
+            },
+              {
+                "title": "Reviewer",
+                 "at": "IEEE Transactions on Software Engineering (TSE) journal",
+                "url": "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=32",
+                "wordToLink": "TSE",
+                "year": "2023"
+            {
+                "title": "PC member",
+                "at": " Symposium on Search-Based Software Engineering (SSBSE) (Challenge track)",
+                "url": "https://conf.researchr.org/track/ssbse-2022/ssbse-2022-challenge?",
+                "wordToLink": "SSBSE",
+                 "year": "2022"
+            },
+           {
+                "title": "PC member",
+                "at": " Symposium on Search-Based Software Engineering (SSBSE) (Challenge track)",
+                "url": "https://conf.researchr.org/track/ssbse-2022/ssbse-2021-challenge?",
+                "wordToLink": "SSBSE",
+                 "year": "2021"
+            },
+        ]
