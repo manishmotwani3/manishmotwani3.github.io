@@ -1,27 +1,27 @@
 "services": [
-	          {
-		            "title": "PC member",
+	    {
+		"title": "PC member",
                 "url": "https://conf.researchr.org/track/icpc-2025/icpc-2025-replications-and-negative-results--rene-?",
                 "at": "IEEE/ACM International Conference on Program Comprehension (ICPC) (RENE track)"
                 "wordToLink": "ICPC",
                 "year": "2025"
             },	
-	          {
-		            "title": "PC member", 
-                "at": ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA) (Research track)",
+	    {
+		"title": "PC member", 
+                "at": "ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA) (Research track)",
                 "url": "https://conf.researchr.org/home/issta-2025",
                 "wordToLink": "ISSTA",
                 "year": "2025"
-            },	
-  	        {
-		            "title": "PC member", 
+	    },	
+  	    {
+		"title": "PC member", 
                 "at": "ACM/IEEE Empirical Software Engineering and Measurement (ESEM) conference (Industry, Government and Community (IGC) Track)",
                 "url": "https://conf.researchr.org/track/esem-2025/esem-2025-industrial-track-",
                 "wordToLink": "ESEM",
                 "year": "2025"
-            },	   
-	          {
-		            "title": "PC member", 
+	    },	   
+	    {
+		"title": "PC member", 
                 "at": "ACM/IEEE Empirical Software Engineering and Measurement (ESEM) conference (Industry, Government and Community (IGC) Track)",
                 "url": "https://conf.researchr.org/track/esem-2024/esem-2024-industry-government-community?",
                 "wordToLink": "ESEM",
