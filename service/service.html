@@ -60,7 +60,7 @@
                 })
                 .then(data => {
                     // Update Service Table
-                    const coursesTableBody = document.getElementById('serviceTable').querySelector('tbody');
+                    const tableBody = document.getElementById('serviceTable').querySelector('tbody');
                    data.services.forEach(service => {
                         const row = document.createElement('tr');
 
