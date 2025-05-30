@@ -75,8 +75,8 @@
                         // Replace wordToLink in 'at' with hyperlink
                         const regex = new RegExp(service.wordToLink);
                         const linkedText = service.at.replace(regex, `<a href="${service.url}" target="_blank">${service.wordToLink}</a>`);
-                        atCell.innerHTML = linkedText;
-
+                        atCell.innerHTML = `<strong>${service.title}</strong> at ${linkedText}`; 
+                        
                         row.appendChild(atCell);
                         tableBody.appendChild(row);
                     });
