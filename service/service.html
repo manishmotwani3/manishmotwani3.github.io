@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Brendon">
+    <meta name="description" content="Services Page of Manish Motwani">
+    <title>Service Page - Manish Motwani</title>
+    <link rel="stylesheet" href="service.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar-links">
+                <ul class="nav-links">
+                    <li><a href="../index.html" aria-label="Home"><i class="fas fa-home"></i> HOME</a></li>
+                    <li><a href="../research/research.html" aria-label="Research"><i class="fas fa-book-reader"></i> RESEARCH</a></li>
+                    <li><a href="../publications/publications.html" aria-label="Publications"><i class="fas fa-project-diagram"></i> PUBLICATIONS</a></li>
+                    <li><a href="./teaching_and_students.html" class="active"><i class="fas fa-book"></i> TEACHING</a></li>
+                    <li><a href="./service.html" class="active"><i class="fas fa-book"></i> SERVICE</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="main-container">
+                <div class="services">
+                    <div class="service-table-wrapper">
+                        <table class="service-table" id="servicesTable">
+                            <thead>
+                                <tr>
+                                    <th>Year</th>
+                                    <th>Professional Service</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Services rows will be dynamically inserted here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        </div>
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>&copy; 2025 Manish Motwani. All rights reserved.</p>
+                    <p>Last Updated: <span id="lastUpdated"></span></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dataUrl = './service.json'; // Update with the actual path to your JSON file
+            
+            fetch(dataUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok: ' + response.statusText);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Update Service Table
+                    const coursesTableBody = document.getElementById('serviceTable').querySelector('tbody');
+                   data.services.forEach(service => {
+                        const row = document.createElement('tr');
+
+                        // Year Column
+                        const yearCell = document.createElement('td');
+                        yearCell.textContent = service.year;
+                        row.appendChild(yearCell);
+
+                        // Conference Column with hyperlink
+                        const atCell = document.createElement('td');
+
+                        // Replace wordToLink in 'at' with hyperlink
+                        const regex = new RegExp(service.wordToLink);
+                        const linkedText = service.at.replace(regex, `<a href="${service.url}" target="_blank">${service.wordToLink}</a>`);
+                        atCell.innerHTML = linkedText;
+
+                        row.appendChild(atCell);
+                        tableBody.appendChild(row);
+                    });
+                })
+                .catch(error => console.error('Error fetching service data:', error));
+        
+            const lastUpdatedElement = document.getElementById('lastUpdated');
+            function formatDate(date) {
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                return date.toLocaleDateString('en-US', options);
+            }
+        
+            // Get the last modified timestamp of the HTML file
+            const lastModified = new Date(document.lastModified);
+        
+            // Update the last updated date
+            lastUpdatedElement.textContent = formatDate(lastModified);
+        });
+    </script>
+</body>
+</html>
