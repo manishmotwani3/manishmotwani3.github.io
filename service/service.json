@@ -21,13 +21,6 @@
                 "wordToLink": "ESEM",
                 "year": "2025"
 	    },	   
-	    {
-		"title": "PC member", 
-                "at": "ACM/IEEE Empirical Software Engineering and Measurement (ESEM) conference (Industry, Government and Community (IGC) Track)",
-                "url": "https://conf.researchr.org/track/esem-2024/esem-2024-industry-government-community?",
-                "wordToLink": "ESEM",
-                "year": "2024"
-            },	    
             {
                 "title": "PC member",
                 "at":  "ACM International Conference on the Foundations of Software Engineering (FSE) (Research track)",
@@ -42,6 +35,13 @@
                 "wordToLink": "TSE",
                 "year": "2024"
             },
+	    {
+		"title": "PC member", 
+                "at": "ACM/IEEE Empirical Software Engineering and Measurement (ESEM) conference (Industry, Government and Community (IGC) Track)",
+                "url": "https://conf.researchr.org/track/esem-2024/esem-2024-industry-government-community?",
+                "wordToLink": "ESEM",
+                "year": "2024"
+            },	    
            {
                 "title": "Faculty search committee member",
                 "at": "School of EECS, Oregon State University",
