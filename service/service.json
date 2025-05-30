@@ -1,4 +1,5 @@
-"services": [
+{
+	"services": [
 	    {
 		"title": "PC member",
                 "url": "https://conf.researchr.org/track/icpc-2025/icpc-2025-replications-and-negative-results--rene-?",
@@ -69,3 +70,4 @@
                  "year": "2021"
             }
         ]
+}
