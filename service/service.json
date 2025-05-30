@@ -3,7 +3,7 @@
 	    {
 		"title": "PC member",
                 "url": "https://conf.researchr.org/track/icpc-2025/icpc-2025-replications-and-negative-results--rene-?",
-                "at": "IEEE/ACM International Conference on Program Comprehension (ICPC) (RENE track)"
+                "at": "IEEE/ACM International Conference on Program Comprehension (ICPC) (RENE track)",
                 "wordToLink": "ICPC",
                 "year": "2025"
             },	
@@ -29,7 +29,7 @@
                 "year": "2024"
             },	    
             {
-                "title": "PC member"
+                "title": "PC member",
                 "at":  "ACM International Conference on the Foundations of Software Engineering (FSE) (Research track)",
                 "url": "https://2024.esec-fse.org/track/fse-2024-research-papers?",
                 "wordToLink": "FSE",
@@ -39,7 +39,7 @@
                 "title": "Reviewer",
                  "at": "IEEE Transactions on Software Engineering (TSE) journal",
                 "url": "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=32",
-                "wordToLink": "TSE"
+                "wordToLink": "TSE",
                 "year": "2024"
             },
            {
