@@ -135,7 +135,7 @@ td:last-child {
 tbody {
     display: block;
     overflow-y: auto;
-    max-height: 197px; /* Adjust as needed */
+    max-height: 400px; /* Adjust as needed */
     font-size: 15px;
     font-weight: 400;
     width: 100%;
