@@ -76,14 +76,14 @@
                     }
                     return response.json();
                 })
-                .then(data => {
+              //  .then(data => {
                     // Update Students Table
-                    const studentsTableBody = document.getElementById('studentsTable').querySelector('tbody');
-                    data.students.forEach(student => {
-                        const row = document.createElement('tr');
-                        row.innerHTML = `<td>${student.standing}</td><td>${student.name}</td>`;
-                        studentsTableBody.appendChild(row);
-                    });
+                   // const studentsTableBody = document.getElementById('studentsTable').querySelector('tbody');
+              //      data.students.forEach(student => {
+                //        const row = document.createElement('tr');
+               //         row.innerHTML = `<td>${student.standing}</td><td>${student.name}</td>`;
+                //        studentsTableBody.appendChild(row);
+               //     });
         
                     // Update Courses Table
                     const coursesTableBody = document.getElementById('coursesTable').querySelector('tbody');
