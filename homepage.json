@@ -36,6 +36,11 @@
         ],
         "news": [
 	    {
+		"title": "PC member at International Conference on Program Comprehension (ICPC) 2025 (RENE track)",
+                "url": "https://conf.researchr.org/track/icpc-2025/icpc-2025-replications-and-negative-results--rene-?",
+                "wordToLink": "RENE"
+            },	
+	    {
 		"title": "PC member at ISSTA'25 (Research track)",
                 "url": "https://conf.researchr.org/home/issta-2025",
                 "wordToLink": "ISSTA'25"
