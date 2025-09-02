@@ -1,5 +1,16 @@
 [
      {
+        "title": "Manish Motwani, Aakash Kulkarni, Yunhan Qiao, Matthew Davis, and Ziyan Chen, LLM-Guided Differential Fuzzing for Detecting Platform-Specific Bugs in Scientific Applications, in Proceedings of the IEEE International Conference on AI x Software Engineering (AIxSE), 2025",
+        "type": "Refereed Conference Publications",
+        "year": 2025,
+        "bold": ["LLM-Guided Differential Fuzzing for Detecting Platform-Specific Bugs in Scientific Applications"],
+        "italic": ["Manish Motwani", "Aakash Kulkarni", "Yunhan Qiao", "Matthew Davis", "Ziyan Chen"],
+        "links": [
+            { "text": "[Paper]", "url": "./publication_sources/Motwani25aixse.pdf" }
+        ]
+    },
+     
+     {
         "title": "Matthew Davis, Aakash Kulkarni, Ziyan Chen, Yunhan Qiao, Christopher Terrazas, and Manish Motwani, Automatically Detecting Heterogeneous Bugs in High-Performance Computing Scientific Software, arXiv preprint arXiv:2501.09872, 2025",
         "type": "arXiv preprints",
         "year": 2025,
