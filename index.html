@@ -119,7 +119,7 @@
                     document.getElementById('socialIcons').append(...socialIcons);
     
                     // Update bio description
-                   //  document.getElementById('bioDescription').innerHTML = data.rightColumn.bio.description;
+                  //   document.getElementById('bioDescription').innerHTML = data.rightColumn.bio.description;
 
                     // Fetch the bio description from JSON
                     let bioText = data.rightColumn.bio.description;
@@ -134,7 +134,7 @@
                     let styledLastStatement = `<span style="color: red;">${lastStatement}</span>`;
 
                     // Reconstruct the bio with the formatted last statement
-                    let formattedBio = bioParts.join("<br><br>") + "<br><br>" + styledLastStatement;
+                    let formattedBio = bioText; // bioParts.join("<br><br>") + "<br><br>" + styledLastStatement;
 
                     // Update the bio description on the webpage
                     document.getElementById('bioDescription').innerHTML = formattedBio;
