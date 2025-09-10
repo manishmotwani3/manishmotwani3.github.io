@@ -19,16 +19,6 @@
             { "text": "[Paper]", "url": "./publication_sources/Anand25fss.pdf" }
         ]
     },
-     {
-        "title": "Matthew Davis, Aakash Kulkarni, Ziyan Chen, Yunhan Qiao, Christopher Terrazas, and Manish Motwani, Automatically Detecting Heterogeneous Bugs in High-Performance Computing Scientific Software, arXiv preprint arXiv:2501.09872, 2025",
-        "type": "arXiv preprints",
-        "year": 2025,
-        "bold": ["Automatically Detecting Heterogeneous Bugs in High-Performance Computing Scientific Software"],
-        "italic": ["Matthew Davis", "Aakash Kulkarni", "Ziyan Chen", "Yunhan Qiao", "Christopher Terrazas", "Manish Motwani"],
-        "links": [
-            { "text": "[Paper]", "url": "https://arxiv.org/abs/2501.09872" }
-        ]
-    },
     {
         "title": "Ruikai Huang, Manish Motwani, Idel Martinez, and Alessandro Orso, Generating REST API Specifications through Static Analysis, in Proceedings of the 46th International Conference on Software Engineering (ICSE), 2024",
         "type": "Refereed Conference Publications",
