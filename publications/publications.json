@@ -9,7 +9,16 @@
             { "text": "[Paper]", "url": "./publication_sources/Motwani25aixse.pdf" }
         ]
     },
-     
+    {
+        "title": "Yashwanthi Anand* , Rahil P. Mehta* , Manish Motwani, and Sandhya Saisubramanian, Uncovering Systemic and Environment Errors in Autonomous Systems Using Differential Testing, in Proceedings of the AAAI Fall Symposium Series (FSS), 2025",
+        "type": "Refereed Conference Publications",
+        "year": 2025,
+        "bold": ["Uncovering Systemic and Environment Errors in Autonomous Systems Using Differential Testing"],
+        "italic": ["Yashwanthi Anand" , "Rahil P. Mehta" , "Manish Motwani", "Sandhya Saisubramanian"],
+        "links": [
+            { "text": "[Paper]", "url": "./publication_sources/Anand25fss.pdf" }
+        ]
+    },
      {
         "title": "Matthew Davis, Aakash Kulkarni, Ziyan Chen, Yunhan Qiao, Christopher Terrazas, and Manish Motwani, Automatically Detecting Heterogeneous Bugs in High-Performance Computing Scientific Software, arXiv preprint arXiv:2501.09872, 2025",
         "type": "arXiv preprints",
