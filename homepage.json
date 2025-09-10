@@ -36,8 +36,13 @@
         ],
         "news": [
             {
-                "title": "Paper accepted in AIxSE'25 (Technical track)",
+                "title": "Paper accepted in the International Conference on Artificial Intelligence x Software Engineering (AIxSE'25)",
                 "url": "./publications/publication_sources/Motwani25aixse.pdf",
+                "wordToLink": "Paper"
+            },
+            {
+                "title": "Paper accepted in AAAI Fall Symposium Series (FSS 2025)",
+                "url": "./publications/publication_sources/Anand25fss.pdf",
                 "wordToLink": "Paper"
             },
             {
