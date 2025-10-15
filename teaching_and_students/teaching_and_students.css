@@ -202,12 +202,12 @@ tbody::-webkit-scrollbar-thumb:hover {
 /* Adjust the width of the columns */
 .courses-table-wrapper th:nth-child(1),
 .courses-table-wrapper td:nth-child(1) {
-    width: 120px; /* Adjust the width as needed */
+    width: 180px; /* Adjust the width as needed */
 }
 
 .students-table-wrapper th:nth-child(1),
 .students-table-wrapper td:nth-child(1) {
-    width: 120px; /* Adjust the width as needed */
+    width: 180px; /* Adjust the width as needed */
 }
 
 /* Footer Styles */
@@ -256,3 +256,4 @@ tbody::-webkit-scrollbar-thumb:hover {
         }       
     }
 }
+
