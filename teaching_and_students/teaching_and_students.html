@@ -81,7 +81,7 @@
                     const studentsTableBody = document.getElementById('studentsTable').querySelector('tbody');
                     data.students.forEach(student => {
                         const row = document.createElement('tr');
-                       row.innerHTML = `<td>${student.standing}</td><td>${student.name}</td>`;
+                       row.innerHTML = `<td>${student.name}</td><td>${student.standing}</td>`;
                         studentsTableBody.appendChild(row);
                     });
         
@@ -120,6 +120,7 @@
     </script>
 </body>
 </html>
+
 
 
 
