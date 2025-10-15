@@ -47,7 +47,7 @@
         },
         {
             "name": "Akshith Gunasekaran",
-            "standing": "PhD candidate at OSU, (co-advised with Rakesh Bobba)"
+            "standing": "PhD candidate at OSU (co-advised with Rakesh Bobba)"
         },
         {
             "name": "Rahil Piyush Mehta",
@@ -63,11 +63,11 @@
         }
         {
             "name": "Brian Wise Mulanda",
-            "standing": "PhD candidate at OSU, (committee member)"
+            "standing": "PhD candidate at OSU (committee member)"
         },
         {
             "name": "Myeongsoo Kim",
-            "standing": "PhD defended at Georgia Tech, (committee member)"
+            "standing": "PhD defended at Georgia Tech (committee member)"
         }, 
     ]
 }
