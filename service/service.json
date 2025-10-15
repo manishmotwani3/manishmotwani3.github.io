@@ -1,5 +1,12 @@
 {
 	"services": [
+		{
+		"title": "PC member",
+                "url": "https://conf.researchr.org/track/icse-2026/icse-2026-nier",
+                "at": "IEEE/ACM International Conference on Software Engineering (ICSE) (New Ideas and Emerging Results (NIER) track)",
+                "wordToLink": "ICSE",
+                "year": "2026"
+        },
 	    {
 		"title": "PC member",
                 "url": "https://conf.researchr.org/track/icpc-2025/icpc-2025-replications-and-negative-results--rene-?",
