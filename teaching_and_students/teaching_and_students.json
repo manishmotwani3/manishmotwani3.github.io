@@ -66,8 +66,12 @@
             "standing": "PhD candidate at OSU (committee member)"
         },
         {
+            "name": "Aakash Kulkarni",
+            "standing": "MS/PhD student at OSU for 1 year (converted from MEng), graduated with MEng, June 2025"
+        },
+        {
             "name": "Myeongsoo Kim",
-            "standing": "PhD graduate from Georgia Tech (committee member)"
+            "standing": "PhD candidate at Georgia Tech (committee member), graduated, April 2025"
         } 
     ]
 }
