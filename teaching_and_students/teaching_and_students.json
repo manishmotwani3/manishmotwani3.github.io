@@ -23,17 +23,29 @@
     ],
     "students": [
         {
-            "name": "Ashish Tulso Ramrakhiani",
-            "standing": "MS at OSU"
+            "name": "Kausar Moshood",
+            "standing": "PhD student at OSU"
         },
         {
-            "name": "Rahil Piyush Mehta",
-            "standing": "MS at OSU"
+            "name": "Ninad Anklesaria",
+            "standing": "PhD student at OSU"
         },
         {
             "name": "Akshith Gunasekaran",
-            "standing": "PhD candidate at OSU, (committee member)"
+            "standing": "PhD candidate at OSU, (co-advised with Rakesh Bobba)"
         },
+        {
+            "name": "Rahil Piyush Mehta",
+            "standing": "MS student at OSU"
+        },
+        {
+            "name": "Oscar Ludwig",
+            "standing": "Undergraduate student at OSU"
+        },
+        {
+            "name": "Farzaan Wadiwalla",
+            "standing": "Undergraduate Honons student at OSU"
+        }
         {
             "name": "Brian Wise Mulanda",
             "standing": "PhD candidate at OSU, (committee member)"
@@ -42,9 +54,5 @@
             "name": "Myeongsoo Kim",
             "standing": "PhD defended at Georgia Tech, (committee member)"
         }, 
-        {
-            "name": "Oscar Ludwig",
-            "standing": "Undergraduate at OSU"
-        }
     ]
 }
