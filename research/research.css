@@ -294,11 +294,11 @@ body {
         }
     
         .research-description {
-            font-size: 5px;
+            font-size: 11px;
         }
     
         #research h2 {
-            font-size: 6px;
+            font-size: 13px;
             margin-top: 10px;
         }
     }
@@ -327,24 +327,25 @@ body {
     @supports (-webkit-touch-callout: none) { /* Check for iOS devices */
 
             .research-description {
-                font-size: 8px;
+                font-size: 10px;
             }
 
             #research h2 {
                 font-size: 17px;
             }
             .research-details h3 {
-                font-size: 9px;
+                font-size: 10px;
                 font-weight: 600;
             }
             
             .research-details p {
-                font-size: 8px;
+                font-size: 10px;
                 font-weight: 100;
             }
             .research-project a.paper-button {
-                font-size: 8px;
+                font-size: 10px;
             }
        
     }
 }
+
