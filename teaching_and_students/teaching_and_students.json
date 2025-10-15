@@ -59,7 +59,7 @@
         },
         {
             "name": "Farzaan Wadiwalla",
-            "standing": "Undergraduate Honons student at OSU"
+            "standing": "Undergraduate Honors student at OSU"
         },
         {
             "name": "Brian Wise Mulanda",
@@ -67,11 +67,11 @@
         },
         {
             "name": "Aakash Kulkarni",
-            "standing": "MS/PhD student at OSU for 1 year (converted from MEng), graduated with MEng, June 2025"
+            "standing": "MS/PhD student at OSU for 1 year (converted from MEng), <b>graduated</b> with MEng, June 2025"
         },
         {
             "name": "Myeongsoo Kim",
-            "standing": "PhD candidate at Georgia Tech (committee member), graduated, April 2025"
+            "standing": "PhD candidate at Georgia Tech (committee member), <b>graduated</b>, April 2025"
         } 
     ]
 }
