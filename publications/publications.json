@@ -1,6 +1,6 @@
 [
       {
-        "title": "Rahil P. Mehta , Pushpak Katkhede, and Manish Motwani, Defects4REST: A Benchmark of Real-World Defects to Enable Controlled Testing and Debugging Studies for REST APIs, in Proceedings of the 48th International Conference on Software Engineering (ICSE), 2026",
+        "title": "Rahil P. Mehta , Pushpak Katkhede, and Manish Motwani, Defects4REST: A Benchmark of Real-World Defects to Enable Controlled Testing and Debugging Studies for REST APIs, in Proceedings of the 48th IEEE/ACM International Conference on Software Engineering (ICSE), 2026",
         "type": "Refereed Conference Publications",
         "year": 2026,
         "bold": ["Defects4REST: A Benchmark of Real-World Defects to Enable Controlled Testing and Debugging Studies for REST APIs"],
@@ -30,7 +30,7 @@
         ]
     },
     {
-        "title": "Ruikai Huang, Manish Motwani, Idel Martinez, and Alessandro Orso, Generating REST API Specifications through Static Analysis, in Proceedings of the 46th International Conference on Software Engineering (ICSE), 2024",
+        "title": "Ruikai Huang, Manish Motwani, Idel Martinez, and Alessandro Orso, Generating REST API Specifications through Static Analysis, in Proceedings of the 46th IEEE/ACM International Conference on Software Engineering (ICSE), 2024",
         "type": "Refereed Conference Publications",
         "year": 2024,
         "bold": ["Generating REST API Specifications through Static Analysis"],
@@ -40,7 +40,7 @@
         ]
     },
     {
-        "title": "Manish Motwani and Yuriy Brun, Better Automatic Program Repair by Using Bug Reports and Tests Together, in Proceedings of the 45th International Conference on Software Engineering (ICSE), 2023",
+        "title": "Manish Motwani and Yuriy Brun, Better Automatic Program Repair by Using Bug Reports and Tests Together, in Proceedings of the 45th IEEE/ACM International Conference on Software Engineering (ICSE), 2023",
         "type": "Refereed Conference Publications",
         "year": 2023,
         "bold": ["Better Automatic Program Repair by Using Bug Reports and Tests Together"],
