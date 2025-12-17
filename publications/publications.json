@@ -1,4 +1,14 @@
 [
+      {
+        "title": "Rahil P. Mehta , Pushpak Katkhede, and Manish Motwani, Defects4REST: A Benchmark of Real-World Defects to Enable Controlled Testing and Debugging Studies for REST APIs, in Proceedings of the 48th International Conference on Software Engineering (ICSE), 2026",
+        "type": "Refereed Conference Publications",
+        "year": 2026,
+        "bold": ["Defects4REST: A Benchmark of Real-World Defects to Enable Controlled Testing and Debugging Studies for REST APIs"],
+        "italic": ["Rahil P. Mehta", "Pushpak Katkhede", "Manish Motwani"],
+        "links": [
+            { "text": "[Paper]", "url": "./publication_sources/Mehta26icse.pdf" }
+        ]
+    },
      {
         "title": "Manish Motwani, Aakash Kulkarni, Yunhan Qiao, Matthew Davis, and Ziyan Chen, LLM-Guided Differential Fuzzing for Detecting Platform-Specific Bugs in Scientific Applications, in Proceedings of the IEEE International Conference on AI x Software Engineering (AIxSE), 2025",
         "type": "Refereed Conference Publications",
