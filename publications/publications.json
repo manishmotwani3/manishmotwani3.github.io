@@ -1,6 +1,6 @@
 [
       {
-        "title": "Rahil P. Mehta , Pushpak Katkhede, and Manish Motwani, Defects4REST: A Benchmark of Real-World Defects to Enable Controlled Testing and Debugging Studies for REST APIs, in Proceedings of the 48th IEEE/ACM International Conference on Software Engineering (ICSE), 2026",
+        "title": "Rahil P. Mehta , Pushpak Katkhede, and Manish Motwani, Defects4REST: A Benchmark of Real-World Defects to Enable Controlled Testing and Debugging Studies for REST APIs, in Proceedings of the 48th ACM/IEEE International Conference on Software Engineering (ICSE), 2026",
         "type": "Refereed Conference Publications",
         "year": 2026,
         "bold": ["Defects4REST: A Benchmark of Real-World Defects to Enable Controlled Testing and Debugging Studies for REST APIs"],
@@ -30,7 +30,7 @@
         ]
     },
     {
-        "title": "Ruikai Huang, Manish Motwani, Idel Martinez, and Alessandro Orso, Generating REST API Specifications through Static Analysis, in Proceedings of the 46th IEEE/ACM International Conference on Software Engineering (ICSE), 2024",
+        "title": "Ruikai Huang, Manish Motwani, Idel Martinez, and Alessandro Orso, Generating REST API Specifications through Static Analysis, in Proceedings of the 46th ACM/IEEE International Conference on Software Engineering (ICSE), 2024",
         "type": "Refereed Conference Publications",
         "year": 2024,
         "bold": ["Generating REST API Specifications through Static Analysis"],
@@ -40,7 +40,7 @@
         ]
     },
     {
-        "title": "Manish Motwani and Yuriy Brun, Better Automatic Program Repair by Using Bug Reports and Tests Together, in Proceedings of the 45th IEEE/ACM International Conference on Software Engineering (ICSE), 2023",
+        "title": "Manish Motwani and Yuriy Brun, Better Automatic Program Repair by Using Bug Reports and Tests Together, in Proceedings of the 45th ACM/IEEE International Conference on Software Engineering (ICSE), 2023",
         "type": "Refereed Conference Publications",
         "year": 2023,
         "bold": ["Better Automatic Program Repair by Using Bug Reports and Tests Together"],
@@ -52,7 +52,7 @@
         ]
     },
     {
-        "title": "Manish Motwani and Yuriy Brun, Understanding Why and Predicting When Developers Adhere to Code-Quality Standards, in Proceedings of the Software Engineering in Practice (SEIP) Track at the 45th International Conference on Software Engineering (ICSE), 2023",
+        "title": "Manish Motwani and Yuriy Brun, Understanding Why and Predicting When Developers Adhere to Code-Quality Standards, in Proceedings of the Software Engineering in Practice (SEIP) Track at the 45th ACM/IEEE International Conference on Software Engineering (ICSE), 2023",
         "type": "Refereed Conference Publications",
         "year": 2023,
         "bold": ["Understanding Why and Predicting When Developers Adhere to Code-Quality Standards"],
@@ -62,7 +62,7 @@
         ]
     },
     {
-        "title": "Manish Motwani and Yuriy Brun, Automatically Generating Precise Oracles from Structured Natural Language Specifications, in Proceedings of the 41st International Conference on Software Engineering (ICSE), 2019",
+        "title": "Manish Motwani and Yuriy Brun, Automatically Generating Precise Oracles from Structured Natural Language Specifications, in Proceedings of the 41st ACM/IEEE International Conference on Software Engineering (ICSE), 2019",
         "type": "Refereed Conference Publications",
         "year": 2019,
         "bold": ["Automatically Generating Precise Oracles from Structured Natural Language Specifications"],
@@ -105,7 +105,7 @@
         ]
     },
     {
-        "title": "Manish Motwani, High-Quality Automated Program Repair, in proceedings of the Doctoral Symposium Track at the International Conference on Software Engineering (ICSE), 2021",
+        "title": "Manish Motwani, High-Quality Automated Program Repair, in proceedings of the Doctoral Symposium Track at the ACM/IEEE International Conference on Software Engineering (ICSE), 2021",
         "type": "Refereed Short Publications",
         "year": 2021,
         "bold": ["High-Quality Automated Program Repair"],
@@ -147,7 +147,7 @@
         ]
     },
     {
-        "title": "Manish Motwani, Sandhya Sankaranarayanan, René Just, and Yuriy Brun, Do Automated Program Repair Techniques Repair Hard and Important Bugs, in Proceedings of the Journal First Track at the International Conference on Software Engineering (ICSE), 2018",
+        "title": "Manish Motwani, Sandhya Sankaranarayanan, René Just, and Yuriy Brun, Do Automated Program Repair Techniques Repair Hard and Important Bugs, in Proceedings of the Journal First Track at the ACM/IEEE International Conference on Software Engineering (ICSE), 2018",
         "type": "Refereed Poster and Unconventional Publications",
         "year": 2018,
         "bold": ["Do Automated Program Repair Techniques Repair Hard and Important Bugs?"],
