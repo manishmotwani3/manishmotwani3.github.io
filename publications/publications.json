@@ -106,7 +106,7 @@
     },
     {
         "title": "Manish Motwani, High-Quality Automated Program Repair, in proceedings of the Doctoral Symposium Track at the ACM/IEEE International Conference on Software Engineering (ICSE), 2021",
-        "type": "Refereed Short Publications",
+        "type": "Refereed Conference Publications",
         "year": 2021,
         "bold": ["High-Quality Automated Program Repair"],
         "italic": ["Manish Motwani"],
@@ -118,7 +118,7 @@
     },
     {
         "title": "Smita Ghaisas, Manish Motwani, Balaji Balasubramaniam, Anjali Gajendragadkar, Rahul Kelkar, and Harrick Vin, Towards automating the security compliance value chain, in proceedings of the Industrial Track at the Joint Meeting on Foundations of Software Engineering (FSE), 2015",
-        "type": "Refereed Short Publications",
+        "type": "Refereed Conference Publications",
         "year": 2015,
         "bold": ["Towards automating the security compliance value chain"],
         "italic": ["Smita Ghaisas", "Manish Motwani", "Balaji Balasubramaniam", "Anjali Gajendragadkar", "Rahul Kelkar", "Harrick Vin"],
@@ -128,7 +128,7 @@
     },
     {
         "title": "Smita Ghaisas, Manish Motwani, and Preethu Rose, Detecting System Use Cases and Validations from Documents, in proceedings of the New Ideas Track at the IEEE/ACM International Conference on Automated Software Engineering (ASE), 2013",
-        "type": "Refereed Short Publications",
+        "type": "Refereed Conference Publications",
         "year": 2013,
         "bold": ["Detecting System Use Cases and Validations from Documents"],
         "italic": ["Smita Ghaisas", "Manish Motwani", "Preethu Rose"],
