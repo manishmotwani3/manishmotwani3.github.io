@@ -35,6 +35,11 @@
             }
         ],
         "news": [
+             {
+                "title": "Paper accepted in ICSE'26 (Research track)",
+                "url": "./publications/publication_sources/Mehta26icse.pdf",
+                "wordToLink": "Paper"
+            },
             {
                 "title": "Paper accepted in the International Conference on Artificial Intelligence x Software Engineering (AIxSE'25)",
                 "url": "./publications/publication_sources/Motwani25aixse.pdf",
@@ -46,7 +51,7 @@
                 "wordToLink": "Paper"
             },
             {
-                "title": "Paper accepted in ICSE'24 (Technical track)",
+                "title": "Paper accepted in ICSE'24 (Research track)",
                 "url": "./publications/publication_sources/Ruikai24icse.pdf",
                 "wordToLink": "Paper"
             },
