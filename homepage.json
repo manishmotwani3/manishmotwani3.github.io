@@ -36,22 +36,22 @@
         ],
         "news": [
              {
-                "title": "Paper accepted in ICSE'26 (Research track)",
+                "title": "Paper accepted in IEEE/ACM ICSE'26 (Research track)",
                 "url": "./publications/publication_sources/Mehta26icse.pdf",
                 "wordToLink": "Paper"
             },
             {
-                "title": "Paper accepted in the International Conference on Artificial Intelligence x Software Engineering (AIxSE'25)",
+                "title": "Paper accepted in the IEEE AIxSE'25",
                 "url": "./publications/publication_sources/Motwani25aixse.pdf",
                 "wordToLink": "Paper"
             },
             {
-                "title": "Paper accepted in AAAI Fall Symposium Series (FSS 2025)",
+                "title": "Paper accepted in AAAI FSS'25",
                 "url": "./publications/publication_sources/Anand25fss.pdf",
                 "wordToLink": "Paper"
             },
             {
-                "title": "Paper accepted in ICSE'24 (Research track)",
+                "title": "Paper accepted in IEEE/ACM ICSE'24 (Research track)",
                 "url": "./publications/publication_sources/Ruikai24icse.pdf",
                 "wordToLink": "Paper"
             },
@@ -66,12 +66,12 @@
                 "wordToLink": "(APR'23)"
             },
             {
-                "title": "Paper accepted in ICSE'23 (Technical track, Artifact Evaluation track)",
+                "title": "Paper accepted in IEEE/ACM ICSE'23 (Technical track, Artifact Evaluation track)",
                 "url": "./publications/publication_sources/Motwani23icse.pdf",
                 "wordToLink": "Paper"
             },
             {
-                "title": "Paper accepted in ICSE'23 (SEIP track)",
+                "title": "Paper accepted in IEEE/ACM ICSE'23 (SEIP track)",
                 "url": "./publications/publication_sources/Motwani23icse.pdf",
                 "wordToLink": "Paper"
             },
@@ -86,22 +86,22 @@
                 "wordToLink": "Dissertation"
             },
             {
-                "title": "Paper accepted in ICSE'21 (Doctoral Symposium track)",
+                "title": "Paper accepted in IEEE/ACM ICSE'21 (Doctoral Symposium track)",
                 "url": "./publications/publication_sources/Motwani21-icseDS.pdf",
                 "wordToLink": "Paper"
             },
             {
-                "title": "Paper accepted in TSE (2020)",
+                "title": "Paper accepted in IEEE TSE (2020)",
                 "url": "./publications/publication_sources/Motwani20tse.pdf",
                 "wordToLink": "Paper"
             },
             {
-                "title": "Paper accepted in TSE (2019)",
+                "title": "Paper accepted in IEEE TSE (2019)",
                 "url": "./publications/publication_sources/Afzal19tse.pdf",
                 "wordToLink": "Paper"
             },
             {
-                "title": "Paper accepted in ICSE'19 (Technical track, Artifact Evaluation track)",
+                "title": "Paper accepted in IEEE/ACM ICSE'19 (Technical track, Artifact Evaluation track)",
                 "url": "./publications/publication_sources/Motwani19icse.pdf",
                 "wordToLink": "Paper"
             },
@@ -111,7 +111,7 @@
                 "wordToLink": "US Patent"
             },
             {
-                "title": "Paper accepted in ICSE'18 (Journal-First track)",
+                "title": "Paper accepted in IEEE/ACM ICSE'18 (Journal-First track)",
                 "url": "./publications/publication_sources/Motwani18emse-icseJF.pdf",
                 "wordToLink": "Paper"
             },
@@ -126,12 +126,12 @@
                 "wordToLink": "US Patent"
             },
             {
-                "title": "Paper accepted in FSE'15 (Industry track)",
+                "title": "Paper accepted in ACM FSE'15 (Industry track)",
                 "url": "./publications/publication_sources/Ghaisas15fse.pdf",
                 "wordToLink": "Paper"
             },
             {
-                "title": "Paper accepted in ASE'13 (New Ideas track)",
+                "title": "Paper accepted in IEEE/ACM ASE'13 (New Ideas track)",
                 "url": "./publications/publication_sources/Ghaisas13ase.pdf",
                 "wordToLink": "Paper"
             },
