@@ -1,4 +1,14 @@
 [
+     {
+      "title": "Akshith Gunasekaran, Max Chase, Zane Ma, Rakesh B. Bobba, and Manish Motwani, Testing Certificate Authorities: An Empirical Study and Stateful Fuzzing Approach, Under Review, IEEE TSE, 2026",
+        "type": "Refereed Journal Publications Under Review",
+        "year": 2026,
+        "bold": ["Testing Certificate Authorities: An Empirical Study and Stateful Fuzzing Approach"],
+        "italic": ["Akshith Gunasekaran", "Max Chase", "Zane Ma", "Rakesh B. Bobba", "Manish Motwani"],
+        "links": [
+            { "text": "[Paper]", "url": "./publication_sources/Gunasekaran26.pdf" }
+        ]
+     },
       {
         "title": "Rahil P. Mehta, Pushpak Katkhede, and Manish Motwani, Defects4REST: A Benchmark of Real-World Defects to Enable Controlled Testing and Debugging Studies for REST APIs, in Proceedings of the 48th ACM/IEEE International Conference on Software Engineering (ICSE), 2026",
         "type": "Refereed Conference Publications",
