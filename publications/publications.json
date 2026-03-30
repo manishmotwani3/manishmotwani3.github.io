@@ -1,10 +1,20 @@
-[
+[  
       {
-        "title": "Rahil P. Mehta, Pushpak Katkhede, and Manish Motwani, Defects4REST: A Benchmark of Real-World Defects to Enable Controlled Testing and Debugging Studies for REST APIs, in Proceedings of the 48th ACM/IEEE International Conference on Software Engineering (ICSE), 2026",
+        "title": "Ninad Anklesaria and Manish Motwani, Energy-Aware Test Prioritization for High-Performance Computing: A Multi-Objective Approach, in Companion Proceedings of the ACM International Conference on the Foundations of Software Engineering (FSE), 2026",
+        "type": "Refereed Conference Publications",
+        "year": 2026,
+        "bold": ["Energy-Aware Test Prioritization for High-Performance Computing: A Multi-Objective Approach"],
+        "italic": ["Ninad Anklesaria", "Manish Motwani"],
+        "links": [
+            { "text": "[Paper]", "url": "./publication_sources/Anklesaria26fse.pdf" }
+        ]
+    },
+      {
+        "title": "Rahil Mehta, Pushpak Katkhede, and Manish Motwani, Defects4REST: A Benchmark of Real-World Defects to Enable Controlled Testing and Debugging Studies for REST APIs, in Proceedings of the 48th ACM/IEEE International Conference on Software Engineering (ICSE), 2026",
         "type": "Refereed Conference Publications",
         "year": 2026,
         "bold": ["Defects4REST: A Benchmark of Real-World Defects to Enable Controlled Testing and Debugging Studies for REST APIs"],
-        "italic": ["Rahil P. Mehta", "Pushpak Katkhede", "Manish Motwani"],
+        "italic": ["Rahil Mehta", "Pushpak Katkhede", "Manish Motwani"],
         "links": [
             { "text": "[Paper]", "url": "./publication_sources/Mehta26icse.pdf" }
         ]
