@@ -1,20 +1,20 @@
 {
     "courses": [
           {
-            "term": "Winter 2026",
-            "courseNumber": "CS 362: Software Engineering II",
-            "url": ""
-        },
-        {
-            "term": "Winter 2026",
-            "courseNumber": "CS 563: Software Evolution and Maintenance",
-            "url": ""
-        },
-        {
             "term": "Spring 2026",
             "courseNumber": "CS 569: Selected Topics in Software Engineering: Program Analysis and Evaluation",
             "url": ""
         },
+          {
+            "term": "Winter 2026",
+            "courseNumber": "CS 362: Software Engineering II",
+            "url": ""
+        },
+        {
+            "term": "Winter 2026",
+            "courseNumber": "CS 563: Software Evolution and Maintenance",
+            "url": ""
+        },
         {
             "term": "Winter 2025",
             "courseNumber": "CS 362: Software Engineering II",
@@ -23,11 +23,6 @@
         {
             "term": "Winter 2025",
             "courseNumber": "CS 563: Software Evolution and Maintenance",
-            "url": ""
-        },
-        {
-            "term": "Winter 2024",
-            "courseNumber": "CS 569: Selected Topics in Software Engineering: Program Analysis and Evaluation",
             "url": ""
         },
         {
@@ -35,6 +30,11 @@
             "courseNumber": "CS 563: Software Evolution and Maintenance",
             "url": ""
         }
+        {
+            "term": "Winter 2024",
+            "courseNumber": "CS 569: Selected Topics in Software Engineering: Program Analysis and Evaluation",
+            "url": ""
+        },
     ],
     "students": [
         {
