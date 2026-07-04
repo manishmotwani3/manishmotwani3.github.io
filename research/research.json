@@ -83,14 +83,6 @@
             ]
         },
         {
-            "id": "automated-testing",
-            "image": "./research_images/hpctest.jpg",
-            "categories": ["se4hpc"],
-            "title": "Automated Testing and Bug Repair for Heterogeneous High-Performance Computing Applications",
-            "description": "Scientific advancements typically use high-performance computing (HPC)-based simulators to model real-world phenomena. These simulations involve processing large amounts of data (e.g., analyzing the change in the interaction between atomic particles while changing their physical environment) that typically require special libraries and computational power to run the simulations efficiently. Most of these HPC applications involve processing numerical values and their correctness depends on the implementation of underlying libraries and platforms (e.g., Kokkos, Raja, OpenMP, Cuda) that are used to create and execute the HPC applications on supercomputers. The goal of this project is to develop techniques to automatically test the correctness of HPC applications, localize the root cause of bugs detected by automated testing, and repair the bugs using an automated program repair approach.",
-            "links": []
-        },
-        {
             "id": "high-quality-apr",
             "image": "./research_images/high-quality-apr.jpg",
             "categories": ["past"],
