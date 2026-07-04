@@ -36,8 +36,7 @@
         ],
         "news": [
             { 
-                "title": "Invited Talk, Advanced Computing Systems Research, Can We Trust Scientific Software Ported by Humans and AI?
-Detecting Porting Errors and Reducing Validation Costs, Oak Ridge National Laboratory (ORNL)",
+                "title": "Invited Talk, Advanced Computing Systems Research, Can We Trust Scientific Software Ported by Humans and AI? Detecting Porting Errors and Reducing Validation Costs, Oak Ridge National Laboratory (ORNL)",
                 "url": "https://www.ornl.gov/section/advanced-computing-systems-research",
                 "wordToLink": "Advanced Computing Systems Research"
             },
