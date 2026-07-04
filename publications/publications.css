@@ -250,7 +250,7 @@ li.publication-item {
         }
     
         .section-list li {
-            font-size: 5px;
+            font-size: 15px;
             font-weight: 400;
         }
     }
@@ -263,7 +263,7 @@ li.publication-item {
         }
     
         .section-list li {
-            font-size: 10px;
+            font-size: 15px;
             font-weight: 400;
         }
     }
@@ -279,10 +279,8 @@ li.publication-item {
         }
 
         li.publication-item {
-            font-size: 9px;
+            font-size: 15px;
         }
 
     }
 }
-
-
