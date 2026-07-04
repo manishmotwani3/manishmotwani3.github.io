@@ -148,7 +148,7 @@
                         data.categories.forEach(cat => { categoryLabelByKey[cat.key] = cat.label; });
                         const jumpLinks = data.categories
                             .filter(cat => data.projects.some(p => p.categories.includes(cat.key)))
-                            .map(cat => `<a href="#cat-${cat.key}">${cat.label}</a>`);
+                            .map(cat => `<a href="#cat-${cat.key}">${cat.shortLabel || cat.label}</a>`);
                         jumpnav.innerHTML = jumpLinks.join('<span class="jumpnav-sep">|</span>');
 
                         // Render the research projects, grouped by category
@@ -210,3 +210,4 @@
         </script>
     </body>
     </html>
+
