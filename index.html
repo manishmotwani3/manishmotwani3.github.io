@@ -86,8 +86,8 @@
     
             updateLastUpdated();
     
-            // Fetch data from JSON
-            fetch('./homepage.json')
+            // Fetch data from JSON (cache-busted to avoid stale CDN/browser caches)
+            fetch('./homepage.json?v=' + Date.now())
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
