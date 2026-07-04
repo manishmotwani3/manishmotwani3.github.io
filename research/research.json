@@ -63,14 +63,23 @@
         },
         {
             "id": "respector",
+            "image": "./research_images/Respector.jpg",
+            "categories": ["coreSE"],
+            "title": "Respector: Automatically Generating Precise OpenAPI Specifications for REST APIs",
+            "description": "Modern web applications extensively use API calls to update the UI state to respond user events or server-side changes. For such applications, API-level testing is as important as the unit testing and UI testing. Existing API testing tools require API specifications (e.g., OpenAPI), which often may not be available or, when available, be inconsistent with the API implementation, thus limiting the applicability of automated API testing to web applications. The goal of this project is to use program analysis techniques to automatically generate precise OpenAPI specifications from the application's implementation that can be used by automated API testing tools.",
+            "links": [
+                { "label": "[Paper]", "url": "../publications/publication_sources/Huang24icse.pdf" }
+            ]
+        },
+        {
+            "id": "defects4rest",
             "image": "./research_images/defects4rest.png",
             "categories": ["coreSE"],
-            "title": "Respector & Defects4REST: Specification Generation and Defect Detection for REST APIs",
-            "description": "Modern web applications extensively use REST APIs to update UI state in response to user or server-side events. API-level testing is as important as unit and UI testing, but existing API testing tools require specifications (e.g., OpenAPI) that are often missing or inconsistent with the actual implementation. This project spans two complementary efforts: Respector, which automatically generates precise OpenAPI specifications from an application's implementation using program analysis, and Defects4REST, a curated benchmark of real-world REST API defects used to evaluate automated REST API testing and defect-detection techniques.",
+            "title": "Defects4REST: A Benchmark of Real-World Defects for REST APIs",
+            "description": "Automated testing and defect-detection techniques for REST APIs are difficult to evaluate without a reliable ground truth of real-world defects. Defects4REST is a curated benchmark built by mining GitHub REST API projects, filtering and manually assessing them, then mining and manually assessing their issues to derive a taxonomy of REST API defects. The resulting benchmark gives researchers a common, real-world basis for evaluating automated REST API testing and defect-detection techniques.",
             "links": [
-                { "label": "[Respector Paper]", "url": "../publications/publication_sources/Huang24icse.pdf" },
-                { "label": "[Defects4REST Paper]", "url": "../publications/publication_sources/Mehta26icse.pdf" },
-                { "label": "[Defects4REST Replication Package]", "url": "https://github.com/ANSWER-OSU/Defects4REST" }
+                { "label": "[Paper]", "url": "../publications/publication_sources/Mehta26icse.pdf" },
+                { "label": "[Replication Package]", "url": "https://github.com/ANSWER-OSU/Defects4REST" }
             ]
         },
         {
