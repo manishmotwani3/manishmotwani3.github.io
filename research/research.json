@@ -178,4 +178,8 @@
             "title": "Knowledge-assisted Product Requirements Configurator",
             "description": "Time to market is a key determinant for the success of any product-based business. This depends to a great extent on how efficiently the existing product knowledge is utilized for customization needs. The knowledge is often not represented in a form that allows an easy reuse. In this project, we developed an ontological representation of product primitives for a knowledge-assisted requirements configurator and deployed it in an organizational unit for a financial product suite.",
             "links": [
-                { "label": "[Paper]", "url": "../publications/p
+                { "label": "[Paper]", "url": "../publications/publication_sources/Anish13please.pdf" }
+            ]
+        }
+    ]
+}
