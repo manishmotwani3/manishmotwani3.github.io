@@ -35,6 +35,12 @@
             }
         ],
         "news": [
+            { 
+                "title": "Invited Talk, Advanced Computing Systems Research, Can We Trust Scientific Software Ported by Humans and AI?
+Detecting Porting Errors and Reducing Validation Costs, Oak Ridge National Laboratory (ORNL)",
+                "url": "https://www.ornl.gov/section/advanced-computing-systems-research",
+                "wordToLink": "Advanced Computing Systems Research"
+            },
             {
                 "title": "Paper accepted in ACM FSE'26 (Ideas, Visions and Reflections Track)",
                 "url": "./publications/publication_sources/Anklesaria26fse.pdf",
@@ -54,6 +60,11 @@
                 "title": "Paper accepted in AAAI FSS'25",
                 "url": "./publications/publication_sources/Anand25fss.pdf",
                 "wordToLink": "Paper"
+            },
+            {
+                 "title": "Invited Talk, AI Seminar, AI for Software Engineering (AI4SE): Opportunities and Challenges, Oregon State University".
+                 "url": "https://engineering.oregonstate.edu/events/ai-seminar-ai-software-engineering-ai4se-opportunities-and-challenges",
+                 "wordToLink": "AI Seminar"
             },
             {
                 "title": "Paper accepted in IEEE/ACM ICSE'24 (Research Track)",
