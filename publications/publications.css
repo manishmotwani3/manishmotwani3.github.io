@@ -245,7 +245,7 @@ li.publication-item {
     /* Portrait mode */
     @media (orientation: portrait) {
         .section h2 {
-            font-size: 7px;
+            font-size: 15px;
             font-weight: 500;
         }
     
@@ -258,7 +258,7 @@ li.publication-item {
     /* Landscape mode */
     @media (orientation: landscape) {
         .section h2 {
-            font-size: 7px;
+            font-size: 15px;
             font-weight: 500;
         }
     
@@ -274,7 +274,7 @@ li.publication-item {
     /* Apply styles for iOS devices */
     @supports (-webkit-touch-callout: none) { /* Check for iOS devices */
         .section h2 {
-            font-size: 13px;
+            font-size: 15px;
             font-weight: 500;
         }
 
