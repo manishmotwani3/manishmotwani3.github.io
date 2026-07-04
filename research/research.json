@@ -23,7 +23,7 @@
         },
         {
             "id": "enact",
-            "image": "./research_images/enact.svg",
+            "image": "./research_images/enact.png",
             "categories": ["se4hpc"],
             "title": "ENACT: Energy-Aware Test Prioritization for High-Performance Computing",
             "description": "HPC test suites can require thousands of tests executed on supercomputers, where energy costs can dwarf traditional software testing costs and execution time is not a reliable proxy for energy consumed. ENACT (ENergy-Aware Coverage-based Test prioritization) is a multi-objective optimization approach that treats energy consumption as a first-class objective alongside code coverage, execution time, and test suite size when selecting and ordering tests. Evaluated on LAMMPS across 1,257 real code changes, ENACT achieves 97.5% average energy savings compared to exhaustive testing while maintaining 95% average coverage of modified code, substantially outperforming random and greedy coverage-per-joule baselines.",
