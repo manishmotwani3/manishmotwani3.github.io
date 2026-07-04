@@ -46,20 +46,20 @@
             "standing": "PhD student at OSU"
         },
         {
-            "name": "Akshith Gunasekaran",
-            "standing": "PhD candidate at OSU (co-advised with Dr. Rakesh Bobba)"
-        },
-        {
-            "name": "Rahil Piyush Mehta",
-            "standing": "MS student at OSU"
-        },
-        {
             "name": "Oscar Ludwig",
-            "standing": "Undergraduate student at OSU"
+            "standing": "Undergraduate student at OSU, enrolled in Accelerated MS program"
         },
         {
             "name": "Farzaan Wadiwalla",
             "standing": "Undergraduate Honors student at OSU"
+        },
+          {
+            "name": "Akshith Gunasekaran",
+            "standing": "PhD candidate at OSU (co-advised with Dr. Rakesh Bobba),  <b>graduated</b>, June 2026"
+        },
+        {
+            "name": "Rahil Piyush Mehta",
+            "standing": "MS student at OSU,  <b>graduated</b>, June 2026"
         },
         {
             "name": "Aakash Kulkarni",
