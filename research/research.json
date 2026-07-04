@@ -3,26 +3,88 @@
         "logo": "./research_images/logo-no-background.png",
         "description": "The Advanced Software Engineering Research (ANSWER) lab (part of both the <a href=\"https://engineering.oregonstate.edu/EECS/research/software-engineering-and-human-computer-interaction\" target=\"_blank\">Software Engineering and Human-Computer Interaction</a> group and the <a href=\"https://hipcastor-osu.github.io/hipcastor-site/\" target=\"_blank\">High-Performance Computing and Systems</a> group) in the <a href=\"https://engineering.oregonstate.edu/EECS\" target=\"_blank\">School of Electrical Engineering and Computer Science</a> at <a href=\"https://oregonstate.edu/\" target=\"_blank\">Oregon State University</a> focuses on advancing the field of automated software testing, debugging, and repair. Our work spans a range of application domains, including High-Performance Computing (HPC) scientific applications, Reinforcement learning (RL)-based systems, and REST API-based web applications. We aim to develop innovative techniques and tools that can automatically identify and fix defects, ensuring the reliability and robustness of these complex software systems. Our research strives to improve the efficiency and effectiveness of software maintenance and quality assurance processes."
     },
+    "categories": [
+        { "key": "se4ai", "label": "SE4AI" },
+        { "key": "se4hpc", "label": "SE4HPC" },
+        { "key": "se4cyber", "label": "SE4Cybersecurity" },
+        { "key": "coreSE", "label": "Core SE" },
+        { "key": "past", "label": "Past Research" }
+    ],
     "projects": [
         {
+            "id": "heterobugdetect",
+            "image": "./research_images/heterobugdetect.png",
+            "categories": ["se4hpc"],
+            "title": "HeteroBugDetect: LLM-Guided Differential Fuzzing for Detecting Platform-Specific Bugs",
+            "description": "Modern scientific and AI-based applications run complex workloads across heterogeneous platforms (CPUs and accelerators such as GPUs), where platform-specific libraries can introduce bugs that cause applications to behave differently across systems. HeteroBugDetect combines large language models, grammar-based kernel-sensitive fuzzing, and differential testing into a unified framework for uncovering these heterogeneous bugs. On LAMMPS, a widely used molecular dynamics simulator, HeteroBugDetect automatically detected 8 of 20 known heterogeneous bugs and uncovered 2 previously unknown bugs, improving LAMMPS's correctness and reliability across diverse platforms.",
+            "links": [
+                { "label": "[Paper]", "url": "../publications/publication_sources/Motwani25aixse.pdf" }
+            ]
+        },
+        {
+            "id": "enact",
+            "image": "./research_images/enact.svg",
+            "categories": ["se4hpc"],
+            "title": "ENACT: Energy-Aware Test Prioritization for High-Performance Computing",
+            "description": "HPC test suites can require thousands of tests executed on supercomputers, where energy costs can dwarf traditional software testing costs and execution time is not a reliable proxy for energy consumed. ENACT (ENergy-Aware Coverage-based Test prioritization) is a multi-objective optimization approach that treats energy consumption as a first-class objective alongside code coverage, execution time, and test suite size when selecting and ordering tests. Evaluated on LAMMPS across 1,257 real code changes, ENACT achieves 97.5% average energy savings compared to exhaustive testing while maintaining 95% average coverage of modified code, substantially outperforming random and greedy coverage-per-joule baselines.",
+            "links": [
+                { "label": "[Paper]", "url": "../publications/publication_sources/Anklesaria26fse.pdf" }
+            ]
+        },
+        {
+            "id": "kaizen",
+            "image": "./research_images/kaizen.png",
+            "categories": ["se4ai", "se4hpc"],
+            "title": "Kaizen: Testing LLM-Based Code Translation for HPC Software",
+            "description": "Large language models are increasingly used to automatically translate HPC code between platforms (e.g., CUDA to OpenMP), but the correctness of these translations is rarely verified beyond compilation. Kaizen is a metamorphic fuzzing and differential testing framework that evaluates LLM-translated HPC programs for both compilation and semantic correctness. Applied across three ChatPORT model variants on 16 HeCBench applications spanning 7 domains, Kaizen characterizes common translation failure modes and uncovers semantic bugs that would otherwise go undetected.",
+            "links": []
+        },
+        {
+            "id": "aiprobe",
+            "image": "./research_images/aiprobe.png",
+            "categories": ["se4ai"],
+            "title": "AIProbe: Differential Testing to Uncover Systemic and Environment Errors in Autonomous Agents",
+            "description": "Autonomous agents deployed in complex environments can fail for two very different reasons: systemic errors in the agent's own reasoning or policy, or environment and task configurations that are inherently unsolvable. AIProbe is a black-box differential testing framework that distinguishes between these two sources of failure. It generates diverse environment and task configurations using Latin Hypercube sampling, solves each task independently with a search-based oracle planner, and compares the agent's behavior against the planner's solution to correctly attribute failures. AIProbe has been evaluated on model-free and model-based agents in both discrete and continuous domains, including aircraft collision avoidance, multi-agent navigation, and locomotion benchmarks.",
+            "links": [
+                { "label": "[Paper]", "url": "../publications/publication_sources/Anand25fss.pdf" },
+                { "label": "[Code]", "url": "https://github.com/ANSWER-OSU/AIProbe" }
+            ]
+        },
+        {
+            "id": "cafuzz",
+            "image": "./research_images/cafuzz.png",
+            "categories": ["se4cyber"],
+            "title": "CAFUZZ: Protocol-Aware Stateful Testing of Certificate Authorities",
+            "description": "Certificate Authorities (CAs) implement stateful, cryptographically authenticated workflows (via the ACME, OCSP, and CRL protocols) for issuing and revoking web certificates, yet little is known about how well these implementations are tested. We conducted the first empirical study of developer-written tests across four widely used ACME-compliant CAs (Boulder, Vault, Smallstep, and Xipki), finding that most tests cover only \"happy path\" operations and leave stateful workflows and specification-defined error handling largely unexercised. To close this gap, we built CAFUZZ, a protocol-aware, stateful black-box test generator that derives behavioral models directly from the RFC specifications and systematically explores CA behavior. CAFUZZ achieves 100% protocol operation and error coverage across all four CAs, compared to 39.5% and 25.6% for developer-written tests, improves code coverage from 15.5% to 37.3%, and detected 3 previously unknown bugs while rediscovering 43 known protocol-related bugs.",
+            "links": [
+                { "label": "[Paper]", "url": "../publications/publication_sources/Gunasekaran26.pdf" },
+                { "label": "[Replication Package]", "url": "https://github.com/ANSWER-OSU/cafuzz" }
+            ]
+        },
+        {
+            "id": "respector",
+            "image": "./research_images/defects4rest.png",
+            "categories": ["coreSE"],
+            "title": "Respector & Defects4REST: Specification Generation and Defect Detection for REST APIs",
+            "description": "Modern web applications extensively use REST APIs to update UI state in response to user or server-side events. API-level testing is as important as unit and UI testing, but existing API testing tools require specifications (e.g., OpenAPI) that are often missing or inconsistent with the actual implementation. This project spans two complementary efforts: Respector, which automatically generates precise OpenAPI specifications from an application's implementation using program analysis, and Defects4REST, a curated benchmark of real-world REST API defects used to evaluate automated REST API testing and defect-detection techniques.",
+            "links": [
+                { "label": "[Respector Paper]", "url": "../publications/publication_sources/Huang24icse.pdf" },
+                { "label": "[Defects4REST Paper]", "url": "../publications/publication_sources/Mehta26icse.pdf" },
+                { "label": "[Defects4REST Replication Package]", "url": "https://github.com/ANSWER-OSU/Defects4REST" }
+            ]
+        },
+        {
             "id": "automated-testing",
-	    "image": "./research_images/hpctest.jpg",
+            "image": "./research_images/hpctest.jpg",
+            "categories": ["se4hpc"],
             "title": "Automated Testing and Bug Repair for Heterogeneous High-Performance Computing Applications",
             "description": "Scientific advancements typically use high-performance computing (HPC)-based simulators to model real-world phenomena. These simulations involve processing large amounts of data (e.g., analyzing the change in the interaction between atomic particles while changing their physical environment) that typically require special libraries and computational power to run the simulations efficiently. Most of these HPC applications involve processing numerical values and their correctness depends on the implementation of underlying libraries and platforms (e.g., Kokkos, Raja, OpenMP, Cuda) that are used to create and execute the HPC applications on supercomputers. The goal of this project is to develop techniques to automatically test the correctness of HPC applications, localize the root cause of bugs detected by automated testing, and repair the bugs using an automated program repair approach.",
             "links": []
         },
         {
-            "id": "respector",
-            "image": "./research_images/Respector.jpg",
-            "title": "Automatically Generating Precise OpenAPI Specifications for REST APIs",
-            "description": "Modern web applications extensively use API calls to update the UI state to respond user events or server-side changes. For such applications, API-level testing is as important as the unit testing and UI testing. Existing API testing tools require API specifications (e.g., OpenAPI), which often may not be available or, when available, be inconsistent with the API implementation, thus limiting the applicability of automated API testing to web applications. The goal of this project is to use program analysis techniques to automatically generate precise OpenAPI specifications from the application's implementation that can be used by automated API testing tools.",
-            "links": [
-                { "label": "[Paper]", "url": "../publications/publication_sources/Huang24icse.pdf" }
-            ]
-        },
-        {
             "id": "high-quality-apr",
             "image": "./research_images/high-quality-apr.jpg",
+            "categories": ["past"],
             "title": "High-Quality Automatic Program Repair",
             "description": "Automatic program repair (APR) has recently gained attention because it proposes to fix software defects with no human intervention. To automatically fix defects, most APR tools use the developer-written tests to (a) localize the defect, and (b) generate and validate the automatically produced candidate patches based on the constraints imposed by the tests. While APR tools can produce patches that appear to fix the defect for 11–19% of the defects in real-world software, most of the patches produced are not correct or acceptable to developers because they overfit to the tests used during the repair process. This problem is known as the patch overfitting problem. To address this problem, I propose to equip APR tools with additional constraints derived from natural-language software artifacts such as bug reports and requirements specifications that describe the bug and intended software behavior but are not typically used by the APR tools. I hypothesize that patches produced by APR tools while using such additional constraints would be of higher quality. To test this hypothesis, I propose an automated and objective approach to evaluate the quality of patches, and propose two novel methods to improve the fault localization and developer-written test suites using natural-language software artifacts. Finally, I propose to use my patch evaluation methodology to analyze the effect of the improved fault localization and test suites on the quality of patches produced by APR tools for real-world defects.",
             "links": [
@@ -34,6 +96,7 @@
         {
             "id": "quality-automated",
             "image": "./research_images/overfitting.png",
+            "categories": ["past"],
             "title": "Quality of Automated Program Repair on Real World Defects",
             "description": "In this project we address a deficit of earlier evaluations of automated repair techniques caused by repairing programs and evaluating generated patches’ correctness using the same set of tests. Since tests are an imperfect metric of program correctness, evaluations of this type do not discriminate between correct patches and patches that “overfit” the available tests and break untested but desired functionality. We develop JaRFLy, a framework to automatically evaluate quality of repair tools, on a publicly available benchmarks using independently constructed evaluation test suites.",
             "links": [
@@ -45,6 +108,7 @@
         {
             "id": "swami",
             "image": "./research_images/swami.png",
+            "categories": ["past"],
             "title": "Automatically Generating Precise Oracles from Structured Natural Language Specifications",
             "description": "Software specifications often use natural language to describe the desired behavior, but such specifications are difficult to verify automatically. We present Swami, an automated technique that extracts test oracles and generates executable tests from structured natural language specifications. Swami focuses on exceptional behavior and boundary conditions that often cause field failures but that developers often fail to manually write tests for.",
             "links": [
@@ -55,6 +119,7 @@
         {
             "id": "sosrepair",
             "image": "./research_images/sosrepair.png",
+            "categories": ["past"],
             "title": "SOSRepair: Expressive Semantic Search for Real-World Program Repair",
             "description": "This project aims to develop a technique that fundamentally redesigns the use of semantic search for automated repair of real-world defects in real-world systems. The technique should handle large, real-world programs that employ realistic programming constructs and idioms (e.g., structs, console output, and library calls) as well as defects with no passing test cases executing the buggy region.",
             "links": [
@@ -65,6 +130,7 @@
         {
             "id": "repairingimportantbugs",
             "image": "./research_images/repairingimportantbugs.jpg",
+            "categories": ["past"],
             "title": "Do Automated Program Repair Techniques Repair Hard and Important Bugs?",
             "description": "Existing evaluations of automated repair techniques focus on the fraction of the defects for which the technique can produce a patch, the time needed to produce patches, and how well patches generalize to the intended specification. These evaluations have not focused on the characteristics of the defects that repair techniques can repair. This project aims to find answers for questions such as “can automated repair techniques repair bugs that are hard for humans to repair?” and “which techniques are more likely to repair a memory leak defect?”.",
             "links": [
@@ -77,6 +143,7 @@
         {
             "id": "scvc",
             "image": "./research_images/scvc.png",
+            "categories": ["past"],
             "title": "Towards automating the security compliance value chain",
             "description": "Information security is of paramount importance in this digital era. While businesses strive to adopt industry-accepted system-hardening standards such as benchmarks recommended by the Center for Internet Security (CIS) to combat threats, they are confronted with an additional challenge of ever-evolving regulations that address security concerns. These create additional requirements, which must be incorporated into software systems. In this project, we present a generic approach towards automating different activities of the Security Compliance Value Chain in organizations in the context of the Payment Card Industry Data Security Standard (PCI-DSS) regulations.",
             "links": [
@@ -86,6 +153,7 @@
         {
             "id": "regulatory-rule",
             "image": null,
+            "categories": ["past"],
             "title": "Systems and Methods for an Automated Interpretation of Legal Regulations",
             "description": "Regulations influence several aspects of IT-enabled businesses. Aimed at safeguarding the wellbeing of citizens, they are written with great rigor and discipline to minimize incidents of violations. However, their diction is so highly specialized that it is almost incomprehensible to business communities and software vendors who need to ensure regulatory compliance. In this projct, we devise a Regulatory Rule Model to represent regulations and demonstrate its use to automate the interpretation of regulations.",
             "links": [
@@ -95,6 +163,7 @@
         {
             "id": "system-use-cases",
             "image": null,
+            "categories": ["past"],
             "title": "Detecting System Use Cases and Validations from Documents",
             "description": "Identifying system use cases and corresponding validations involves analyzing large requirement documents to understand the descriptions of business processes, rules and policies. This consumes a significant amount of effort and time. This project aims to develop an approach to automate the detection of system use cases and corresponding validations from natural-language requirements documents.",
             "links": [
@@ -104,7 +173,7 @@
         {
             "id": "product-configurator",
             "image": null,
-            "class": "research-project anchor-target",
+            "categories": ["past"],
             "title": "Knowledge-assisted Product Requirements Configurator",
             "description": "Time to market is a key determinant for the success of any product-based business. This depends to a great extent on how efficiently the existing product knowledge is utilized for customization needs. The knowledge is often not represented in a form that allows an easy reuse. In this project, we developed an ontological representation of product primitives for a knowledge-assisted requirements configurator and deployed it in an organizational unit for a financial product suite.",
             "links": [
