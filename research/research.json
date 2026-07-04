@@ -4,11 +4,11 @@
         "description": "The Advanced Software Engineering Research (ANSWER) lab (part of both the <a href=\"https://engineering.oregonstate.edu/EECS/research/software-engineering-and-human-computer-interaction\" target=\"_blank\">Software Engineering and Human-Computer Interaction</a> group and the <a href=\"https://hipcastor-osu.github.io/hipcastor-site/\" target=\"_blank\">High-Performance Computing and Systems</a> group) in the <a href=\"https://engineering.oregonstate.edu/EECS\" target=\"_blank\">School of Electrical Engineering and Computer Science</a> at <a href=\"https://oregonstate.edu/\" target=\"_blank\">Oregon State University</a> focuses on advancing the field of automated software testing, debugging, and repair. Our work spans a range of application domains, including High-Performance Computing (HPC) scientific applications, Reinforcement learning (RL)-based systems, and REST API-based web applications. We aim to develop innovative techniques and tools that can automatically identify and fix defects, ensuring the reliability and robustness of these complex software systems. Our research strives to improve the efficiency and effectiveness of software maintenance and quality assurance processes."
     },
     "categories": [
-        { "key": "se4ai", "label": "Software Engineering for AI" },
-        { "key": "se4hpc", "label": "Software Engineering for HPC" },
-        { "key": "se4cyber", "label": "Software Engineering for Cybersecurity" },
-        { "key": "coreSE", "label": "Core Software Engineering" },
-        { "key": "past", "label": "Past Research" }
+        { "key": "se4ai", "label": "Software Engineering for AI", "shortLabel": "SE4AI" },
+        { "key": "se4hpc", "label": "Software Engineering for HPC", "shortLabel": "SE4HPC" },
+        { "key": "se4cyber", "label": "Software Engineering for Cybersecurity", "shortLabel": "SE4Cybersecurity" },
+        { "key": "coreSE", "label": "Core Software Engineering", "shortLabel": "Core SE" },
+        { "key": "past", "label": "Past Research", "shortLabel": "Past Research" }
     ],
     "projects": [
         {
@@ -178,8 +178,4 @@
             "title": "Knowledge-assisted Product Requirements Configurator",
             "description": "Time to market is a key determinant for the success of any product-based business. This depends to a great extent on how efficiently the existing product knowledge is utilized for customization needs. The knowledge is often not represented in a form that allows an easy reuse. In this project, we developed an ontological representation of product primitives for a knowledge-assisted requirements configurator and deployed it in an organizational unit for a financial product suite.",
             "links": [
-                { "label": "[Paper]", "url": "../publications/publication_sources/Anish13please.pdf" }
-            ]
-        }
-    ]
-}
+                { "label": "[Paper]", "url": "../publications/p
