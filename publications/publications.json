@@ -4,7 +4,7 @@
       "type": "Refereed Journal Publications Under Review",
         "year": 2026,
         "bold": ["Kaizen: Metamorphic Fuzzing and Differential Testing for LLM-Translated HPC Applications"],
-        "italic": ["Oscar Ludwig", "Ninad Anklesaria", "Zheming Jin", "Swaroop Pophale", "Kausar Moshood", "Christian J. DeVore", "Brandon Gill", "Cassius Villareal", "Keita Teranishi", "Manish Motwani"]
+        "italic": ["Oscar Ludwig", "Ninad Anklesaria", "Zheming Jin", "Swaroop Pophale", "Kausar Moshood", "Christian J. DeVore", "Brandon Gill", "Cassius Villareal", "Keita Teranishi", "Manish Motwani"],
         "links": [
             { "text": "[Paper]", "url": "https://arxiv.org/abs/2607.04058" }
         ]
