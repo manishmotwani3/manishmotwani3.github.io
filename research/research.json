@@ -18,7 +18,8 @@
             "title": "HeteroBugDetect: LLM-Guided Differential Fuzzing for Detecting Platform-Specific Bugs",
             "description": "Modern scientific and AI-based applications run complex workloads across heterogeneous platforms (CPUs and accelerators such as GPUs), where platform-specific libraries can introduce bugs that cause applications to behave differently across systems. HeteroBugDetect combines large language models, grammar-based kernel-sensitive fuzzing, and differential testing into a unified framework for uncovering these heterogeneous bugs. On LAMMPS, a widely used molecular dynamics simulator, HeteroBugDetect automatically detected 8 of 20 known heterogeneous bugs and uncovered 2 previously unknown bugs, improving LAMMPS's correctness and reliability across diverse platforms.",
             "links": [
-                { "label": "[Paper]", "url": "../publications/publication_sources/Motwani25aixse.pdf" }
+                { "label": "[Paper]", "url": "../publications/publication_sources/Motwani25aixse.pdf" },
+                { "label": "[Code]", "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/VHO9RH" }
             ]
         },
         {
@@ -28,7 +29,8 @@
             "title": "ENACT: Energy-Aware Test Prioritization for High-Performance Computing",
             "description": "HPC test suites can require thousands of tests executed on supercomputers, where energy costs can dwarf traditional software testing costs and execution time is not a reliable proxy for energy consumed. ENACT (ENergy-Aware Coverage-based Test prioritization) is a multi-objective optimization approach that treats energy consumption as a first-class objective alongside code coverage, execution time, and test suite size when selecting and ordering tests. Evaluated on LAMMPS across 1,257 real code changes, ENACT achieves 97.5% average energy savings compared to exhaustive testing while maintaining 95% average coverage of modified code, substantially outperforming random and greedy coverage-per-joule baselines.",
             "links": [
-                { "label": "[Paper]", "url": "../publications/publication_sources/Anklesaria26fse.pdf" }
+                { "label": "[Paper]", "url": "../publications/publication_sources/Anklesaria26fse.pdf" },
+                { "label": "[Code]", "url": "https://github.com/ANSWER-OSU/ENACT-Replication-Package" }
             ]
         },
         {
