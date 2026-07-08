@@ -37,7 +37,10 @@
             "categories": ["se4ai", "se4hpc"],
             "title": "Kaizen: Testing LLM-Based Code Translation for HPC Software",
             "description": "Large language models are increasingly used to automatically translate HPC code between platforms (e.g., CUDA to OpenMP), but the correctness of these translations is rarely verified beyond compilation. Kaizen is a metamorphic fuzzing and differential testing framework that evaluates LLM-translated HPC programs for both compilation and semantic correctness. Applied across three ChatPORT model variants on 16 HeCBench applications spanning 7 domains, Kaizen characterizes common translation failure modes and uncovers semantic bugs that would otherwise go undetected.",
-            "links": []
+            "links": [
+                { "label": "[Paper]", "url": "https://arxiv.org/pdf/2607.04058" },
+                { "label": "[Code]", "url": "https://github.com/ANSWER-OSU/Kaizen-Replication-Package" }
+            ]
         },
         {
             "id": "aiprobe",
