@@ -1,5 +1,12 @@
-{
+{ 
 	"services": [
+		{
+			"title": "PC member",
+			"at":  "ACM International Conference on the Foundations of Software Engineering (FSE) (Research track)",
+			"url": "https://conf.researchr.org/track/fse-2027/fse-2027-papers",
+			"wordToLink": "FSE",
+			"year": "2027"
+		},
 		{
 		"title": "PC member",
                 "url": "https://conf.researchr.org/track/icse-2026/icse-2026-nier",
