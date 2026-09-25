@@ -1,5 +1,15 @@
 [ 
       {
+      "title": "Clarisa Caballero-Ignacio, Lucas Stephens, Josiah Sage, Manish Motwani, and Zane Ma, Vulnerability Trends Across Open-Source AI-Attributed Code, in Proceedings of the 2nd Workshop on Explainable and Reliable Software Systems (EXPRESS), 2026",
+      "type": "Refereed Poster and Unconventional Publications",
+        "year": 2026,
+        "bold": ["Vulnerability Trends Across Open-Source AI-Attributed Code"],
+        "italic": ["Clarisa Caballero-Ignacio", "Lucas Stephens", "Josiah Sage", "Manish Motwani", "Zane Ma"],
+        "links": [
+            { "text": "[Paper]", "url": "./publication_sources/Caballero-Ignacio_express26.pdf" }
+        ]
+     },
+      {
       "title": "Oscar Ludwig, Ninad Anklesaria, Zheming Jin, Swaroop Pophale, Kausar Moshood, Christian J. DeVore, Brandon Gill, Cassius Villareal, Keita Teranishi, and Manish Motwani, Kaizen: Metamorphic Fuzzing and Differential Testing for LLM-Translated HPC Applications, Under Review, Transactions on Software Engineering and Methodology (TOSEM), 2026",
       "type": "Refereed Journal Publications Under Review",
         "year": 2026,
