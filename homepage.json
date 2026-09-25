@@ -35,15 +35,25 @@
             }
         ],
         "news": [
-            { 
-                "title": "Invited Talk, Advanced Computing Systems Research, Can We Trust Scientific Software Ported by Humans and AI? Detecting Porting Errors and Reducing Validation Costs, Oak Ridge National Laboratory (ORNL)",
-                "url": "https://www.ornl.gov/section/advanced-computing-systems-research",
-                "wordToLink": "ORNL"
+             {
+                "title": "Panelist in the BoF session on Correctness Testing of HPC Scientific Software in the Age of AI-Generated Code at Supercomputing Conference (SC'26)",
+                "url": "https://sc26.conference-program.com/presentation/?id=bof160&sess=sess389",
+                "wordToLink": "(SC'26)"
+            },
+            {
+                "title": "Paper accepted in Workshop on Explainable and Reliable Software Systems (EXPRESS'26)",
+                "url": "./publication_sources/Caballero-Ignacio_express26.pdf",
+                "wordToLink": "Paper"
             },
             {
                 "title": "Paper accepted in ACM FSE'26 (Ideas, Visions and Reflections Track)",
                 "url": "./publications/publication_sources/Anklesaria26fse.pdf",
                 "wordToLink": "Paper"
+            },
+            { 
+                "title": "Invited Talk, Advanced Computing Systems Research, Can We Trust Scientific Software Ported by Humans and AI? Detecting Porting Errors and Reducing Validation Costs, Oak Ridge National Laboratory (ORNL)",
+                "url": "https://www.ornl.gov/section/advanced-computing-systems-research",
+                "wordToLink": "ORNL"
             },
              {
                 "title": "Paper accepted in IEEE/ACM ICSE'26 (Research Track)",
@@ -51,7 +61,7 @@
                 "wordToLink": "Paper"
             },
             {
-                "title": "Paper accepted in the IEEE AIxSE'25",
+                "title": "Paper accepted in the IEEE Conference on AI x Software Engineering (AIxSE'25)",
                 "url": "./publications/publication_sources/Motwani25aixse.pdf",
                 "wordToLink": "Paper"
             },
