@@ -1,6 +1,11 @@
 {
     "courses": [
           {
+            "term": "Fall 2026",
+            "courseNumber": "CS 569: Selected Topics in Software Engineering: AI-Driven Program Analysis and Evaluation",
+            "url": ""
+        },
+          {
             "term": "Spring 2026",
             "courseNumber": "CS 569: Selected Topics in Software Engineering: Program Analysis and Evaluation",
             "url": ""
