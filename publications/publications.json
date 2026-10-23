@@ -1,5 +1,15 @@
 [ 
       {
+      "title": "Kausar Moshood, Jace Bolante, Roshan Aditya Murali, and Manish Motwani, Specification-Based Testing of Large Language Models, 2026",
+      "type": "Refereed Journal Publications Under Review",
+        "year": 2026,
+        "bold": ["Specification-Based Testing of Large Language Models"],
+        "italic": ["Kausar Moshood", "Jace Bolante", "Roshan Aditya Murali", "Manish Motwani"],
+        "links": [
+            { "text": "[Paper]", "url": "https://arxiv.org/abs/2610.14443" }
+        ]
+     },
+      {
       "title": "Clarisa Caballero-Ignacio, Lucas Stephens, Josiah Sage, Manish Motwani, and Zane Ma, Vulnerability Trends Across Open-Source AI-Attributed Code, in Proceedings of the 2nd Workshop on Explainable and Reliable Software Systems (EXPRESS), 2026",
       "type": "Refereed Poster and Unconventional Publications",
         "year": 2026,
@@ -10,7 +20,7 @@
         ]
      },
       {
-      "title": "Oscar Ludwig, Ninad Anklesaria, Zheming Jin, Swaroop Pophale, Kausar Moshood, Christian J. DeVore, Brandon Gill, Cassius Villareal, Keita Teranishi, and Manish Motwani, Kaizen: Metamorphic Fuzzing and Differential Testing for LLM-Translated HPC Applications, Under Review, 2026",
+      "title": "Oscar Ludwig, Ninad Anklesaria, Zheming Jin, Swaroop Pophale, Kausar Moshood, Christian J. DeVore, Brandon Gill, Cassius Villareal, Keita Teranishi, and Manish Motwani, Kaizen: Metamorphic Fuzzing and Differential Testing for LLM-Translated HPC Applications, 2026",
       "type": "Refereed Journal Publications Under Review",
         "year": 2026,
         "bold": ["Kaizen: Metamorphic Fuzzing and Differential Testing for LLM-Translated HPC Applications"],
