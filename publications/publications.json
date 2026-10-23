@@ -1,7 +1,7 @@
 [ 
       {
-      "title": "Kausar Moshood, Jace Bolante, Roshan Aditya Murali, and Manish Motwani, Specification-Based Testing of Large Language Models, 2026",
-      "type": "Refereed Journal Publications Under Review",
+      "title": "Kausar Moshood, Jace Bolante, Roshan Aditya Murali, and Manish Motwani, Specification-Based Testing of Large Language Models, preprint, 2026",
+      "type": "Preprint",
         "year": 2026,
         "bold": ["Specification-Based Testing of Large Language Models"],
         "italic": ["Kausar Moshood", "Jace Bolante", "Roshan Aditya Murali", "Manish Motwani"],
@@ -20,8 +20,8 @@
         ]
      },
       {
-      "title": "Oscar Ludwig, Ninad Anklesaria, Zheming Jin, Swaroop Pophale, Kausar Moshood, Christian J. DeVore, Brandon Gill, Cassius Villareal, Keita Teranishi, and Manish Motwani, Kaizen: Metamorphic Fuzzing and Differential Testing for LLM-Translated HPC Applications, 2026",
-      "type": "Refereed Journal Publications Under Review",
+      "title": "Oscar Ludwig, Ninad Anklesaria, Zheming Jin, Swaroop Pophale, Kausar Moshood, Christian J. DeVore, Brandon Gill, Cassius Villareal, Keita Teranishi, and Manish Motwani, Kaizen: Metamorphic Fuzzing and Differential Testing for LLM-Translated HPC Applications, preprint, 2026",
+      "type": "Preprint",
         "year": 2026,
         "bold": ["Kaizen: Metamorphic Fuzzing and Differential Testing for LLM-Translated HPC Applications"],
         "italic": ["Oscar Ludwig", "Ninad Anklesaria", "Zheming Jin", "Swaroop Pophale", "Kausar Moshood", "Christian J. DeVore", "Brandon Gill", "Cassius Villareal", "Keita Teranishi", "Manish Motwani"],
@@ -50,13 +50,13 @@
         ]
     },
       {
-      "title": "Akshith Gunasekaran, Max Chase, Zane Ma, Rakesh B. Bobba, and Manish Motwani, Testing Certificate Authorities: An Empirical Study and Stateful Fuzzing Approach, Under Review, IEEE Transactions on Software Engineering (TSE), 2026",
-        "type": "Refereed Journal Publications Under Review",
+      "title": "Akshith Gunasekaran, Max Chase, Zane Ma, Rakesh B. Bobba, and Manish Motwani, Testing Certificate Authorities: An Empirical Study and Stateful Fuzzing Approach, preprint, 2026",
+        "type": "Preprint",
         "year": 2026,
         "bold": ["Testing Certificate Authorities: An Empirical Study and Stateful Fuzzing Approach"],
         "italic": ["Akshith Gunasekaran", "Max Chase", "Zane Ma", "Rakesh B. Bobba", "Manish Motwani"],
         "links": [
-            { "text": "[Paper]", "url": "./publication_sources/Gunasekaran26.pdf" }
+            { "text": "[Paper]", "url": "https://www.techrxiv.org/doi/full/10.36227/techrxiv.176972158.85579194/v1" }
         ]
      },
      {
